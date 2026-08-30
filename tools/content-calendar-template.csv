@@ -1,0 +1,23 @@
+id,date,title,category,tags,difficulty,frcem,bullet1,bullet2,bullet3,bullet4,bullet5,bullet6,bullet7,question,optionA,optionB,optionC,optionD,answer,explanation,source_title,source_publisher,source_url,deep_dive_url
+,,,,,,,,,,,,,,,,,,,,,,,,,
+INSTRUCTIONS:,,,,,,,,,,,,,,,,,,,,,,,,
+id,"Unique slug (auto-generated from title if blank — e.g. 'hyperkalaemia-management')",,,,,,,,,,,,,,,,,,,,,,,
+date,"Scheduled date YYYY-MM-DD (leave blank to add to rotation pool, not pinned to a date)",,,,,,,,,,,,,,,,,,,,,,,
+title,"Full teaching point title",,,,,,,,,,,,,,,,,,,,,,,
+category,"One of: resus / ecg / airway / tox / trauma / pem / stroke / safety",,,,,,,,,,,,,,,,,,,,,,,
+tags,"Semicolon-separated tags; e.g. 'sepsis;fluids;paediatrics'",,,,,,,,,,,,,,,,,,,,,,,
+difficulty,"core or advanced",,,,,,,,,,,,,,,,,,,,,,,
+frcem,"y or n — is this relevant to FRCEM exam?",,,,,,,,,,,,,,,,,,,,,,,
+bullet1-7,"Teaching point bullets. Prefix with # to render as a numbered step; e.g. '#Give calcium gluconate first'",,,,,,,,,,,,,,,,,,,,,,,
+question,"Single best answer question stem (optional — leave blank to skip quiz)",,,,,,,,,,,,,,,,,,,,,,,
+optionA-D,"Answer options (at least 2 required if question is set)",,,,,,,,,,,,,,,,,,,,,,,
+answer,"Correct answer letter: A / B / C / D",,,,,,,,,,,,,,,,,,,,,,,
+explanation,"Explanation shown after answer is selected",,,,,,,,,,,,,,,,,,,,,,,
+source_title,"Title of the primary source",,,,,,,,,,,,,,,,,,,,,,,
+source_publisher,"Publisher name; e.g. NICE / RCUK / RCEM Learning",,,,,,,,,,,,,,,,,,,,,,,
+source_url,"Direct URL to the primary source (not a homepage)",,,,,,,,,,,,,,,,,,,,,,,
+deep_dive_url,"Optional link to a deeper resource; e.g. emcrit.org or litfl.com page",,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+EXAMPLE ROWS:,,,,,,,,,,,,,,,,,,,,,,,,
+sepsis-6-bundle,2026-09-15,Sepsis: the 6 actions in the first hour,resus,sepsis;antibiotics,core,y,Suspect sepsis in any patient with NEWS2 >=5 or clinical concern,#Take blood cultures before antibiotics — do not delay for more than 45 minutes,#Give IV antibiotics within 1 hour of recognition,#Measure lactate and send FBC / CRP / CMP,#Give IV fluid bolus if lactate above 2 or hypotension present,#Document the time of each action,Escalate early — if not improving at 1 hour call critical care,A 62-year-old has NEWS2 of 6 and is confused. Which action is the single most time-critical?,Give furosemide to treat fluid overload,Give IV antibiotics within 1 hour,Wait for blood culture results before any treatment,Request a CT chest,B,Antibiotics within 1 hour of recognition are the most time-critical action. Blood cultures should be taken first but must not delay antibiotic administration beyond 45 minutes.,Sepsis-6 and NICE NG51 — sepsis recognition,RCUK / NICE,https://www.nice.org.uk/guidance/ng51,https://emcrit.org/ibcc/sepsis/
+paeds-wheeze,,Paediatric acute wheeze: initial assessment and severity scoring,pem,respiratory;wheeze;paediatrics,core,y,Use a validated severity score (e.g. PRAM or modified Borg) at presentation and after treatment,#Bronchodilators first: salbutamol via MDI+spacer is as effective as nebulised in mild-moderate wheeze,#Add ipratropium bromide to every nebulisation in moderate or severe wheeze,#IV magnesium sulphate 40 mg/kg (max 2 g) IV over 20 min in severe or life-threatening wheeze,Steroids early — oral prednisolone 1-2 mg/kg (max 40 mg) as soon as wheeze recognised,Escalate if SpO2 persistently below 92% or exhaustion develops,A 5-year-old with moderate acute wheeze has had two salbutamol spacer doses. What should be added for the next cycle?,Oral montelukast,IV aminophylline,Ipratropium bromide with the next salbutamol dose,IV hydrocortisone,C,Ipratropium bromide is added to every nebulisation in moderate and severe paediatric wheeze. IV aminophylline is a later step; montelukast has no role in acute management.,British Guideline on the Management of Asthma (BTS/SIGN),BTS / SIGN,https://www.brit-thoracic.org.uk/quality-improvement/guidelines/asthma/,https://www.rch.org.au/clinicalguide/guideline_index/Acute_Asthma_in_Children/

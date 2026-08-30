@@ -1,41 +1,1235 @@
 {
-  "note": "Fallback list, used when no Google Sheet is connected or the sheet cannot be read. Same fields as the sheet columns. 'date' is optional — leave it blank and the paper joins the daily rotation instead of being pinned to one day. These three records were pulled from PubMed and their DOIs check out, but the one-line takeaways are mine and need your review.",
+  "note": "Papers from EM Evidence Rundown Issues 1-27. Sourced from the EM Evidence all-papers database. All 82 entries are genuine EM papers with direct links. Rotates daily — no dates pinned. The Google Sheet (ID: 1qjPV9ClYIg6piwwnoWtWt0kBpPWDq_ON_ia0MPEq7fw) is the live source once published to web.",
   "papers": [
     {
       "date": "",
-      "title": "Pharmacists in Trauma: a randomised controlled trial of emergency medicine pharmacists in trauma response teams",
-      "authors": "Roman C, et al.",
-      "journal": "Emerg Med J",
-      "year": "2024",
-      "doi": "10.1136/emermed-2022-212934",
-      "pmid": "38749667",
-      "design": "RCT",
-      "takeaway": "Putting an EM pharmacist in the trauma team cut time to first analgesia. Single Australian centre, unblinded, 82 patients analysed.",
-      "tags": ["trauma", "analgesia", "workforce"]
+      "title": "UKHSA MenB Canterbury UPDATE — 21 cases, 2 deaths, downgraded to standard incident",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://www.gov.uk/government/publications/invasive-meningococcal-disease-statistical-releases/notified-cases-of-invasive-meningococcal-disease",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
     },
     {
       "date": "",
-      "title": "The effect of early fluid resuscitation on mortality in sepsis: a systematic review and meta-analysis",
-      "authors": "Ward MA, Kuttab HI, Badgett RG",
+      "title": "UKHSA Legionnaires' Disease Outbreak — NW and SW London",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://www.gov.uk/government/publications/health-protection-report-volume-20-2026/hpr-volume-20-issue-3-news-24-march-2026",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Resident Doctors' Strike 7–13 April 2026 — RCEM + NHS England Guidance",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://rcem.ac.uk/press-release/statement-on-resident-doctors-industrial-action/",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "UK Guidelines / Policy"
+      ]
+    },
+    {
+      "date": "",
+      "title": "FICM/ICS GPICS V3 — 3rd Edition, Now in Active Implementation",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://ics.ac.uk/resource/guidelines-for-the-provision-of-intensive-care-services-gpics-3rd-edition-now-published.html",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "HI-PEITHO Trial — Catheter-Directed Fibrinolysis in High-Intermediate Risk PE",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://emcrit.org/pulmcrit/",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Single-Shot Regional Anaesthesia for Rib Fractures — Systematic Review and Network Meta-Analysis",
+      "authors": "",
+      "journal": "Anaesthesia",
+      "year": "2026",
+      "url": "https://doi.org/10.1111/acem.70277",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Trauma & Haemorrhage"
+      ]
+    },
+    {
+      "date": "",
+      "title": "PROMINE Trial — Propofol vs Ketamine for RSI in Critically Ill Patients",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://doi.org/10.1007/s00134-026-08351-3",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Airway & RSI"
+      ]
+    },
+    {
+      "date": "",
+      "title": "BESS Trial — Surfactant Does NOT Reduce Ventilation Duration in Severe Bronchiolitis",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://doi.org/10.1016/S2213-2600(26)00008-1",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Respiratory"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Phoenix Sepsis Score External Validation in >25,000 Children",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41760137/",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Succinylcholine vs Rocuronium in Paediatric RSI — Mortality Signal Favours Succinylcholine",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://journalfeed.org",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "DFTB 100th Bubble Wrap — DKA Fluids RCT (RL vs 0.9% Saline) + Croup MDI Adrenaline",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://dontforgetthebubbles.com/the-100th-bubble-wrap/",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Metabolic & Electrolytes"
+      ]
+    },
+    {
+      "date": "",
+      "title": "PulmCrit — HI-PEITHO and the Case for Peripheral Low-Dose tPA in PE",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://emcrit.org/pulmcrit/",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Stroke & Neurology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "St Emlyn's TTL Tips 8 — External Haemorrhage Control",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://stemlynsblog.org/ttl-tips-8-external-haemorrhage-control",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Trauma & Haemorrhage"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Quick Hit: UKHSA Measles Resurgence — MMR Uptake Decade-Low",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://www.gov.uk/guidance/measles-symptoms-prevention-and-treatment",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Quick Hit: NHS England 2026/27 GP Contract — Same-Day Urgent Access + Mandatory A&G",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://www.gov.uk/government/news/better-access-to-gps-with-same-day-appointments-for-urgent-care",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "UK Guidelines / Policy"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Quick Hit: EMCrit — ECGs in Acute Pulmonary Embolism",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://emcrit.org/emcrit/ecg-acute-pulmonary-embolism/",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "ECG & Cardiology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Quick Hit: Gabapentinoids — Seldom Help, Often Harm",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://journalfeed.org",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Quick Hit: US-Guided Peripheral IV — 80% Improved First-Attempt Success SR/MA",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://journalfeed.org",
+      "doi": "",
+      "pmid": "",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Paediatric Drowning OHCA: CCO CPR worse outcomes — rescue breaths essential",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41819340/",
+      "doi": "",
+      "pmid": "41819340",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "CCO vs Standard CPR in Adult OHCA: Similar outcomes — SR/MA 230,000 patients",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41819400/",
+      "doi": "",
+      "pmid": "41819400",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "date": "",
+      "title": "No OUCH RCT — Ibuprofen Alone for Paediatric MSK Pain",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41505155/",
+      "doi": "",
+      "pmid": "41505155",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "OPTION Trial — Tenecteplase 4.5-24h Non-LVO Stroke",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41642827/",
+      "doi": "",
+      "pmid": "41642827",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Stroke & Neurology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "SWiFT RCT — Prehospital Whole Blood No Benefit",
+      "authors": "",
+      "journal": "NEJM",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41841706/",
+      "doi": "",
+      "pmid": "41841706",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Prehospital / PHEM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "STORM-PE — Mechanical Thrombectomy Intermediate-High PE",
+      "authors": "",
+      "journal": "Circulation",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41183181/",
+      "doi": "",
+      "pmid": "41183181",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Stroke & Neurology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Mirtazapine for Methamphetamine Use Disorder",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41920558/",
+      "doi": "",
+      "pmid": "41920558",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Surviving Sepsis Campaign 2026 Guidelines",
+      "authors": "",
       "journal": "Crit Care Med",
-      "year": "2025",
-      "doi": "10.1097/CCM.0000000000006769",
-      "pmid": "40637496",
-      "design": "Systematic review and meta-analysis",
-      "takeaway": "Randomised data show no mortality difference between liberal and restrictive early fluid strategies. Certainty of evidence is low throughout.",
-      "tags": ["sepsis", "fluids"]
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41869847/",
+      "doi": "",
+      "pmid": "41869847",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Sepsis & Infection"
+      ]
     },
     {
       "date": "",
-      "title": "Nonoperative versus operative management of chest trauma with multiple rib fractures: meta-analysis and trial sequential analysis",
-      "authors": "Hisamune R, et al.",
-      "journal": "World J Emerg Surg",
-      "year": "2024",
-      "doi": "10.1186/s13017-024-00540-z",
-      "pmid": "38504282",
-      "design": "Systematic review and meta-analysis",
-      "takeaway": "Surgical rib fixation shortened ventilation and reduced pneumonia, but showed no clear mortality benefit. GRADE certainty very low to low.",
-      "tags": ["trauma", "chest"]
+      "title": "Paeds Septic Shock Fluid RCT — Balanced vs Saline No Difference",
+      "authors": "",
+      "journal": "NEJM",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42028918/",
+      "doi": "",
+      "pmid": "42028918",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Coffee and Dementia Risk — SGEM#509",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41661604/",
+      "doi": "",
+      "pmid": "41661604",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Stroke & Neurology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Ketamine vs Etomidate RSI — No Mortality Difference, Ketamine More CV Collapse",
+      "authors": "",
+      "journal": "NEJM",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41369227/",
+      "doi": "",
+      "pmid": "41369227",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Airway & RSI"
+      ]
+    },
+    {
+      "date": "",
+      "title": "ANDROMEDA-SHOCK-2 — CRT Protocol Reduces Organ Support",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41159835/",
+      "doi": "",
+      "pmid": "41159835",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Pericardiocentesis + Intrapericardial TXA — 25-Case Series Penetrating Tamponade",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41760498/",
+      "doi": "",
+      "pmid": "41760498",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Trauma & Haemorrhage"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Avalanche Burial Breathing Device RCT",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41060661/",
+      "doi": "",
+      "pmid": "41060661",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Airway Management of Adults in the Acute Care Setting — BMJ State of the Art 2026 (PMID 41951238) [FOCUS]",
+      "authors": "",
+      "journal": "BMJ",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41951238/",
+      "doi": "",
+      "pmid": "41951238",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Airway & RSI"
+      ]
+    },
+    {
+      "date": "",
+      "title": "ED Boarding and Clinical Deterioration — Ann Emerg Med 2026",
+      "authors": "",
+      "journal": "Ann Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41860510/",
+      "doi": "",
+      "pmid": "41860510",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Maternal RSV Vaccination vs Infant Nirsevimab vs Both — Interim RCT",
+      "authors": "",
+      "journal": "Pediatrics",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42070784/",
+      "doi": "",
+      "pmid": "42070784",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "ICP Monitoring in Paediatric Severe TBI — EVD vs IPM",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41925562/",
+      "doi": "",
+      "pmid": "41925562",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Upper GI Bleeding ED Predictors",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41863907/",
+      "doi": "",
+      "pmid": "41863907",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Trauma & Haemorrhage"
+      ]
+    },
+    {
+      "date": "",
+      "title": "TNK-PLUS: TNK Before EVT at 4.5-24h — No Benefit",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42099212/",
+      "doi": "",
+      "pmid": "42099212",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "ECG & Cardiology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "INSTANT: Tirofiban After Failed TNK in Non-LVO Stroke — NNT 8",
+      "authors": "",
+      "journal": "JAMA",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42100960/",
+      "doi": "",
+      "pmid": "42100960",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Stroke & Neurology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "POCUS Pathway for ED Dyspnoea RCT — Certainty Without Management Change",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41870288/",
+      "doi": "",
+      "pmid": "41870288",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "POCUS & Imaging"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Carotid Doppler for ROSC Prediction in Cardiac Arrest",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42098731/",
+      "doi": "",
+      "pmid": "42098731",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "date": "",
+      "title": "AI-Automated POCUS Skill Assessment",
+      "authors": "",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41653848/",
+      "doi": "",
+      "pmid": "41653848",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "POCUS & Imaging"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Stellate Ganglion Block for Electrical Storm",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41698390/",
+      "doi": "",
+      "pmid": "41698390",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "USS-Guided Truncal Blocks for Tube Thoracostomy Analgesia",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41936304/",
+      "doi": "",
+      "pmid": "41936304",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Mottling Score, CRT, Peripheral Perfusion Index in Sepsis SR/MA",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42258324/",
+      "doi": "",
+      "pmid": "42258324",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Sepsis & Infection"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Lung US 2025 Updated International Consensus Recommendations",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42257880/",
+      "doi": "",
+      "pmid": "42257880",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "POCUS Infant Bladder SR/MA 3 RCTs — 89.7% vs 72.5% First-Attempt Success, Dry Taps 3.6% vs 23.9%",
+      "authors": "",
+      "journal": "Acad Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42246462/",
+      "doi": "",
+      "pmid": "42246462",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "LUS + CRP for Bacterial Pneumonia in Children — Specificity 0.91 Combined",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230808/",
+      "doi": "",
+      "pmid": "42230808",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "NLS Telesimulation for Rural Clinicians — Sustained Improvement at 6 and 12 months",
+      "authors": "",
+      "journal": "Pediatrics",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42229913/",
+      "doi": "",
+      "pmid": "42229913",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "LUS in Paeds Pneumonia Reduces Radiation, Duration, Costs",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41540593/",
+      "doi": "",
+      "pmid": "41540593",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Suicidality Following Sexual Abuse in Children 10-17 — 11.1% Within 90 Days, Higher With Non-Relative Perpetrator",
+      "authors": "",
+      "journal": "Pediatrics",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276546/",
+      "doi": "",
+      "pmid": "42276546",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "POCUS During Inpatient Cardiac Arrest — QI Project Raises Usage 16% to 35%, Changes Management >30%",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41772363/",
+      "doi": "",
+      "pmid": "41772363",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Pathophysiology of Distributive Shock in Sepsis — Beyond Vasoplegia: Microcirculatory Failure, Mitochondrial Dysfunction, Endothelial Injury",
+      "authors": "",
+      "journal": "Injury",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42440111/",
+      "doi": "",
+      "pmid": "42440111",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Sepsis & Infection"
+      ]
+    },
+    {
+      "date": "",
+      "title": "FFP-First Approach Independently Associated With Improved Survival in Massive Transfusion vs PRBC-First",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42275580/",
+      "doi": "",
+      "pmid": "42275580",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Trauma & Haemorrhage"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Fosfomycin oral step-down for ESBL complicated UTI — RCT non-inferiority",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42313397/",
+      "doi": "",
+      "pmid": "42313397",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Bedside toxicology consultation: higher appropriate ED discharge",
+      "authors": "",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42314343/",
+      "doi": "",
+      "pmid": "42314343",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Toxicology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "PE + DOACs: outpatient management safe sPESI 0-1",
+      "authors": "",
+      "journal": "Acad Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42313763/",
+      "doi": "",
+      "pmid": "42313763",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "ECG & Cardiology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Intussusception: failure predictors — age >48m, symptoms >48h, constipation, US wall thickening",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42304311/",
+      "doi": "",
+      "pmid": "42304311",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Paediatric sepsis: base deficit and alactic base excess outperform lactate",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42304271/",
+      "doi": "",
+      "pmid": "42304271",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Garth Pretorius inquest Hull Royal Infirmary: sepsis death after overcrowding discharge, Sepsis 6 not initiated, dual triage systems, coroner PFD 2026-0273",
+      "authors": "",
+      "journal": "BMJ",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42521355/",
+      "doi": "",
+      "pmid": "42521355",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Sepsis & Infection"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Intranasal dexmedetomidine vs nitrous oxide for paediatric procedural sedation: AV block in 1/13 children, nitrous oxide preferred by 69% at follow-up",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42479237/",
+      "doi": "",
+      "pmid": "42479237",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Urine leukocyte count limited diagnostic accuracy for complicated appendicitis vs CRP in children n=156",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42478642/",
+      "doi": "",
+      "pmid": "42478642",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Nirmatrelvir/ritonavir COVID-19 children 6+ years: phase 2/3 confirms comparable pharmacokinetics and safety",
+      "authors": "",
+      "journal": "Pediatrics",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42342255/",
+      "doi": "",
+      "pmid": "42342255",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "ED visits for suspected suicide attempts USA 2021-2025: sustained elevation in adolescents and young adults",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42348443/",
+      "doi": "",
+      "pmid": "42348443",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Cochrane SR albumin for liver cirrhosis with bacterial infections",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42517322/",
+      "doi": "",
+      "pmid": "42517322",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Sepsis & Infection"
+      ]
+    },
+    {
+      "date": "",
+      "title": "AI as second reader for pneumothorax detection in ED: redirects CT rather than reduces it",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42393541/",
+      "doi": "",
+      "pmid": "42393541",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "POCUS cardiac dysfunction in children with suspected systemic infection predicts vasoactive requirement and ICU admission",
+      "authors": "",
+      "journal": "",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42441468/",
+      "doi": "",
+      "pmid": "42441468",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Multimodal QI intervention reduces CT in blunt head injury without missed TBI or return visits",
+      "authors": "",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42435500/",
+      "doi": "",
+      "pmid": "42435500",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "SAPB for acute rib fractures in the ED — RCT",
+      "authors": "",
+      "journal": "Acad Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42159402/",
+      "doi": "",
+      "pmid": "42159402",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Trauma & Haemorrhage"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Bandemia degree and short-term mortality in ED bacteraemia",
+      "authors": "",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42127878/",
+      "doi": "",
+      "pmid": "42127878",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Sepsis & Infection"
+      ]
+    },
+    {
+      "date": "",
+      "title": "RSI in myasthenia gravis — neuromuscular blocker data",
+      "authors": "",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41638015/",
+      "doi": "",
+      "pmid": "41638015",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Airway & RSI"
+      ]
+    },
+    {
+      "date": "",
+      "title": "AZ-SWED: Azithromycin no benefit for preschool wheeze",
+      "authors": "",
+      "journal": "N Engl J Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42149992/",
+      "doi": "",
+      "pmid": "42149992",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Single-dose dexamethasone equivalent to two doses for paediatric asthma",
+      "authors": "",
+      "journal": "Ann Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41575401/",
+      "doi": "",
+      "pmid": "41575401",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Paediatric e-scooter injuries UK MTCs",
+      "authors": "",
+      "journal": "Emerg Med J",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42580879/",
+      "doi": "",
+      "pmid": "42580879",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "IO lines in children — long-term complications rare",
+      "authors": "",
+      "journal": "Emerg Med J",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42580875/",
+      "doi": "",
+      "pmid": "42580875",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Rocuronium >1.2 mg/kg RSI: 100% first-pass success vs 89.5%",
+      "authors": "",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42385663/",
+      "doi": "",
+      "pmid": "42385663",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Airway & RSI"
+      ]
+    },
+    {
+      "date": "",
+      "title": "EtCO2 trajectories during CPR and ROSC prediction",
+      "authors": "",
+      "journal": "Circulation",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42145111/",
+      "doi": "",
+      "pmid": "42145111",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Aggressive vs Conservative BP in ICH SR/MA n=12669",
+      "authors": "",
+      "journal": "Crit Care Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42484370/",
+      "doi": "",
+      "pmid": "42484370",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Stroke & Neurology"
+      ]
+    },
+    {
+      "date": "",
+      "title": "HEART protocol + peer feedback 14% admission reduction",
+      "authors": "",
+      "journal": "Ann Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42080778/",
+      "doi": "",
+      "pmid": "42080778",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Clinical Evidence"
+      ]
+    },
+    {
+      "date": "",
+      "title": "ED boarding older adults post-COVID escalation",
+      "authors": "",
+      "journal": "Ann Emerg Med",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42084584/",
+      "doi": "",
+      "pmid": "42084584",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "UK Guidelines / Policy"
+      ]
+    },
+    {
+      "date": "",
+      "title": "Acute pericarditis ED management gaps",
+      "authors": "",
+      "journal": "Eur J Clin Invest",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42032877/",
+      "doi": "",
+      "pmid": "42032877",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "UK Guidelines / Policy"
+      ]
+    },
+    {
+      "date": "",
+      "title": "IBI in febrile 60-90 day infants SR/MA: IBI 1.1%, meningitis 0.11%",
+      "authors": "",
+      "journal": "JAMA Pediatr",
+      "year": "2026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42189531/",
+      "doi": "",
+      "pmid": "42189531",
+      "takeaway": "",
+      "design": "",
+      "tags": [
+        "Paediatric EM"
+      ]
     }
   ]
 }

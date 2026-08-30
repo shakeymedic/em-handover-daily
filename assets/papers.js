@@ -55,14 +55,29 @@
  *     python3 tools/check_sheet.py
  * -------------------------------------------------------------------------*/
 
-export const SHEET_CSV_URL =
-  'https://docs.google.com/spreadsheets/d/1qjPV9ClYIg6piwwnoWtWt0kBpPWDq_ON_ia0MPEq7fw/gviz/tq?tqx=out:csv';
+/* ---------------------------------------------------------------------------
+ * EM Evidence Rundown — All Newsletters Paper Database
+ * Sheet ID: 1qjPV9ClYIg6piwwnoWtWt0kBpPWDq_ON_ia0MPEq7fw
+ *
+ * The sheet has a summary tab (gid=0) and the papers tab.
+ * Once the papers tab is published to web via File > Share > Publish to web
+ * > Comma-separated values, paste that URL here (it will look like:
+ *   .../pub?gid=XXXXXXX&single=true&output=csv)
+ *
+ * Until then, the fallback data/papers.json (82 EM papers) is used automatically.
+ *
+ * Column headers in the sheet that are already recognised:
+ *   Title, Journal, PMID, Link — match directly
+ *   Issue Date — mapped to 'date' (papers.js FIELDS extended to recognise this)
+ *   Topic Area — mapped to 'tags' (papers.js FIELDS extended to recognise this)
+ * ---------------------------------------------------------------------------*/
+export const SHEET_CSV_URL = '';
 
 const CACHE_KEY = 'ehd:papers';
 const CACHE_HOURS = 6;
 
 const FIELDS = {
-  date:     ['date', 'day', 'scheduled'],
+  date:     ['date', 'day', 'scheduled', 'issue date'],
   title:    ['title', 'paper', 'name'],
   authors:  ['authors', 'author', 'first author'],
   journal:  ['journal', 'source', 'publication'],
@@ -71,8 +86,8 @@ const FIELDS = {
   doi:      ['doi'],
   pmid:     ['pmid', 'pubmed', 'pubmed id'],
   takeaway: ['takeaway', 'summary', 'bottom line', 'why it matters', 'comment'],
-  design:   ['design', 'type', 'study type'],
-  tags:     ['tags', 'category']
+  design:   ['design', 'type', 'study type', 'study design'],
+  tags:     ['tags', 'category', 'topic area', 'topic']
 };
 
 /* ------------------------------------------------------------ CSV parse --- */

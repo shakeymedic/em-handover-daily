@@ -19,7 +19,7 @@ from pathlib import Path
 QR_BYTE_LIMIT = 213
 
 ALIASES = {
-    "date": ["date", "day", "scheduled"],
+    "date": ["date", "day", "scheduled", "issue date"],
     "title": ["title", "paper", "name"],
     "authors": ["authors", "author", "first author"],
     "journal": ["journal", "source", "publication"],
@@ -28,6 +28,7 @@ ALIASES = {
     "doi": ["doi"],
     "pmid": ["pmid", "pubmed", "pubmed id"],
     "takeaway": ["takeaway", "summary", "bottom line", "why it matters", "comment"],
+    "tags": ["tags", "category", "topic area", "topic"],
 }
 
 

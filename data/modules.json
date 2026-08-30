@@ -7,17 +7,36 @@
       "date": "2026-08-30",
       "title": "Hyperkalaemia: don't miss the ECG, don't under-dose the calcium",
       "category": "resus",
-      "tags": ["electrolytes", "ECG", "AKI"],
+      "tags": [
+        "electrolytes",
+        "ECG",
+        "AKI"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Severe hyperkalaemia is usually defined as K+ 6.5 mmol/L or above" },
-        { "text": "ECG progression: peaked T waves, then broad QRS, then sine wave, then arrest" },
-        { "text": "A normal ECG does not exclude it — sensitivity is poor" },
-        { "text": "Calcium gluconate 10% 30 mL IV to stabilise the myocardium. Repeat if no ECG change", "step": true },
-        { "text": "Insulin 10 units with dextrose 25 g IV. Monitor glucose for at least 6 hours", "step": true },
-        { "text": "Then treat the cause and consider potassium removal. Discuss with renal early", "step": true }
+        {
+          "text": "Severe hyperkalaemia is usually defined as K+ 6.5 mmol/L or above"
+        },
+        {
+          "text": "ECG progression: peaked T waves, then broad QRS, then sine wave, then arrest"
+        },
+        {
+          "text": "A normal ECG does not exclude it — sensitivity is poor"
+        },
+        {
+          "text": "Calcium gluconate 10% 30 mL IV to stabilise the myocardium. Repeat if no ECG change",
+          "step": true
+        },
+        {
+          "text": "Insulin 10 units with dextrose 25 g IV. Monitor glucose for at least 6 hours",
+          "step": true
+        },
+        {
+          "text": "Then treat the cause and consider potassium removal. Discuss with renal early",
+          "step": true
+        }
       ],
       "deep_dive": {
         "type": "algorithm",
@@ -33,7 +52,12 @@
       },
       "quiz": {
         "question": "A 72-year-old on ramipril and spironolactone is weak. K+ 7.1 mmol/L, ECG shows a broad QRS. Which drug goes in first?",
-        "options": ["Insulin 10 units IV", "Calcium gluconate IV", "Salbutamol 10 mg nebulised", "Sodium bicarbonate 50 mmol IV"],
+        "options": [
+          "Insulin 10 units IV",
+          "Calcium gluconate IV",
+          "Salbutamol 10 mg nebulised",
+          "Sodium bicarbonate 50 mmol IV"
+        ],
         "answer_index": 1,
         "explanation": "Calcium stabilises the myocardium and is the first drug when there are ECG changes. It does not lower K+ — follow it immediately with insulin and dextrose."
       },
@@ -44,23 +68,37 @@
       },
       "deep_dive_url": "https://emcrit.org/ibcc/hyperkalemia/"
     },
-
     {
       "id": "occlusion-mi-patterns",
       "date": "2026-08-31",
       "title": "Occlusion MI: the patterns that don't meet STEMI criteria",
       "category": "ecg",
-      "tags": ["ACS", "cath lab"],
+      "tags": [
+        "ACS",
+        "cath lab"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Millimetre STEMI criteria miss a substantial minority of acute occlusions" },
-        { "text": "Posterior MI: horizontal ST depression in V1 to V3 with tall R waves" },
-        { "text": "Do posterior leads V7 to V9 — only 0.5 mm elevation is needed there" },
-        { "text": "De Winter pattern: upsloping ST depression with tall symmetrical T waves" },
-        { "text": "Modified Sgarbossa criteria apply when there is LBBB or a paced rhythm" },
-        { "text": "Ongoing pain with a dynamic ECG warrants a cardiology conversation, not a wait" }
+        {
+          "text": "Millimetre STEMI criteria miss a substantial minority of acute occlusions"
+        },
+        {
+          "text": "Posterior MI: horizontal ST depression in V1 to V3 with tall R waves"
+        },
+        {
+          "text": "Do posterior leads V7 to V9 — only 0.5 mm elevation is needed there"
+        },
+        {
+          "text": "De Winter pattern: upsloping ST depression with tall symmetrical T waves"
+        },
+        {
+          "text": "Modified Sgarbossa criteria apply when there is LBBB or a paced rhythm"
+        },
+        {
+          "text": "Ongoing pain with a dynamic ECG warrants a cardiology conversation, not a wait"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -74,7 +112,12 @@
       },
       "quiz": {
         "question": "Chest pain, ECG shows 2 mm horizontal ST depression in V1 to V3 with tall R waves and upright T waves. Next step?",
-        "options": ["Treat as NSTEMI and admit", "Record posterior leads V7 to V9", "Give thrombolysis", "Repeat troponin at 3 hours and reassess"],
+        "options": [
+          "Treat as NSTEMI and admit",
+          "Record posterior leads V7 to V9",
+          "Give thrombolysis",
+          "Repeat troponin at 3 hours and reassess"
+        ],
         "answer_index": 1,
         "explanation": "This is the mirror image of posterior injury. Posterior leads confirm it, and only 0.5 mm of elevation in V7 to V9 is required."
       },
@@ -84,23 +127,37 @@
         "url": "https://litfl.com/posterior-myocardial-infarction-ecg-library/"
       }
     },
-
     {
       "id": "anaphylaxis-refractory",
       "date": "2026-09-01",
       "title": "Anaphylaxis: IM adrenaline early, and what to do when it doesn't work",
       "category": "resus",
-      "tags": ["allergy", "airway"],
+      "tags": [
+        "allergy",
+        "airway"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Adult dose: adrenaline 500 micrograms IM into the anterolateral thigh" },
-        { "text": "Repeat every 5 minutes if there is no improvement" },
-        { "text": "Refractory means no improvement after two appropriate IM doses" },
-        { "text": "Refractory anaphylaxis needs an adrenaline infusion and expert help" },
-        { "text": "Lay the patient flat — sitting or standing up has been linked to arrest" },
-        { "text": "Steroids are no longer routinely recommended in the initial treatment" }
+        {
+          "text": "Adult dose: adrenaline 500 micrograms IM into the anterolateral thigh"
+        },
+        {
+          "text": "Repeat every 5 minutes if there is no improvement"
+        },
+        {
+          "text": "Refractory means no improvement after two appropriate IM doses"
+        },
+        {
+          "text": "Refractory anaphylaxis needs an adrenaline infusion and expert help"
+        },
+        {
+          "text": "Lay the patient flat — sitting or standing up has been linked to arrest"
+        },
+        {
+          "text": "Steroids are no longer routinely recommended in the initial treatment"
+        }
       ],
       "deep_dive": {
         "type": "algorithm",
@@ -116,7 +173,12 @@
       },
       "quiz": {
         "question": "An adult with anaphylaxis has had two doses of IM adrenaline 5 minutes apart with no improvement. What is the next step?",
-        "options": ["A third IM dose", "IV adrenaline bolus 1 mg", "Start an adrenaline infusion and call for critical care help", "Give hydrocortisone 200 mg IV"],
+        "options": [
+          "A third IM dose",
+          "IV adrenaline bolus 1 mg",
+          "Start an adrenaline infusion and call for critical care help",
+          "Give hydrocortisone 200 mg IV"
+        ],
         "answer_index": 2,
         "explanation": "This is refractory anaphylaxis. Guidance moves to an adrenaline infusion with expert help rather than continued repeat IM dosing."
       },
@@ -126,23 +188,37 @@
         "url": "https://www.resus.org.uk/library/additional-guidance/guidance-anaphylaxis"
       }
     },
-
     {
       "id": "dka-adult-pitfalls",
       "date": "2026-09-02",
       "title": "Adult DKA: the four things that go wrong in the first two hours",
       "category": "resus",
-      "tags": ["endocrine", "metabolic"],
+      "tags": [
+        "endocrine",
+        "metabolic"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Fixed rate insulin infusion at 0.1 units/kg/hour — weight-based, not a standard rate" },
-        { "text": "Continue long-acting basal insulin. Stopping it causes rebound ketosis" },
-        { "text": "Add glucose-containing fluid once blood glucose falls below 14 mmol/L" },
-        { "text": "Potassium falls fast — check it early and replace within the infusion" },
-        { "text": "Resolution is ketone and pH based, not glucose based" },
-        { "text": "Euglycaemic DKA happens on SGLT2 inhibitors — check ketones despite normal glucose" }
+        {
+          "text": "Fixed rate insulin infusion at 0.1 units/kg/hour — weight-based, not a standard rate"
+        },
+        {
+          "text": "Continue long-acting basal insulin. Stopping it causes rebound ketosis"
+        },
+        {
+          "text": "Add glucose-containing fluid once blood glucose falls below 14 mmol/L"
+        },
+        {
+          "text": "Potassium falls fast — check it early and replace within the infusion"
+        },
+        {
+          "text": "Resolution is ketone and pH based, not glucose based"
+        },
+        {
+          "text": "Euglycaemic DKA happens on SGLT2 inhibitors — check ketones despite normal glucose"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -156,7 +232,12 @@
       },
       "quiz": {
         "question": "A patient in DKA on an SGLT2 inhibitor has a blood glucose of 9 mmol/L. Which statement is correct?",
-        "options": ["DKA is excluded by the normal glucose", "Euglycaemic DKA is recognised and ketones must be checked", "Insulin should be withheld until glucose exceeds 14 mmol/L", "Only sodium bicarbonate will correct the acidosis"],
+        "options": [
+          "DKA is excluded by the normal glucose",
+          "Euglycaemic DKA is recognised and ketones must be checked",
+          "Insulin should be withheld until glucose exceeds 14 mmol/L",
+          "Only sodium bicarbonate will correct the acidosis"
+        ],
         "answer_index": 1,
         "explanation": "SGLT2 inhibitors can cause DKA with near-normal glucose. Diagnosis rests on ketones and acidosis, and treatment runs with glucose-containing fluid alongside insulin."
       },
@@ -166,23 +247,37 @@
         "url": "https://abcd.care/joint-british-diabetes-societies-jbds-inpatient-care-group"
       }
     },
-
     {
       "id": "paediatric-fluid-bolus",
       "date": "2026-09-03",
       "title": "Paediatric shock: 10 mL/kg, then reassess",
       "category": "pem",
-      "tags": ["sepsis", "fluids"],
+      "tags": [
+        "sepsis",
+        "fluids"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Bolus 10 mL/kg of balanced crystalloid, then reassess before the next one" },
-        { "text": "Reassess after every bolus: heart rate, perfusion, conscious level, liver edge" },
-        { "text": "Look for crackles, a new gallop or an enlarging liver — signs of fluid overload" },
-        { "text": "In DKA and severe malnutrition the approach is different — follow those pathways" },
-        { "text": "If shock persists after 40 to 60 mL/kg, think inotropes and critical care, not more fluid" },
-        { "text": "Weight: use the child's actual weight if known, otherwise an age-based formula" }
+        {
+          "text": "Bolus 10 mL/kg of balanced crystalloid, then reassess before the next one"
+        },
+        {
+          "text": "Reassess after every bolus: heart rate, perfusion, conscious level, liver edge"
+        },
+        {
+          "text": "Look for crackles, a new gallop or an enlarging liver — signs of fluid overload"
+        },
+        {
+          "text": "In DKA and severe malnutrition the approach is different — follow those pathways"
+        },
+        {
+          "text": "If shock persists after 40 to 60 mL/kg, think inotropes and critical care, not more fluid"
+        },
+        {
+          "text": "Weight: use the child's actual weight if known, otherwise an age-based formula"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -196,7 +291,12 @@
       },
       "quiz": {
         "question": "A 4-year-old with septic shock remains tachycardic and poorly perfused after 40 mL/kg of crystalloid. What is the priority?",
-        "options": ["Another 20 mL/kg bolus", "Start vasoactive support and involve critical care", "Wait for the lactate to return", "Change to colloid"],
+        "options": [
+          "Another 20 mL/kg bolus",
+          "Start vasoactive support and involve critical care",
+          "Wait for the lactate to return",
+          "Change to colloid"
+        ],
         "answer_index": 1,
         "explanation": "Persisting shock after substantial fluid should prompt vasoactive support and critical care involvement rather than continued escalating boluses."
       },
@@ -206,23 +306,37 @@
         "url": "https://www.nice.org.uk/guidance/ng51"
       }
     },
-
     {
       "id": "fever-under-three-months",
       "date": "2026-09-04",
       "title": "Fever under 3 months: the ones you do not send home",
       "category": "pem",
-      "tags": ["sepsis", "safeguarding"],
+      "tags": [
+        "sepsis",
+        "safeguarding"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Under 3 months with fever 38°C or above is a red flag in its own right" },
-        { "text": "Serious bacterial infection can present with no localising signs at all" },
-        { "text": "The traffic light system does not apply below 3 months in the usual way" },
-        { "text": "Hypothermia in a neonate is as concerning as fever" },
-        { "text": "A well-looking baby who fed poorly overnight still needs a senior review" },
-        { "text": "Document the parental concern — it is a recognised risk marker" }
+        {
+          "text": "Under 3 months with fever 38°C or above is a red flag in its own right"
+        },
+        {
+          "text": "Serious bacterial infection can present with no localising signs at all"
+        },
+        {
+          "text": "The traffic light system does not apply below 3 months in the usual way"
+        },
+        {
+          "text": "Hypothermia in a neonate is as concerning as fever"
+        },
+        {
+          "text": "A well-looking baby who fed poorly overnight still needs a senior review"
+        },
+        {
+          "text": "Document the parental concern — it is a recognised risk marker"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -236,7 +350,12 @@
       },
       "quiz": {
         "question": "A 6-week-old has a temperature of 38.2°C, is feeding normally and looks well. What is the correct approach?",
-        "options": ["Discharge with safety-net advice", "Follow the under-3-month febrile infant pathway with senior involvement", "Oral antibiotics and GP review", "Reassure — the traffic light system says green"],
+        "options": [
+          "Discharge with safety-net advice",
+          "Follow the under-3-month febrile infant pathway with senior involvement",
+          "Oral antibiotics and GP review",
+          "Reassure — the traffic light system says green"
+        ],
         "answer_index": 1,
         "explanation": "Age under 3 months with fever is a high-risk feature regardless of appearance. Local febrile infant pathways and senior review apply."
       },
@@ -246,23 +365,37 @@
         "url": "https://www.nice.org.uk/guidance/ng143"
       }
     },
-
     {
       "id": "aortic-dissection-red-flags",
       "date": "2026-09-05",
       "title": "Aortic dissection: the presentations that look like something else",
       "category": "resus",
-      "tags": ["chest pain", "diagnostic error"],
+      "tags": [
+        "chest pain",
+        "diagnostic error"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Pain is often abrupt and maximal at onset rather than crescendo" },
-        { "text": "Beware the stroke, limb ischaemia or syncope with chest or back pain" },
-        { "text": "A normal chest X-ray and a normal D-dimer do not exclude it" },
-        { "text": "Inferior ST elevation can be dissection involving the right coronary ostium" },
-        { "text": "Ask about pulse and blood pressure differences, but their absence proves nothing" },
-        { "text": "If you are seriously considering it, the test is a CT aortogram" }
+        {
+          "text": "Pain is often abrupt and maximal at onset rather than crescendo"
+        },
+        {
+          "text": "Beware the stroke, limb ischaemia or syncope with chest or back pain"
+        },
+        {
+          "text": "A normal chest X-ray and a normal D-dimer do not exclude it"
+        },
+        {
+          "text": "Inferior ST elevation can be dissection involving the right coronary ostium"
+        },
+        {
+          "text": "Ask about pulse and blood pressure differences, but their absence proves nothing"
+        },
+        {
+          "text": "If you are seriously considering it, the test is a CT aortogram"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -276,7 +409,12 @@
       },
       "quiz": {
         "question": "A 58-year-old has sudden severe chest pain radiating to the back and a new right hemiparesis. BP differs by 30 mmHg between arms. What is the priority investigation?",
-        "options": ["CT head only", "CT aortogram", "D-dimer", "Bedside echocardiogram alone"],
+        "options": [
+          "CT head only",
+          "CT aortogram",
+          "D-dimer",
+          "Bedside echocardiogram alone"
+        ],
         "answer_index": 1,
         "explanation": "Sudden chest and back pain with neurological deficit suggests dissection with carotid malperfusion. CT aortogram is the diagnostic test, and thrombolysis would be dangerous."
       },
@@ -286,23 +424,37 @@
         "url": "https://www.rcemlearning.co.uk/"
       }
     },
-
     {
       "id": "sah-ct-and-lp",
       "date": "2026-09-06",
       "title": "Thunderclap headache: what the 6-hour CT does and does not do",
       "category": "stroke",
-      "tags": ["headache", "SAH"],
+      "tags": [
+        "headache",
+        "SAH"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Non-contrast CT within 6 hours of onset has very high sensitivity for SAH" },
-        { "text": "That performance depends on a modern scanner and a competent reporter" },
-        { "text": "Beyond 6 hours, sensitivity falls and further investigation is needed" },
-        { "text": "LP is timed at 12 hours or more from onset to allow xanthochromia to form" },
-        { "text": "Send CSF for spectrophotometry, and protect the sample from light" },
-        { "text": "Onset time is the anchor for everything — pin it down precisely" }
+        {
+          "text": "Non-contrast CT within 6 hours of onset has very high sensitivity for SAH"
+        },
+        {
+          "text": "That performance depends on a modern scanner and a competent reporter"
+        },
+        {
+          "text": "Beyond 6 hours, sensitivity falls and further investigation is needed"
+        },
+        {
+          "text": "LP is timed at 12 hours or more from onset to allow xanthochromia to form"
+        },
+        {
+          "text": "Send CSF for spectrophotometry, and protect the sample from light"
+        },
+        {
+          "text": "Onset time is the anchor for everything — pin it down precisely"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -316,7 +468,12 @@
       },
       "quiz": {
         "question": "A patient presents 9 hours after a thunderclap headache. Non-contrast CT head is normal. What is appropriate?",
-        "options": ["Discharge — a normal CT excludes SAH", "Immediate LP now", "Plan LP at 12 hours or more from headache onset, or an agreed local alternative pathway", "Repeat CT at 24 hours"],
+        "options": [
+          "Discharge — a normal CT excludes SAH",
+          "Immediate LP now",
+          "Plan LP at 12 hours or more from headache onset, or an agreed local alternative pathway",
+          "Repeat CT at 24 hours"
+        ],
         "answer_index": 2,
         "explanation": "Beyond 6 hours a normal CT does not exclude SAH. LP is timed at 12 hours or more from onset so xanthochromia can be detected, unless your unit uses a CTA-based pathway."
       },
@@ -326,23 +483,37 @@
         "url": "https://www.rcemlearning.co.uk/"
       }
     },
-
     {
       "id": "paracetamol-overdose-basics",
       "date": "2026-09-07",
       "title": "Paracetamol overdose: the questions that change management",
       "category": "tox",
-      "tags": ["overdose", "TOXBASE"],
+      "tags": [
+        "overdose",
+        "TOXBASE"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Single time of ingestion, or staggered over more than an hour? It changes everything" },
-        { "text": "The UK uses a single treatment line on the nomogram at 4 hours post-ingestion" },
-        { "text": "Levels before 4 hours cannot be interpreted on the nomogram" },
-        { "text": "Staggered and unknown-time overdoses are treated without waiting for a level" },
-        { "text": "Check TOXBASE for the current regimen — it has changed more than once" },
-        { "text": "Do not stop acetylcysteine for a rash alone; treat and continue" }
+        {
+          "text": "Single time of ingestion, or staggered over more than an hour? It changes everything"
+        },
+        {
+          "text": "The UK uses a single treatment line on the nomogram at 4 hours post-ingestion"
+        },
+        {
+          "text": "Levels before 4 hours cannot be interpreted on the nomogram"
+        },
+        {
+          "text": "Staggered and unknown-time overdoses are treated without waiting for a level"
+        },
+        {
+          "text": "Check TOXBASE for the current regimen — it has changed more than once"
+        },
+        {
+          "text": "Do not stop acetylcysteine for a rash alone; treat and continue"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -356,7 +527,12 @@
       },
       "quiz": {
         "question": "A patient took paracetamol in unknown amounts over about 8 hours. What is the correct approach?",
-        "options": ["Wait for a 4-hour level", "Treat as a staggered overdose without waiting for a level, per TOXBASE", "Plot the level on the nomogram from the first tablet", "Discharge if asymptomatic"],
+        "options": [
+          "Wait for a 4-hour level",
+          "Treat as a staggered overdose without waiting for a level, per TOXBASE",
+          "Plot the level on the nomogram from the first tablet",
+          "Discharge if asymptomatic"
+        ],
         "answer_index": 1,
         "explanation": "The nomogram only applies to a single ingestion at a known time. Staggered overdoses are managed on the TOXBASE pathway without relying on a plotted level."
       },
@@ -366,23 +542,37 @@
         "url": "https://www.toxbase.org/"
       }
     },
-
     {
       "id": "head-injury-ct-decisions",
       "date": "2026-09-08",
       "title": "Head injury: the anticoagulated patient and the 'minor' bang",
       "category": "trauma",
-      "tags": ["CT", "anticoagulation"],
+      "tags": [
+        "CT",
+        "anticoagulation"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Anticoagulation changes the threshold for imaging even without other risk factors" },
-        { "text": "Ask what they are on: DOAC, warfarin, antiplatelet — they are not equivalent" },
-        { "text": "Falls in older people are frequently under-triaged as minor" },
-        { "text": "Reduced GCS with no history is a head injury until proven otherwise" },
-        { "text": "Know your reversal pathway and where the agents are kept before you need them" },
-        { "text": "Discharge advice must be given to someone who will actually be with the patient" }
+        {
+          "text": "Anticoagulation changes the threshold for imaging even without other risk factors"
+        },
+        {
+          "text": "Ask what they are on: DOAC, warfarin, antiplatelet — they are not equivalent"
+        },
+        {
+          "text": "Falls in older people are frequently under-triaged as minor"
+        },
+        {
+          "text": "Reduced GCS with no history is a head injury until proven otherwise"
+        },
+        {
+          "text": "Know your reversal pathway and where the agents are kept before you need them"
+        },
+        {
+          "text": "Discharge advice must be given to someone who will actually be with the patient"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -396,7 +586,12 @@
       },
       "quiz": {
         "question": "An 82-year-old on apixaban had an unwitnessed fall, hit her head, and is fully alert with no focal deficit. What is the appropriate action?",
-        "options": ["Discharge with head injury advice", "CT head in line with the anticoagulated head injury pathway", "Observe for 4 hours then discharge", "Skull X-ray"],
+        "options": [
+          "Discharge with head injury advice",
+          "CT head in line with the anticoagulated head injury pathway",
+          "Observe for 4 hours then discharge",
+          "Skull X-ray"
+        ],
         "answer_index": 1,
         "explanation": "Anticoagulation lowers the imaging threshold in head injury. A normal GCS does not exclude significant intracranial bleeding in this group."
       },
@@ -406,23 +601,37 @@
         "url": "https://www.nice.org.uk/guidance/ng232"
       }
     },
-
     {
       "id": "testicular-torsion-time",
       "date": "2026-09-09",
       "title": "Testicular torsion: the clock started before they arrived",
       "category": "safety",
-      "tags": ["urology", "diagnostic error"],
+      "tags": [
+        "urology",
+        "diagnostic error"
+      ],
       "difficulty": "core",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Acute scrotal pain in a young male is torsion until surgically excluded" },
-        { "text": "Salvage rates fall steeply with time from onset of pain" },
-        { "text": "Abdominal or groin pain with no scrotal complaint still needs the testes examined" },
-        { "text": "Ultrasound must never delay a surgical opinion" },
-        { "text": "Intermittent pain that has settled is still a torsion story" },
-        { "text": "Document the examination, including that you examined at all" }
+        {
+          "text": "Acute scrotal pain in a young male is torsion until surgically excluded"
+        },
+        {
+          "text": "Salvage rates fall steeply with time from onset of pain"
+        },
+        {
+          "text": "Abdominal or groin pain with no scrotal complaint still needs the testes examined"
+        },
+        {
+          "text": "Ultrasound must never delay a surgical opinion"
+        },
+        {
+          "text": "Intermittent pain that has settled is still a torsion story"
+        },
+        {
+          "text": "Document the examination, including that you examined at all"
+        }
       ],
       "deep_dive": {
         "type": "notes",
@@ -436,7 +645,12 @@
       },
       "quiz": {
         "question": "A 14-year-old has 3 hours of lower abdominal pain and vomiting. What must be part of the assessment?",
-        "options": ["Urine dip only", "Examination of the testes", "Abdominal X-ray", "Discharge with a surgical review in the morning"],
+        "options": [
+          "Urine dip only",
+          "Examination of the testes",
+          "Abdominal X-ray",
+          "Discharge with a surgical review in the morning"
+        ],
         "answer_index": 1,
         "explanation": "Torsion frequently presents as abdominal pain. Failure to examine the testes in a boy with abdominal pain is a well-documented cause of delayed diagnosis."
       },
@@ -446,23 +660,37 @@
         "url": "https://www.rcemlearning.co.uk/"
       }
     },
-
     {
       "id": "preoxygenation-before-rsi",
       "date": "2026-09-10",
       "title": "Preoxygenation: the three minutes that decide how the RSI goes",
       "category": "airway",
-      "tags": ["RSI", "critical care"],
+      "tags": [
+        "RSI",
+        "critical care"
+      ],
       "difficulty": "advanced",
-      "status": "draft",
+      "status": "published",
       "frcem_relevant": true,
       "bullets": [
-        { "text": "Sit the patient up unless there is a specific reason not to" },
-        { "text": "A well-sealed mask matters more than the flow rate on the flowmeter" },
-        { "text": "Nasal cannulae left on during laryngoscopy extend safe apnoea time" },
-        { "text": "The shocked and acidotic patient desaturates fast — plan for it, don't be surprised" },
-        { "text": "Say the plan aloud: who does what, and what happens if the first look fails" },
-        { "text": "Have push-dose vasopressor drawn up before induction, not after" }
+        {
+          "text": "Sit the patient up unless there is a specific reason not to"
+        },
+        {
+          "text": "A well-sealed mask matters more than the flow rate on the flowmeter"
+        },
+        {
+          "text": "Nasal cannulae left on during laryngoscopy extend safe apnoea time"
+        },
+        {
+          "text": "The shocked and acidotic patient desaturates fast — plan for it, don't be surprised"
+        },
+        {
+          "text": "Say the plan aloud: who does what, and what happens if the first look fails"
+        },
+        {
+          "text": "Have push-dose vasopressor drawn up before induction, not after"
+        }
       ],
       "deep_dive": {
         "type": "algorithm",
@@ -478,7 +706,12 @@
       },
       "quiz": {
         "question": "Which intervention most reliably prolongs safe apnoea time during laryngoscopy?",
-        "options": ["Increasing the tidal volume of bag-mask breaths", "Leaving nasal cannula oxygen running through the apnoeic period", "Using a smaller tube", "Reducing the induction agent dose"],
+        "options": [
+          "Increasing the tidal volume of bag-mask breaths",
+          "Leaving nasal cannula oxygen running through the apnoeic period",
+          "Using a smaller tube",
+          "Reducing the induction agent dose"
+        ],
         "answer_index": 1,
         "explanation": "Apnoeic oxygenation via nasal cannulae maintained through laryngoscopy extends the time to desaturation, particularly in patients with limited reserve."
       },
