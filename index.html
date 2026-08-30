@@ -9,306 +9,409 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0f6157">
 <style>
-/* ═══════════════════════════════════════════════════════════════════════════
-   HANDOVER PAGE LAYOUT
-   Full-viewport landscape card:
-     top:    3-column handover sections
-     bottom: teaching point (left 60%) | paper of the day (right 40%)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ─────────────────────────────────────────────────────────────────────────────
+   COLOUR TOKENS — section palette
+   S1 blue-slate  S2 teal (brand)  S3 amber
+   Bottom: teaching sage-green | paper warm-cream
+───────────────────────────────────────────────────────────────────────────── */
+:root {
+  --s1:        #1a4a6e;  /* deep blue   — S1 header */
+  --s1-tint:   #e8f0f7;
+  --s1-mid:    #2d6a9f;
 
-/* Remove default body scroll for the handover view — the page fits the screen */
-html, body { height: 100%; }
+  --s2:        #0f6157;  /* brand teal  — S2 header */
+  --s2-tint:   #e3efec;
+  --s2-mid:    #1a8573;
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  --s3:        #8a4f00;  /* amber-brown — S3 header */
+  --s3-tint:   #fdf3e3;
+  --s3-mid:    #c07000;
+
+  --teach-bg:  #1e3a2f;  /* dark green teaching card */
+  --teach-fg:  #c8e6dd;
+  --teach-acc: #4fd1b5;
+
+  --paper-bg:  #1c2230;  /* dark navy paper card */
+  --paper-fg:  #d4dce8;
+  --paper-acc: #7eb8f7;
+  --paper-qr-bg: #ffffff;
+
+  --meet-bg:   #261a38;  /* purple meetings sidebar */
+  --meet-fg:   #d8ceea;
+  --meet-acc:  #b08cf0;
+
+  --learn-bg:  #1a1e2e;  /* dark slate learning strip */
+  --learn-fg:  #c8d0e8;
+  --learn-acc: #f0b429;
 }
+
+/* ─── Layout ──────────────────────────────────────────────────────────────── */
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; min-height: 100vh; background: var(--paper); }
 
 main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0.75rem;
-  overflow: hidden;
+  flex: 1; display: flex; flex-direction: column;
+  padding: 0 0.65rem; overflow: hidden; gap: 0.55rem;
 }
 
-/* ── Top section: 3 handover columns ─────────────────────────────────────── */
+/* Top: 3 handover columns + meetings sidebar */
 .hv-top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.65rem;
+  grid-template-columns: 1fr 1fr 1fr 0.72fr;
+  gap: 0.55rem;
   flex: 1 1 0;
   min-height: 0;
-  padding-top: 0.5rem;
+  padding-top: 0.45rem;
 }
 
-/* ── Bottom strip: teaching | paper ──────────────────────────────────────── */
+/* Learning events strip + bottom row */
+.hv-learning-strip {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+.hv-learning-strip__hdr {
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--learn-acc); font-weight: 700;
+  margin-bottom: 0.25rem; white-space: nowrap;
+}
+.hv-learning-card {
+  background: var(--learn-bg);
+  border-radius: var(--radius);
+  padding: 0.45rem 0.75rem;
+  display: flex; align-items: center; gap: 0.75rem;
+  flex: 1;
+}
+.hv-learning-items {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+  flex: 1;
+}
+.hv-learn-item {
+  display: inline-flex; align-items: baseline; gap: 0.35rem;
+  background: rgba(240,180,41,0.1);
+  border-left: 2px solid var(--learn-acc);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem; color: var(--learn-fg); line-height: 1.3;
+}
+.hv-learn-item__date {
+  font-family: var(--mono); font-size: 0.58rem; color: var(--learn-acc);
+  white-space: nowrap; flex-shrink: 0;
+}
+.hv-learn-submit {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--learn-acc); opacity: 0.65;
+  white-space: nowrap; text-decoration: none; flex-shrink: 0;
+}
+.hv-learn-submit:hover { opacity: 1; }
+
+/* Bottom strip */
 .hv-bottom {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.65rem;
-  padding: 0.65rem 0 0.6rem;
+  grid-template-columns: 55fr 45fr;
+  gap: 0.55rem;
   flex-shrink: 0;
+  padding-bottom: 0.5rem;
 }
 
-/* ── Section column ───────────────────────────────────────────────────────── */
-.hv-col {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
+/* ─── Section column ──────────────────────────────────────────────────────── */
+.hv-col { display: flex; flex-direction: column; overflow: hidden; }
 
 .hv-col__hdr {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--signal);
-  font-weight: 700;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.4rem;
-  border-bottom: 2px solid var(--signal);
-  flex-shrink: 0;
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em;
+  text-transform: uppercase; font-weight: 800;
+  padding: 0.3rem 0.7rem; margin-bottom: 0.35rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: #fff; flex-shrink: 0;
 }
+.hv-col--s1 .hv-col__hdr { background: var(--s1); }
+.hv-col--s2 .hv-col__hdr { background: var(--s2); }
+.hv-col--s3 .hv-col__hdr { background: var(--s3); }
 
+/* Card body */
 .hv-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 0.7rem 0.85rem;
-  flex: 1 1 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 0.65rem 0.8rem;
+  flex: 1 1 0; overflow: hidden;
+  display: flex; flex-direction: column;
+  border: 1px solid; border-top: 3px solid;
 }
+.hv-col--s1 .hv-card { background: var(--s1-tint); border-color: var(--s1); }
+.hv-col--s2 .hv-card { background: var(--s2-tint); border-color: var(--s2); }
+.hv-col--s3 .hv-card { background: var(--s3-tint); border-color: var(--s3); }
 
-/* ── Prompt blocks inside a card ─────────────────────────────────────────── */
-.pb {
-  padding-top: 0.5rem;
-  margin-top: 0.5rem;
-  border-top: 1px solid var(--rule);
-  flex-shrink: 0;
-}
+/* ─── Prompt blocks ───────────────────────────────────────────────────────── */
+.pb { padding-top: 0.45rem; margin-top: 0.45rem; border-top: 1px solid; flex-shrink: 0; }
 .pb:first-child { padding-top: 0; margin-top: 0; border-top: none; }
+.hv-col--s1 .pb { border-color: rgba(26,74,110,0.2); }
+.hv-col--s2 .pb { border-color: rgba(15,97,87,0.2); }
+.hv-col--s3 .pb { border-color: rgba(138,79,0,0.2); }
 
 .pb__hdr {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 700;
-  margin-bottom: 0.25rem;
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 700; margin-bottom: 0.2rem;
 }
+.hv-col--s1 .pb__hdr { color: var(--s1-mid); }
+.hv-col--s2 .pb__hdr { color: var(--s2); }
+.hv-col--s3 .pb__hdr { color: var(--s3-mid); }
 
-.pl {
-  list-style: none;
-  margin: 0; padding: 0;
-}
+.pl { list-style: none; margin: 0; padding: 0; }
 .pl li {
-  font-size: 0.82rem;
-  line-height: 1.3;
-  padding: 0.18rem 0 0.18rem 1.1rem;
-  position: relative;
+  font-size: 0.8rem; line-height: 1.3;
+  padding: 0.15rem 0 0.15rem 1rem; position: relative;
   color: var(--ink);
 }
 .pl li::before {
-  content: "";
-  position: absolute;
-  left: 0.3rem; top: 0.78em;
-  width: 0.4rem; height: 1px;
-  background: var(--ink-faint);
+  content: ""; position: absolute;
+  left: 0.25rem; top: 0.76em;
+  width: 0.35rem; height: 1px;
 }
-.pl li.strong { font-weight: 700; }
-.pl li.note   { font-size: 0.72rem; color: var(--ink-soft); padding-left: 1.5rem; }
-.pl li.note::before { left: 0.75rem; }
+.hv-col--s1 .pl li::before { background: var(--s1-mid); }
+.hv-col--s2 .pl li::before { background: var(--s2); }
+.hv-col--s3 .pl li::before { background: var(--s3-mid); }
 
-/* Alert rows inside col 1 */
-.hv-alert-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-top: 0.35rem;
-}
+.pl li.strong { font-weight: 700; }
+.pl li.note { font-size: 0.7rem; color: var(--ink-soft); padding-left: 1.4rem; }
+.pl li.note::before { left: 0.7rem; }
+
+/* ─── Alert rows ──────────────────────────────────────────────────────────── */
+.hv-alert-row { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.3rem; }
 .hv-alert {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  line-height: 1.25;
+  display: flex; align-items: baseline; gap: 0.35rem;
+  font-size: 0.73rem; line-height: 1.25;
+  background: rgba(168,16,43,0.06);
+  border-left: 2px solid var(--alarm);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.2rem 0.4rem;
 }
 .hv-alert__src {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--alarm);
-  white-space: nowrap;
-  flex-shrink: 0;
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--alarm); white-space: nowrap; flex-shrink: 0;
 }
-.hv-alert__title {
-  color: var(--ink);
+.hv-alert__title { color: var(--ink); }
+.hv-alert--quiet {
+  background: transparent; border-left-color: var(--rule);
 }
 .hv-alert--quiet .hv-alert__src { color: var(--ink-faint); }
 .hv-alert--quiet .hv-alert__title { color: var(--ink-soft); }
 
-/* ── Bottom cards ─────────────────────────────────────────────────────────── */
-.hv-teaching {
-  background: var(--signal-tint);
-  border: 1px solid transparent;
-  border-radius: var(--radius);
-  padding: 0.7rem 0.85rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.hv-teaching__hdr {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--signal);
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-.hv-teaching__title {
-  font-weight: 700;
-  font-size: 0.9rem;
-  line-height: 1.3;
-  margin-bottom: 0.25rem;
-}
-.hv-teaching__bullet {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  line-height: 1.3;
-}
-.hv-teaching__link {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.04em;
-  margin-top: 0.35rem;
-  display: inline-block;
+/* ─── Utility bar ─────────────────────────────────────────────────────────── */
+.hv-util {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.35rem 0 0;
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-faint); flex-shrink: 0;
 }
 
-.hv-paper {
-  background: var(--paper-raised);
-  border: 1px solid var(--rule);
+/* ─── Bottom: Teaching card ───────────────────────────────────────────────── */
+.hv-teaching {
+  background: var(--teach-bg);
   border-radius: var(--radius);
-  padding: 0.7rem 0.85rem;
+  padding: 0.7rem 0.9rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+/* Subtle grid texture */
+.hv-teaching::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 28px),
+  repeating-linear-gradient(
+    90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 28px);
+}
+.hv-teaching__hdr {
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--teach-acc); font-weight: 700;
+  margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.6rem;
+  position: relative;
+}
+.hv-teaching__hdr a { color: var(--teach-acc); opacity: 0.7; font-size: 0.8em; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.hv-teaching__hdr a:hover { opacity: 1; }
+.hv-teaching__cat {
+  background: var(--teach-acc); color: var(--teach-bg);
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em;
+  text-transform: uppercase; font-weight: 700;
+  padding: 0.1rem 0.4rem; border-radius: var(--radius);
+}
+.hv-teaching__title {
+  font-weight: 700; font-size: 0.92rem; line-height: 1.3;
+  color: #fff; margin-bottom: 0.25rem; position: relative;
+}
+.hv-teaching__bullet {
+  font-size: 0.78rem; color: var(--teach-fg); line-height: 1.35;
+  padding-left: 0.85rem; position: relative; margin-bottom: 0.1rem;
+}
+.hv-teaching__bullet::before {
+  content: ''; position: absolute; left: 0.1rem; top: 0.72em;
+  width: 0.35rem; height: 1px; background: var(--teach-acc);
+}
+.hv-teaching__link {
+  font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.04em;
+  color: var(--teach-acc); margin-top: 0.3rem; display: inline-block;
+  text-decoration: none; position: relative;
+}
+.hv-teaching__link:hover { text-decoration: underline; }
+
+/* ─── Meetings sidebar ───────────────────────────────────────────────────── */
+.hv-col--meet .hv-col__hdr { background: var(--meet-bg); border: 1px solid rgba(176,140,240,0.3); border-bottom: none; }
+.hv-col--meet .hv-card {
+  background: var(--meet-bg); border-color: rgba(176,140,240,0.3); border-top: 3px solid var(--meet-acc);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.hv-col--meet .pb { border-color: rgba(176,140,240,0.15); }
+.hv-col--meet .pb__hdr { color: var(--meet-acc); }
+.meet-item {
+  padding: 0.3rem 0 0.3rem 0.7rem;
+  border-left: 2px solid rgba(176,140,240,0.3);
+  margin-bottom: 0.35rem;
+}
+.meet-item:last-child { margin-bottom: 0; }
+.meet-item__date {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em;
+  color: var(--meet-acc); margin-bottom: 0.1rem;
+}
+.meet-item__title { font-size: 0.78rem; font-weight: 700; color: var(--meet-fg); line-height: 1.25; }
+.meet-item__sub   { font-size: 0.68rem; color: rgba(216,206,234,0.55); margin-top: 0.05rem; }
+.meet-empty { font-size: 0.75rem; color: rgba(216,206,234,0.35); font-style: italic; }
+
+body.handover .meet-item__date  { font-size: 0.72rem; }
+body.handover .meet-item__title { font-size: 0.95rem; }
+body.handover .meet-item__sub   { font-size: 0.82rem; }
+body.handover .hv-learn-item    { font-size: 0.9rem; }
+
+/* ─── Bottom: Paper of the day card ──────────────────────────────────────── */
+.hv-paper {
+  background: var(--paper-bg);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.9rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0.75rem;
-  align-items: center;
+  align-items: start;
+  position: relative; overflow: hidden;
 }
+.hv-paper::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 120% 50%, rgba(126,184,247,0.08) 0%, transparent 65%);
+}
+.hv-paper__body { min-width: 0; position: relative; }
 .hv-paper__hdr {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 700;
-  margin-bottom: 0.25rem;
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--paper-acc); font-weight: 700;
+  margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.hv-paper__tag {
+  background: rgba(126,184,247,0.15); color: var(--paper-acc);
+  font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 0.1rem 0.35rem; border-radius: var(--radius);
 }
 .hv-paper__title {
-  font-weight: 700;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  margin-bottom: 0.2rem;
+  font-weight: 700; font-size: 0.88rem; line-height: 1.3;
+  color: #fff; margin-bottom: 0.2rem;
 }
 .hv-paper__title a { color: inherit; text-decoration: none; }
-.hv-paper__title a:hover { color: var(--signal); }
+.hv-paper__title a:hover { color: var(--paper-acc); }
 .hv-paper__cite {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  color: var(--ink-faint);
-  margin-bottom: 0.2rem;
+  font-family: var(--mono); font-size: 0.62rem; color: rgba(212,220,232,0.55);
+  margin-bottom: 0.3rem; letter-spacing: 0.01em;
 }
 .hv-paper__takeaway {
-  font-size: 0.78rem;
-  color: var(--ink-soft);
-  line-height: 1.3;
+  font-size: 0.78rem; color: var(--paper-fg); line-height: 1.4;
+  border-left: 2px solid var(--paper-acc);
+  padding-left: 0.5rem;
+  margin-top: 0.15rem;
 }
-.hv-paper__qr { flex-shrink: 0; }
-.hv-paper__qr svg { display: block; width: 72px; height: 72px; border-radius: 2px; }
-.hv-paper__qr--none {
-  width: 72px; height: 72px;
-  border: 1px dashed var(--rule);
-  border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.6rem; color: var(--ink-faint); text-align: center;
-  font-family: var(--mono); padding: 0.25rem;
+.hv-paper__qr-col {
+  flex-shrink: 0; display: flex; flex-direction: column;
+  align-items: center; gap: 0.25rem; position: relative;
 }
-
-/* ── Utility bar ──────────────────────────────────────────────────────────── */
-.hv-util {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0.4rem 0 0.25rem;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  flex-shrink: 0;
+.hv-paper__qr-col svg {
+  display: block; border-radius: 4px;
+  background: var(--paper-qr-bg); padding: 4px;
+}
+.hv-paper__scan {
+  font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(212,220,232,0.45); text-align: center;
+}
+.hv-paper__no-qr {
+  width: 72px; height: 72px; border: 1px dashed rgba(126,184,247,0.25);
+  border-radius: var(--radius); display: flex; align-items: center;
+  justify-content: center; font-size: 0.6rem; color: rgba(212,220,232,0.3);
+  font-family: var(--mono); text-align: center; padding: 0.25rem;
 }
 
-/* ── Portrait hint ────────────────────────────────────────────────────────── */
-@media (orientation: portrait) and (max-width: 900px) {
-  .rotate-hint { display: flex !important; }
+/* ─── Handover mode ───────────────────────────────────────────────────────── */
+body.handover .pl li          { font-size: 1.05rem; line-height: 1.45; padding: 0.28rem 0 0.28rem 1.35rem; }
+body.handover .pl li::before  { width: 0.5rem; }
+body.handover .pl li.note     { font-size: 0.85rem; }
+body.handover .pb__hdr        { font-size: 0.72rem; }
+body.handover .hv-col__hdr    { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
+body.handover .hv-card        { padding: 0.85rem 1rem; }
+body.handover .hv-alert       { font-size: 0.9rem; padding: 0.3rem 0.5rem; }
+body.handover .hv-alert__src  { font-size: 0.68rem; }
+body.handover .hv-teaching__title  { font-size: 1.1rem; }
+body.handover .hv-teaching__bullet { font-size: 0.92rem; }
+body.handover .hv-paper__title     { font-size: 1.05rem; }
+body.handover .hv-paper__takeaway  { font-size: 0.9rem; }
+body.handover .hv-paper__qr-col svg { width: 90px; height: 90px; }
+
+/* Hide learning strip and meetings in print — focus on handover prompts */
+@media print {
+  .hv-col--meet { display: none !important; }
+  .hv-learning-strip { display: none !important; }
+  .hv-top { grid-template-columns: 1fr 1fr 1fr; }
 }
+
+/* ─── Portrait hint ───────────────────────────────────────────────────────── */
+@media (orientation: portrait) and (max-width: 900px) { .rotate-hint { display: flex !important; } }
 .rotate-hint {
-  display: none;
-  position: fixed; inset: 0; z-index: 9999;
-  background: var(--paper-raised);
-  align-items: center; justify-content: center;
-  flex-direction: column; gap: 1rem;
-  font-family: var(--mono); font-size: 0.875rem;
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: var(--paper-raised); align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; font-family: var(--mono); font-size: 0.875rem;
   letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--ink-soft); text-align: center; padding: 2rem;
 }
 
-/* ── Handover mode ────────────────────────────────────────────────────────── */
-body.handover .pl li           { font-size: 1.1rem; line-height: 1.4; padding: 0.3rem 0 0.3rem 1.4rem; }
-body.handover .pl li::before   { top: 0.78em; width: 0.55rem; }
-body.handover .pl li.note      { font-size: 0.9rem; }
-body.handover .pb__hdr         { font-size: 0.75rem; }
-body.handover .hv-col__hdr     { font-size: 0.75rem; }
-body.handover .hv-card         { padding: 0.9rem 1rem; }
-body.handover .hv-alert        { font-size: 0.95rem; }
-body.handover .hv-alert__src   { font-size: 0.75rem; }
-body.handover .hv-teaching__title  { font-size: 1.1rem; }
-body.handover .hv-teaching__bullet { font-size: 0.95rem; }
-body.handover .hv-paper__title     { font-size: 1rem; }
-body.handover .hv-paper__takeaway  { font-size: 0.9rem; }
-body.handover .hv-paper__qr svg    { width: 90px; height: 90px; }
-body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
-
-/* ── Print — landscape A4 ────────────────────────────────────────────────── */
+/* ─── Print ───────────────────────────────────────────────────────────────── */
 @media print {
   @page { size: A4 landscape; margin: 7mm; }
-  html, body { height: auto; overflow: visible; }
+  html, body { height: auto; overflow: visible; background: #fff; }
   body { display: block; }
-  main { display: block; overflow: visible; padding: 0; }
-  .hv-top    { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
-  .hv-bottom { display: grid; grid-template-columns: 1fr 1fr;    gap: 4mm; margin-top: 4mm; }
+  main { display: block; overflow: visible; padding: 0; gap: 3mm; }
+  .hv-top    { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; }
+  .hv-bottom { display: grid; grid-template-columns: 55fr 45fr; gap: 3mm; margin-top: 3mm; }
   .hv-col    { display: block; }
   .hv-card   { display: block; }
-  .pl li     { font-size: 7.5pt; padding: 1pt 0 1pt 9pt; }
-  .pl li::before { top: 0.75em; width: 4pt; }
-  .pb__hdr   { font-size: 5.5pt; }
-  .hv-col__hdr { font-size: 5.5pt; margin-bottom: 2pt; padding-bottom: 2pt; }
-  .hv-card, .hv-teaching, .hv-paper { padding: 4pt 5pt; }
-  .hv-teaching__title  { font-size: 8pt; }
-  .hv-teaching__bullet { font-size: 7pt; }
-  .hv-paper__title     { font-size: 8pt; }
-  .hv-paper__cite      { font-size: 5.5pt; }
-  .hv-paper__takeaway  { font-size: 6.5pt; }
-  .hv-paper__qr svg    { width: 55pt; height: 55pt; }
-  .hv-paper__hdr, .hv-teaching__hdr { font-size: 5.5pt; }
+  .hv-col__hdr { font-size: 5.5pt; padding: 2pt 4pt; }
+  .hv-card { padding: 3pt 5pt; }
+  .hv-col--s1 .hv-card, .hv-col--s2 .hv-card, .hv-col--s3 .hv-card {
+    background: #fff; border-color: #999; border-top-width: 2pt;
+  }
+  .hv-col--s1 .hv-col__hdr { background: #1a4a6e; }
+  .hv-col--s2 .hv-col__hdr { background: #0f6157; }
+  .hv-col--s3 .hv-col__hdr { background: #8a4f00; }
+  .pl li { font-size: 7pt; padding: 1pt 0 1pt 8pt; color: #000; }
+  .pl li::before { top: 0.7em; width: 3pt; background: #555 !important; }
+  .pb__hdr { font-size: 5pt; color: #333 !important; }
+  .pb { border-color: #ccc !important; }
+  .hv-alert { background: #fff3f3; border-left: 1.5pt solid #c00; font-size: 6pt; padding: 1pt 3pt; }
+  .hv-alert__src { font-size: 5pt; color: #c00; }
+  .hv-alert__title { color: #000; }
+  .hv-teaching { background: #e8f5f1; padding: 3pt 5pt; }
+  .hv-teaching::before { display: none; }
+  .hv-teaching__hdr { color: #0f6157; font-size: 5pt; }
+  .hv-teaching__title { color: #000; font-size: 8pt; }
+  .hv-teaching__bullet { color: #333; font-size: 6.5pt; }
+  .hv-teaching__cat { background: #0f6157; }
+  .hv-paper { background: #eef2f8; padding: 3pt 5pt; grid-template-columns: 1fr auto; }
+  .hv-paper::before { display: none; }
+  .hv-paper__hdr { color: #1a4a6e; font-size: 5pt; }
+  .hv-paper__title { color: #000; font-size: 8pt; }
+  .hv-paper__cite { color: #555; font-size: 5.5pt; }
+  .hv-paper__takeaway { color: #222; font-size: 6.5pt; border-color: #1a4a6e; }
+  .hv-paper__qr-col svg { width: 52pt; height: 52pt; background: #fff; }
+  .hv-paper__scan { color: #555; font-size: 5pt; }
   .no-print, .masthead, .trace, .hv-util, .rotate-hint { display: none !important; }
 }
 </style>
@@ -331,6 +434,7 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
       <a href="teaching.html">Teaching</a>
       <a href="archive.html">Archive</a>
       <a href="alerts.html">Alerts</a>
+      <a href="night-handover.html">Night handover</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -343,7 +447,6 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
 </div>
 
 <main>
-  <!-- Utility bar -->
   <div class="hv-util no-print">
     <span id="hv-date"></span>
     <span class="btn-row">
@@ -352,11 +455,11 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
     </span>
   </div>
 
-  <!-- TOP: 3 handover columns -->
+  <!-- ═══ TOP: 3 HANDOVER COLUMNS ══════════════════════════════════════════ -->
   <div class="hv-top">
 
-    <!-- Column 1: Section 1 — All staff -->
-    <div class="hv-col">
+    <!-- S1 — All staff (blue) -->
+    <div class="hv-col hv-col--s1">
       <div class="hv-col__hdr">Section 1 — All staff</div>
       <div class="hv-card">
 
@@ -367,7 +470,7 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
             <li>Attendance register</li>
             <li>Role allocation for the shift</li>
             <li>Learning needs flagged</li>
-            <li>Acknowledgement and thanks to the finishing team</li>
+            <li>Thanks to the finishing team</li>
           </ul>
         </div>
 
@@ -402,15 +505,15 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
       </div>
     </div>
 
-    <!-- Column 2: Section 2 — Resus / Education / Paeds -->
-    <div class="hv-col">
+    <!-- S2 — Resus / Education / Paeds (teal) -->
+    <div class="hv-col hv-col--s2">
       <div class="hv-col__hdr">Section 2 — Resus · Education · Paeds</div>
       <div class="hv-card">
 
         <div class="pb">
           <div class="pb__hdr">Resus handover</div>
           <ul class="pl">
-            <li>Current resus patients — bed space only</li>
+            <li class="strong">Current resus patients — bed space only</li>
             <li>Pending procedures or decisions</li>
             <li>Who is leading each bay</li>
           </ul>
@@ -420,14 +523,14 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
           <div class="pb__hdr">5-min education / RCEM safety flash</div>
           <ul class="pl">
             <li>Aim for 3× weekly at morning handovers</li>
-            <li>Today's teaching point shown below</li>
+            <li>Today's point shown below — <a href="teaching.html">full module</a></li>
           </ul>
         </div>
 
         <div class="pb">
           <div class="pb__hdr">Paediatric handover</div>
           <ul class="pl">
-            <li>Paediatric patients in department</li>
+            <li class="strong">Paediatric patients in department</li>
             <li>Safeguarding or social concerns</li>
             <li>Who is the paeds lead</li>
           </ul>
@@ -436,8 +539,8 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
       </div>
     </div>
 
-    <!-- Column 3: Section 3 — Split into teams -->
-    <div class="hv-col">
+    <!-- S3 — Split into teams (amber) -->
+    <div class="hv-col hv-col--s3">
       <div class="hv-col__hdr">Section 3 — Split into teams</div>
       <div class="hv-card">
 
@@ -454,7 +557,7 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
         </div>
 
         <div class="pb">
-          <div class="pb__hdr">EDAA <span style="font-size:0.75em;font-weight:400;text-transform:none;letter-spacing:0">(EDAA Drs office)</span></div>
+          <div class="pb__hdr">EDAA <span style="font-size:0.78em;font-weight:400;text-transform:none;letter-spacing:0">(EDAA Drs office)</span></div>
           <ul class="pl">
             <li class="strong">Patients not yet referred</li>
             <li class="strong">Outstanding jobs for ED</li>
@@ -475,27 +578,54 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
       </div>
     </div>
 
-  </div><!-- /hv-top -->
-
-  <!-- BOTTOM STRIP: Teaching | Paper of the day -->
-  <div class="hv-bottom">
-
-    <!-- Teaching point -->
-    <div class="hv-teaching" id="hv-teaching">
-      <div class="hv-teaching__hdr">
-        Teaching point
-        <a href="teaching.html" style="font-size:0.8em;font-weight:400;text-transform:none;letter-spacing:0;margin-left:0.5rem">Full module &rarr;</a>
+    <!-- Meetings sidebar (purple) -->
+    <div class="hv-col hv-col--meet">
+      <div class="hv-col__hdr">Upcoming</div>
+      <div class="hv-card">
+        <div class="pb">
+          <div class="pb__hdr">Educational meetings</div>
+          <div id="hv-meetings"><div class="meet-empty">Loading…</div></div>
+        </div>
       </div>
-      <div id="hv-teaching-body" style="color:var(--ink-faint);font-size:0.82rem">Loading…</div>
     </div>
 
-    <!-- Paper of the day -->
-    <div class="hv-paper" id="hv-paper">
-      <div class="hv-paper__body">
-        <div class="hv-paper__hdr">Paper of the day</div>
-        <div id="hv-paper-body" style="color:var(--ink-faint);font-size:0.82rem">Loading…</div>
+  </div><!-- /hv-top -->
+
+  <!-- ═══ LEARNING EVENTS STRIP ════════════════════════════════════════════ -->
+  <div class="hv-learning-strip" id="hv-learning-strip" style="display:none">
+    <div class="hv-learning-card">
+      <div class="hv-learning-strip__hdr">Local learning</div>
+      <div class="hv-learning-items" id="hv-learning-items"></div>
+      <a class="hv-learn-submit" href="#submit-learning" id="hv-learn-submit-btn">+ Submit &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ═══ BOTTOM STRIP ═════════════════════════════════════════════════════ -->
+  <div class="hv-bottom">
+
+    <!-- Teaching point (dark green) -->
+    <div class="hv-teaching">
+      <div class="hv-teaching__hdr">
+        Teaching point
+        <a href="teaching.html">Full module &rarr;</a>
       </div>
-      <div class="hv-paper__qr" id="hv-paper-qr"></div>
+      <div id="hv-teaching-body">
+        <div style="color:rgba(200,230,221,0.4);font-size:0.8rem">Loading…</div>
+      </div>
+    </div>
+
+    <!-- Paper of the day (dark navy) -->
+    <div class="hv-paper">
+      <div class="hv-paper__body">
+        <div class="hv-paper__hdr">
+          Paper of the day
+          <span class="hv-paper__tag" id="hv-paper-tag"></span>
+        </div>
+        <div id="hv-paper-body">
+          <div style="color:rgba(212,220,232,0.3);font-size:0.8rem">Loading…</div>
+        </div>
+      </div>
+      <div class="hv-paper__qr-col" id="hv-paper-qr"></div>
     </div>
 
   </div><!-- /hv-bottom -->
@@ -504,14 +634,76 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
 
 <script src="assets/app.js"></script>
 <script type="module">
-  import { getAlerts }                          from './assets/alerts.js';
+  import { getAlerts }                         from './assets/alerts.js';
   import { loadPapers, pickPaperForDate,
-           paperLink, citation }                from './assets/papers.js';
-  import { qrSVG }                              from './assets/qr.js';
+           paperLink, citation }               from './assets/papers.js';
+  import { qrSVG }                             from './assets/qr.js';
+
+  // ── Meetings ──────────────────────────────────────────────────────────────
+  (async () => {
+    const box = document.getElementById('hv-meetings');
+    try {
+      const res  = await fetch('data/meetings.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      const today = localISODate();
+      const upcoming = (data.meetings || [])
+        .filter(m => m.active !== false && m.date >= today)
+        .sort((a, b) => a.date.localeCompare(b.date))
+        .slice(0, 5);
+      if (!upcoming.length) {
+        box.innerHTML = '<div class="meet-empty">No upcoming meetings</div>';
+        return;
+      }
+      const fmtDate = iso => {
+        const [y, mo, d] = iso.split('-').map(Number);
+        return new Date(y, mo - 1, d).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+      };
+      const typeLabel = { grand_round: 'Grand Round', sim: 'Sim', teaching: 'Teaching', conference: 'Conference', mdt: 'MDT', audit: 'Audit', other: '' };
+      box.innerHTML = upcoming.map(m => `
+        <div class="meet-item">
+          <div class="meet-item__date">${fmtDate(m.date)}${m.time ? ' &middot; ' + m.time : ''}${typeLabel[m.type] ? ' &middot; ' + typeLabel[m.type] : ''}</div>
+          <div class="meet-item__title">${escapeHTML(m.title)}</div>
+          ${m.topic ? `<div class="meet-item__sub">${escapeHTML(m.topic)}</div>` : ''}
+          ${m.location ? `<div class="meet-item__sub">${escapeHTML(m.location)}</div>` : ''}
+        </div>`).join('');
+    } catch {
+      box.innerHTML = '<div class="meet-empty">Could not load meetings</div>';
+    }
+  })();
+
+  // ── Learning events ───────────────────────────────────────────────────────
+  (async () => {
+    const strip = document.getElementById('hv-learning-strip');
+    const box   = document.getElementById('hv-learning-items');
+    try {
+      const res  = await fetch('data/learning-events.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      const cutoff = new Date();
+      cutoff.setDate(cutoff.getDate() - (data.display_days || 30));
+      const cutoffISO = cutoff.toISOString().slice(0, 10);
+      const active = (data.events || [])
+        .filter(e => e.active !== false && e.date >= cutoffISO)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .slice(0, 4);
+      if (!active.length) return; // strip stays hidden
+      strip.style.display = 'flex';
+      const fmtShort = iso => {
+        const [y, mo, d] = iso.split('-').map(Number);
+        return new Date(y, mo - 1, d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      };
+      box.innerHTML = active.map(e => `
+        <div class="hv-learn-item">
+          <span class="hv-learn-item__date">${fmtShort(e.date)}</span>
+          <span>${escapeHTML(e.title)}</span>
+        </div>`).join('');
+    } catch { /* silently skip */ }
+  })();
 
   const iso = localISODate();
 
-  // Date label
+  // Date
   const dateEl = document.getElementById('hv-date');
   if (dateEl) dateEl.textContent = longDate(iso);
 
@@ -520,23 +712,23 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
     const box = document.getElementById('hv-alerts');
     try {
       const { alerts, degraded, message } = await getAlerts({ limit: 3 });
+      const fmt = d => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
       if (!alerts.length) {
         box.innerHTML = `<div class="hv-alert hv-alert--quiet">
           <span class="hv-alert__src">Alerts</span>
-          <span class="hv-alert__title">No ED-relevant alerts in the last 90 days${degraded ? ' — ' + escapeHTML(message) : ''}</span>
+          <span class="hv-alert__title">No ED-relevant alerts in the last 90 days</span>
         </div>`;
         return;
       }
-      const fmt = iso => new Date(iso).toLocaleDateString('en-GB', { day:'numeric', month:'short' });
       box.innerHTML = alerts.map(a => `
         <div class="hv-alert">
           <span class="hv-alert__src">${escapeHTML(a.source)} &middot; ${fmt(a.date)}</span>
           <a class="hv-alert__title" href="${escapeHTML(a.url)}" target="_blank" rel="noopener">${escapeHTML(a.title)}</a>
         </div>`).join('');
-    } catch (e) {
+    } catch {
       box.innerHTML = `<div class="hv-alert hv-alert--quiet">
         <span class="hv-alert__src">Alerts</span>
-        <span class="hv-alert__title">Could not load alerts</span>
+        <span class="hv-alert__title">Could not load</span>
       </div>`;
     }
   })();
@@ -546,44 +738,50 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
     const box = document.getElementById('hv-teaching-body');
     try {
       const modules = await loadModules();
-      const { module, scheduled } = pickForDate(modules, iso);
+      const { module } = pickForDate(modules, iso);
       if (!module) {
-        box.innerHTML = `<span>No module today — <a href="teaching.html">browse archive</a></span>`;
+        box.innerHTML = `<div style="color:var(--teach-fg);font-size:0.82rem">No module today — <a href="teaching.html" style="color:var(--teach-acc)">browse archive</a></div>`;
         return;
       }
-      const cat   = CATEGORIES[module.category] || module.category;
-      const b1    = module.bullets?.[0];
-      const b1txt = b1 ? (typeof b1 === 'string' ? b1 : b1.text) : '';
-      const b2    = module.bullets?.[1];
-      const b2txt = b2 ? (typeof b2 === 'string' ? b2 : b2.text) : '';
+      const cat = CATEGORIES[module.category] || module.category;
+      const bullets = (module.bullets || []).slice(0, 3).map(b => {
+        const t = typeof b === 'string' ? b : b.text;
+        return `<div class="hv-teaching__bullet">${escapeHTML(t)}</div>`;
+      }).join('');
       box.innerHTML = `
         <div class="hv-teaching__title">
-          <span class="chip chip--cat" style="margin-right:0.35rem;vertical-align:middle;font-size:0.65rem">${escapeHTML(cat)}</span>${escapeHTML(module.title)}
+          <span class="hv-teaching__cat">${escapeHTML(cat)}</span>
+          &nbsp;${escapeHTML(module.title)}
         </div>
-        ${b1txt ? `<div class="hv-teaching__bullet">${escapeHTML(b1txt)}</div>` : ''}
-        ${b2txt ? `<div class="hv-teaching__bullet">${escapeHTML(b2txt)}</div>` : ''}
+        ${bullets}
         <a class="hv-teaching__link" href="teaching.html">Open full module &rarr;</a>`;
     } catch (e) {
-      box.textContent = 'Could not load module.';
+      box.innerHTML = `<div style="color:var(--teach-fg);font-size:0.82rem">Could not load module</div>`;
     }
   })();
 
   // ── Paper of the day ──────────────────────────────────────────────────────
   (async () => {
-    const body = document.getElementById('hv-paper-body');
-    const qrEl = document.getElementById('hv-paper-qr');
+    const body  = document.getElementById('hv-paper-body');
+    const qrEl  = document.getElementById('hv-paper-qr');
+    const tagEl = document.getElementById('hv-paper-tag');
     try {
       const payload = await loadPapers();
       const paper   = pickPaperForDate(payload.papers, iso);
       if (!paper) {
-        body.textContent = 'No paper today.';
+        body.innerHTML = `<div style="color:var(--paper-fg);font-size:0.82rem">No paper today.</div>`;
         return;
       }
       const link = paperLink(paper);
-      const cite = citation(paper);
+      const cite = [paper.authors, paper.journal, paper.year]
+        .filter(Boolean).join(' · ');
       const titleHTML = link
         ? `<a href="${escapeHTML(link)}" target="_blank" rel="noopener">${escapeHTML(paper.title)}</a>`
         : escapeHTML(paper.title);
+
+      if (tagEl && paper.tags && paper.tags[0]) {
+        tagEl.textContent = paper.tags[0];
+      }
 
       body.innerHTML = `
         <div class="hv-paper__title">${titleHTML}</div>
@@ -592,15 +790,16 @@ body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
 
       if (link) {
         try {
-          qrEl.innerHTML = qrSVG(link, { size: 80, label: 'Scan to open paper' });
+          qrEl.innerHTML = `${qrSVG(link, { size: 80, label: 'Scan to open paper' })}
+            <div class="hv-paper__scan">Scan to read</div>`;
         } catch {
-          qrEl.innerHTML = `<div class="hv-paper__qr--none">Link too long for QR</div>`;
+          qrEl.innerHTML = `<div class="hv-paper__no-qr">Link too long for QR</div>`;
         }
       } else {
-        qrEl.innerHTML = `<div class="hv-paper__qr--none">No link</div>`;
+        qrEl.innerHTML = `<div class="hv-paper__no-qr">No link</div>`;
       }
     } catch (e) {
-      body.textContent = 'Could not load paper.';
+      body.innerHTML = `<div style="color:var(--paper-fg);font-size:0.82rem">Could not load paper</div>`;
     }
   })();
 </script>

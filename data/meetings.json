@@ -1,0 +1,38 @@
+{
+  "note": "Upcoming educational meetings and events. Add entries here — they appear on the handover screen sidebar. Remove past events manually or set 'active: false'. Date format: YYYY-MM-DD. Types: grand_round | sim | teaching | conference | mdt | audit | other",
+  "meetings": [
+    {
+      "id": "placeholder-1",
+      "title": "EM Grand Round",
+      "date": "2026-09-10",
+      "time": "08:00",
+      "location": "Main Lecture Theatre",
+      "type": "grand_round",
+      "speaker": "TBC",
+      "topic": "Placeholder — replace with real entry",
+      "active": true
+    },
+    {
+      "id": "placeholder-2",
+      "title": "SIM Session — Difficult Airway",
+      "date": "2026-09-17",
+      "time": "14:00",
+      "location": "Simulation Centre",
+      "type": "sim",
+      "speaker": "",
+      "topic": "RSI and failed airway drill",
+      "active": true
+    },
+    {
+      "id": "placeholder-3",
+      "title": "RCEM Regional Teaching",
+      "date": "2026-09-24",
+      "time": "18:00",
+      "location": "Virtual / Teams",
+      "type": "teaching",
+      "speaker": "",
+      "topic": "Placeholder — replace with real entry",
+      "active": true
+    }
+  ]
+}

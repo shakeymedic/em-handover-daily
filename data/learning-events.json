@@ -1,0 +1,18 @@
+{
+  "note": "Local learning events and safety points submitted via email or the web form. Entries appear on the handover screen for 30 days after the event date, then are automatically archived. To submit: email learning@[yourdomain] with subject 'LEARNING: Your point here' — or use the submit form on the site. Do not include patient-identifiable information.",
+  "submit_email": "jaketurner2503@gmail.com",
+  "submit_subject_prefix": "LEARNING:",
+  "display_days": 30,
+  "events": [
+    {
+      "id": "example-1",
+      "date": "2026-08-30",
+      "title": "Example learning point — replace or remove",
+      "detail": "This is a placeholder entry showing the format. Submitted by email with subject 'LEARNING: ...' — the pipeline will auto-populate this file from your inbox.",
+      "category": "safety",
+      "submitted_by": "System",
+      "active": false
+    }
+  ],
+  "archive": []
+}

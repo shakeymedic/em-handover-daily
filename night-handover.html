@@ -6,8 +6,116 @@
 <title>Night handover — EM Handover Daily</title>
 <link rel="stylesheet" href="assets/style.css">
 <link rel="manifest" href="manifest.webmanifest">
+<style>
+/* Re-use the same landscape grid CSS as the main handover page */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; display: flex; flex-direction: column; padding: 0 0.75rem; overflow: hidden; }
+
+.hv-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.65rem;
+  flex: 1 1 0;
+  min-height: 0;
+  padding-top: 0.5rem;
+}
+.hv-col { display: flex; flex-direction: column; overflow: hidden; }
+.hv-col__hdr {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--signal); font-weight: 700;
+  padding-bottom: 0.3rem; margin-bottom: 0.4rem;
+  border-bottom: 2px solid var(--signal); flex-shrink: 0;
+}
+.hv-card {
+  background: var(--paper-raised); border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: 0.7rem 0.85rem;
+  flex: 1 1 0; overflow: hidden; display: flex; flex-direction: column;
+}
+.pb { padding-top: 0.5rem; margin-top: 0.5rem; border-top: 1px solid var(--rule); flex-shrink: 0; }
+.pb:first-child { padding-top: 0; margin-top: 0; border-top: none; }
+.pb__hdr {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint); font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.pl { list-style: none; margin: 0; padding: 0; }
+.pl li {
+  font-size: 0.82rem; line-height: 1.3;
+  padding: 0.18rem 0 0.18rem 1.1rem; position: relative; color: var(--ink);
+}
+.pl li::before {
+  content: ""; position: absolute; left: 0.3rem; top: 0.78em;
+  width: 0.4rem; height: 1px; background: var(--ink-faint);
+}
+.pl li.strong { font-weight: 700; }
+.pl li.note   { font-size: 0.72rem; color: var(--ink-soft); padding-left: 1.5rem; }
+.pl li.note::before { left: 0.75rem; }
+
+/* Inline alert rows */
+.hv-alert-row { display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.35rem; }
+.hv-alert { display: flex; align-items: baseline; gap: 0.4rem; font-size: 0.75rem; line-height: 1.25; }
+.hv-alert__src {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--alarm); white-space: nowrap; flex-shrink: 0;
+}
+.hv-alert__title { color: var(--ink); }
+.hv-alert--quiet .hv-alert__src { color: var(--ink-faint); }
+.hv-alert--quiet .hv-alert__title { color: var(--ink-soft); }
+
+.hv-util {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.5rem; padding: 0.4rem 0 0.25rem;
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ink-faint); flex-shrink: 0;
+}
+
+/* Handover mode */
+body.handover .pl li           { font-size: 1.1rem; line-height: 1.4; padding: 0.3rem 0 0.3rem 1.4rem; }
+body.handover .pl li::before   { top: 0.78em; width: 0.55rem; }
+body.handover .pl li.note      { font-size: 0.9rem; }
+body.handover .pb__hdr         { font-size: 0.75rem; }
+body.handover .hv-col__hdr     { font-size: 0.75rem; }
+body.handover .hv-card         { padding: 0.9rem 1rem; }
+body.handover .hv-alert        { font-size: 0.95rem; }
+body.handover .hv-alert__src   { font-size: 0.75rem; }
+
+/* Portrait hint */
+@media (orientation: portrait) and (max-width: 900px) { .rotate-hint { display: flex !important; } }
+.rotate-hint {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: var(--paper-raised); align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; font-family: var(--mono); font-size: 0.875rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-soft); text-align: center; padding: 2rem;
+}
+
+/* Print — landscape A4 */
+@media print {
+  @page { size: A4 landscape; margin: 7mm; }
+  html, body { height: auto; overflow: visible; }
+  body { display: block; }
+  main { display: block; overflow: visible; padding: 0; }
+  .hv-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+  .hv-col { display: block; } .hv-card { display: block; }
+  .pl li { font-size: 7.5pt; padding: 1pt 0 1pt 9pt; }
+  .pl li::before { top: 0.75em; width: 4pt; }
+  .pb__hdr { font-size: 5.5pt; }
+  .hv-col__hdr { font-size: 5.5pt; margin-bottom: 2pt; padding-bottom: 2pt; }
+  .hv-card { padding: 4pt 5pt; }
+  .no-print, .masthead, .trace, .hv-util, .rotate-hint { display: none !important; }
+}
+</style>
 </head>
 <body>
+
+<div class="rotate-hint" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+    <rect x="5" y="2" width="14" height="20" rx="2"/>
+    <path d="M2 9l3-3 3 3M5 6v6M22 15l-3 3-3-3m3 3V12"/>
+  </svg>
+  Rotate to landscape
+</div>
 
 <header class="masthead no-print">
   <div class="wrap masthead__row">
@@ -22,143 +130,186 @@
     </nav>
   </div>
 </header>
+
 <div class="trace no-print" aria-hidden="true">
   <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
     <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
   </svg>
 </div>
 
-<main class="wrap">
-
-  <div class="utility no-print">
-    <span>Prompt sheet — nothing is saved or sent</span>
+<main>
+  <div class="hv-util no-print">
+    <span>Night handover prompt</span>
     <span class="btn-row">
-      <button class="btn btn--primary" data-print>Print handover</button>
-      <button class="btn" id="copy">Copy to clipboard</button>
-      <button class="btn" id="clear">Clear form</button>
+      <button class="btn" data-handover-toggle aria-pressed="false">Handover mode</button>
+      <button class="btn" data-print>Print</button>
     </span>
   </div>
 
-  <form class="sheet" id="sheet" autocomplete="off">
+  <div class="hv-top">
 
-    <h2>ED night handover</h2>
-    <div class="row">
-      <label class="stack">Date<input type="date" name="Date" id="date"></label>
-      <label class="stack">Time<input type="time" name="Time" id="time"></label>
-      <label class="stack">Handed over by<input type="text" name="Handed over by"></label>
-      <label class="stack">Receiving<input type="text" name="Receiving"></label>
+    <!-- Column 1: Section 1 — All staff -->
+    <div class="hv-col">
+      <div class="hv-col__hdr">Section 1 — All staff</div>
+      <div class="hv-card">
+
+        <div class="pb">
+          <div class="pb__hdr">Introductions</div>
+          <ul class="pl">
+            <li>Consultant and senior regs introduce themselves</li>
+            <li>Attendance register completed</li>
+            <li>Role allocation for the shift</li>
+            <li>Learning needs flagged</li>
+            <li>Acknowledgement and thanks to the finishing team</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Imminent blue lights</div>
+          <ul class="pl">
+            <li>Any pre-alerts expected in the next 30 minutes?</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">ABCDE — must cross over</div>
+          <ul class="pl">
+            <li class="strong">Deaths since last handover</li>
+            <li class="strong">Absconding / patients who left DAMA</li>
+            <li class="strong">Bed and specialty issues outstanding</li>
+            <li class="strong">Clinical / acute concerns</li>
+            <li class="strong">Equipment issues</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Live safety alerts</div>
+          <div class="hv-alert-row" id="hv-alerts">
+            <div class="hv-alert hv-alert--quiet">
+              <span class="hv-alert__src">Checking…</span>
+              <span class="hv-alert__title"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <p class="gdpr">This tool is a prompt only. Do not enter patient-identifiable
-      information. Clinical handover documentation must be completed in your EPR.</p>
+    <!-- Column 2: Section 2 — Resus / Education / Paeds -->
+    <div class="hv-col">
+      <div class="hv-col__hdr">Section 2 — Resus · Education · Paeds</div>
+      <div class="hv-card">
 
-    <fieldset>
-      <legend>1 — Deaths, disasters and deserters</legend>
-      <p class="hint">The three things that must be handed over, whatever else gets missed.</p>
-      <div class="row">
-        <label class="stack">Deaths<textarea name="Deaths" rows="2"></textarea></label>
-        <label class="stack">Disasters — incidents, complaints, near misses<textarea name="Disasters" rows="2"></textarea></label>
-        <label class="stack">Deserters — anyone who left before being seen or against advice<textarea name="Deserters" rows="2"></textarea></label>
+        <div class="pb">
+          <div class="pb__hdr">Resus handover</div>
+          <ul class="pl">
+            <li class="strong">Current resus patients — bed space only</li>
+            <li>Outstanding procedures or clinical decisions</li>
+            <li>Who is leading each bay on the night team</li>
+            <li>Any patients likely to deteriorate overnight</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">5-min education / RCEM safety flash</div>
+          <ul class="pl">
+            <li>Aim for 3× weekly — morning handovers preferred</li>
+            <li>Use today's teaching point from the <a href="teaching.html">Teaching page</a></li>
+            <li class="note">RCEM safety flash archive: <a href="https://rcem.ac.uk/clinical-standards-and-guidance/" target="_blank" rel="noopener">rcem.ac.uk/clinical-standards-and-guidance</a></li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Paediatric handover</div>
+          <ul class="pl">
+            <li class="strong">Paediatric patients currently in department</li>
+            <li>Any safeguarding or social concerns</li>
+            <li>Who is the paeds lead overnight</li>
+            <li>Paeds senior available if needed?</li>
+          </ul>
+        </div>
+
       </div>
-    </fieldset>
+    </div>
 
-    <fieldset>
-      <legend>2 — Department status</legend>
-      <div class="row">
-        <label class="stack">Patients in department<input type="text" name="Patients in department"></label>
-        <label class="stack">Longest wait<input type="text" name="Longest wait"></label>
-        <label class="stack">Resus / majors / paeds occupancy<input type="text" name="Occupancy"></label>
-        <label class="stack">Ambulance offload / corridor status<input type="text" name="Offload status"></label>
+    <!-- Column 3: Section 3 — Split into teams -->
+    <div class="hv-col">
+      <div class="hv-col__hdr">Section 3 — Split into teams</div>
+      <div class="hv-card">
+
+        <div class="pb">
+          <div class="pb__hdr">Majors</div>
+          <ul class="pl">
+            <li class="strong">Patients not yet referred</li>
+            <li class="strong">Outstanding jobs for ED</li>
+            <li class="strong">Unwell / clinical concern</li>
+            <li class="strong">Psychiatric concern</li>
+            <li class="strong">Suitable for discharge</li>
+            <li class="strong">Ambulance queue</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">EDAA <span style="font-size:0.75em;font-weight:400;text-transform:none;letter-spacing:0">(separate — EDAA Drs office)</span></div>
+          <ul class="pl">
+            <li class="strong">Patients not yet referred</li>
+            <li class="strong">Outstanding jobs for ED</li>
+            <li class="strong">Unwell / clinical concern</li>
+            <li class="strong">Psychiatric concern</li>
+            <li class="strong">Suitable for discharge</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Staffing and department status</div>
+          <ul class="pl">
+            <li>Rota gaps or sick calls on the night rota</li>
+            <li>Named consultant lead overnight confirmed</li>
+            <li>Total patients in department</li>
+            <li>Longest wait / escalation level</li>
+            <li>Staff safety — any security concerns or anyone needing support</li>
+          </ul>
+        </div>
+
       </div>
-      <label class="stack">Escalation level and what is already in place<textarea name="Escalation" rows="2"></textarea></label>
-    </fieldset>
+    </div>
 
-    <fieldset>
-      <legend>3 — Staff safety</legend>
-      <p class="hint">Security concerns, violent or aggressive patients, lone working, anyone who needs support tonight.</p>
-      <label class="stack"><span class="visually-hidden">Staff safety notes</span>
-        <textarea name="Staff safety" rows="3"></textarea></label>
-    </fieldset>
+  </div><!-- /hv-top -->
 
-    <fieldset>
-      <legend>4 — Sickness and staffing</legend>
-      <div class="row">
-        <label class="stack">Gaps on the night rota<textarea name="Rota gaps" rows="2"></textarea></label>
-        <label class="stack">Late or sick calls<textarea name="Sickness" rows="2"></textarea></label>
-        <label class="stack">Who is the named lead overnight<input type="text" name="Named night lead"></label>
-      </div>
-    </fieldset>
+  <p class="eyebrow no-print" style="padding: 0.4rem 0 0.5rem; display:block">
+    Prompt only — not a clinical record. Complete handover documentation in your EPR.
+  </p>
 
-    <fieldset>
-      <legend>5 — Equipment and safety alerts</legend>
-      <p class="hint">Broken kit, missing equipment, and any live MHRA or RCEM alert for today.
-        Active alerts are pulled in below — delete any that are not relevant.
-        Full RCEM safety flash archive: <a href="https://rcem.ac.uk/clinical-standards-and-guidance/" target="_blank" rel="noopener">rcem.ac.uk/clinical-standards-and-guidance</a></p>
-      <label class="stack">Equipment issues<textarea name="Equipment" rows="2"></textarea></label>
-      <label class="stack">Active safety alerts
-        <textarea name="Active alerts" id="alertbox" rows="3"></textarea></label>
-    </fieldset>
-
-    <fieldset>
-      <legend>6 — Significant patients</legend>
-      <p class="hint">Not a clinical handover list. The few the oncoming lead must know about.
-        Use initials or bed space, never full identifiers.</p>
-      <label class="stack"><span class="visually-hidden">Significant patients</span>
-        <textarea name="Significant patients" rows="5"></textarea></label>
-    </fieldset>
-
-    <fieldset>
-      <legend>7 — Tasks for the night team</legend>
-      <label class="stack"><span class="visually-hidden">Tasks</span>
-        <textarea name="Tasks" rows="4"></textarea></label>
-    </fieldset>
-
-  </form>
-
-  <p class="eyebrow no-print" style="margin:1rem 0 2rem" id="status" aria-live="polite"></p>
 </main>
 
 <script src="assets/app.js"></script>
 <script type="module">
-  import { getAlerts, alertLines } from './assets/alerts.js';
+  import { getAlerts } from './assets/alerts.js';
 
-  const form = document.getElementById('sheet');
-  const status = document.getElementById('status');
-  const now = new Date();
-  document.getElementById('date').value = localISODate(now);
-  document.getElementById('time').value =
-    `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-
-  // Pre-populate today's live alerts. Always editable, never locked.
-  getAlerts({ limit: 3 }).then(payload => {
-    const lines = alertLines(payload);
-    if (lines.length) document.getElementById('alertbox').value = lines.join('\n');
-  }).catch(() => {});
-
-  document.getElementById('clear').addEventListener('click', () => {
-    form.reset();
-    document.getElementById('date').value = localISODate();
-    status.textContent = 'Form cleared.';
-  });
-
-  document.getElementById('copy').addEventListener('click', async () => {
-    const out = ['ED NIGHT HANDOVER'];
-    [...form.elements].forEach(el => {
-      if (!el.name) return;
-      const v = el.value.trim();
-      if (v) out.push(`${el.name}: ${v}`);
-    });
+  (async () => {
+    const box = document.getElementById('hv-alerts');
     try {
-      await navigator.clipboard.writeText(out.join('\n'));
-      status.textContent = 'Copied. Remember it contains whatever you typed — check before pasting.';
+      const { alerts, degraded, message } = await getAlerts({ limit: 3 });
+      if (!alerts.length) {
+        box.innerHTML = `<div class="hv-alert hv-alert--quiet">
+          <span class="hv-alert__src">Alerts</span>
+          <span class="hv-alert__title">No ED-relevant alerts in the last 90 days${degraded ? ' — ' + escapeHTML(message) : ''}</span>
+        </div>`;
+        return;
+      }
+      const fmt = d => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      box.innerHTML = alerts.map(a => `
+        <div class="hv-alert">
+          <span class="hv-alert__src">${escapeHTML(a.source)} &middot; ${fmt(a.date)}</span>
+          <a class="hv-alert__title" href="${escapeHTML(a.url)}" target="_blank" rel="noopener">${escapeHTML(a.title)}</a>
+        </div>`).join('');
     } catch {
-      status.textContent = 'Copy failed — your browser blocked clipboard access. Use Print instead.';
+      box.innerHTML = `<div class="hv-alert hv-alert--quiet">
+        <span class="hv-alert__src">Alerts</span>
+        <span class="hv-alert__title">Could not load alerts</span>
+      </div>`;
     }
-  });
+  })();
 </script>
-<style>
-  .visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden;
-    clip:rect(0 0 0 0); white-space:nowrap; }
-</style>
 </body>
 </html>
