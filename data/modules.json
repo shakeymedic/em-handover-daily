@@ -720,6 +720,2625 @@
         "publisher": "Difficult Airway Society / FICM / ICS / RCoA",
         "url": "https://das.uk.com/guidelines"
       }
+    },
+    {
+      "id": "rsi-checklist",
+      "date": "",
+      "title": "RSI — The Pre-Induction Checklist That Prevents Peri-Intubation Arrest",
+      "category": "resus",
+      "tags": [
+        "airway",
+        "RSI",
+        "critical care"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Pre-oxygenate to SpO2 >94% — sit upright, tight mask seal, 15 L/min O2 for ≥3 minutes or 8 vital-capacity breaths"
+        },
+        {
+          "text": "Apnoeic oxygenation: 15 L/min via nasal cannulae left running throughout laryngoscopy extends safe apnoea time significantly"
+        },
+        {
+          "text": "DASH-1A checklist: MAP ≥65 mmHg, Haemoglobin adequate, Glucose 4–10 mmol/L — correct all three before pushing drugs"
+        },
+        {
+          "text": "Induction agent: ketamine 1–2 mg/kg IV for haemodynamic instability; propofol 1–2 mg/kg where haemodynamics are stable"
+        },
+        {
+          "text": "Rocuronium 1.2 mg/kg IV is the standard paralytic; suxamethonium 1.5 mg/kg if rapid offset required (contraindicated in hyperkalaemia, burns >24h, denervation)"
+        },
+        {
+          "text": "Failed intubation drill (DAS 2015): declare failed after 3 attempts, maintain oxygenation as the priority, call for surgical airway early"
+        },
+        {
+          "text": "Post-intubation: sedate + paralyse for transfer, target SpO2 94–98%, PaCO2 4.5–6 kPa, ventilate 6–8 mL/kg IBW"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "DAS 2015 Failed Intubation Pathway",
+        "steps": [
+          "Plan A: direct or video laryngoscopy — maximum 3 attempts by experienced operator",
+          "Maintain oxygenation between each attempt; use IGEL or LMA if mask ventilation fails",
+          "Plan B: supraglottic airway device (SGA) — declare cant-intubate-can-oxygenate and call for help",
+          "Plan C: wake the patient if SGA provides adequate oxygenation and intubation not immediately essential",
+          "Plan D: cant-intubate-cant-oxygenate (CICO) — front-of-neck airway (FONA) with scalpel-bougie-tube technique immediately",
+          "After any difficult airway: document in notes, alert the patient, complete Difficult Airway Alert Form"
+        ]
+      },
+      "quiz": {
+        "question": "A 78-year-old in respiratory failure requires intubation. BP 78/50 mmHg. Which induction agent is most appropriate?",
+        "options": [
+          "Propofol 2 mg/kg",
+          "Thiopentone 5 mg/kg",
+          "Ketamine 1–2 mg/kg",
+          "Midazolam 0.3 mg/kg without a paralytic"
+        ],
+        "answer_index": 2,
+        "explanation": "Ketamine maintains sympathetic tone and is haemodynamically safer in shocked patients. Propofol causes vasodilation and myocardial depression, worsening hypotension. Thiopentone similarly reduces SVR. Midazolam alone without a paralytic is not RSI."
+      },
+      "source": {
+        "title": "Difficult Airway Society Guidelines for Unanticipated Difficult Intubation",
+        "publisher": "Difficult Airway Society",
+        "url": "https://das.uk.com/guidelines/das-guidelines-for-management-of-unanticipated-difficult-intubation-in-adults-2015"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/airway/"
+    },
+    {
+      "id": "hs-troponin-interpretation",
+      "date": "",
+      "title": "High-Sensitivity Troponin — Reading the Numbers Correctly",
+      "category": "resus",
+      "tags": [
+        "ACS",
+        "troponin",
+        "chest pain"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "hs-cTnI and hs-cTnT are different assays with different reference limits — always check your local lab's 99th-percentile upper reference limit (URL)"
+        },
+        {
+          "text": "ESC 0h/1h algorithm: if 0h value <5 ng/L AND absolute rise <3 ng/L at 1h, rule-out sensitivity exceeds 99%"
+        },
+        {
+          "text": "Significant delta: a rise ≥3–5 ng/L (absolute) between 0h and 1h samples is considered significant — relative percentage rise alone is unreliable"
+        },
+        {
+          "text": "Non-ACS causes of troponin elevation: PE, myocarditis, demand ischaemia, renal failure, sepsis, stroke, tachyarrhythmia — do not equate elevation with ACS"
+        },
+        {
+          "text": "HEART score ≤3 with low-risk delta: suitable for early discharge pathway; HEART ≥7 warrants same-day cardiology review"
+        },
+        {
+          "text": "LEGEND trial: hs-cTnI limit-of-detection strategy (LoD <1.6 ng/L) allows safe 0h rule-out for low-prevalence populations in the ED"
+        },
+        {
+          "text": "Always pair troponin with a structured pre-test probability score — troponin without clinical context is diagnostically dangerous"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "When a Positive Troponin Is Not ACS",
+        "points": [
+          "Type 2 MI (demand ischaemia): tachyarrhythmia, sepsis, anaemia — troponin rises but coronaries may be normal; treat the underlying cause",
+          "Myocarditis: young patient, viral prodrome, pleuritic chest pain, ECG changes across multiple territories — MRI, not angiogram",
+          "PE: RV strain pattern on ECG, elevated D-dimer, Wells score — troponin predicts RV dysfunction not coronary disease",
+          "The delta is key: a single elevated troponin without dynamic rise over time usually means chronic elevation, not acute occlusion",
+          "Document pre-test probability explicitly — this drives the downstream investigation plan"
+        ]
+      },
+      "quiz": {
+        "question": "A 55-year-old with atypical chest pain has hs-cTnI 6 ng/L at 0h and 7 ng/L at 1h (local URL 52 ng/L). Which statement is correct?",
+        "options": [
+          "ACS is confirmed — activate the cath lab",
+          "Both values are below the URL and the delta is <3 ng/L — this meets low-risk ESC 0h/1h rule-out criteria",
+          "A third troponin at 3h is mandatory before any decision",
+          "The patient must be admitted to the coronary care unit"
+        ],
+        "answer_index": 1,
+        "explanation": "Both values are well below the 99th-percentile URL and the absolute delta of 1 ng/L is below the 3 ng/L threshold. This meets ESC 0h/1h rule-out criteria if clinical assessment is concordant — early discharge with HEART score stratification is appropriate."
+      },
+      "source": {
+        "title": "2023 ESC Guidelines for the management of acute coronary syndromes",
+        "publisher": "European Society of Cardiology",
+        "url": "https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-Coronary-Syndromes-ACS-Guidelines"
+      },
+      "deep_dive_url": "https://first10em.com/high-sensitivity-troponin/"
+    },
+    {
+      "id": "dka-ed-management",
+      "date": "",
+      "title": "DKA in the ED — Fluids, Insulin, Potassium in the Right Order",
+      "category": "resus",
+      "tags": [
+        "DKA",
+        "endocrine",
+        "metabolic"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Diagnosis: ketonaemia ≥3 mmol/L (or ketonuria 2+), blood glucose >11 mmol/L (or known T1DM), venous pH <7.3 or bicarbonate <15 mmol/L"
+        },
+        {
+          "text": "Fluid: 0.9% NaCl 1 L in first hour; SCOPE-1 RCT suggests Hartmann's (balanced crystalloid) may reduce acidosis duration — check local protocol"
+        },
+        {
+          "text": "Fixed-rate insulin infusion (FRII): 0.1 units/kg/h — do NOT start if K+ <3.5 mmol/L; continue long-acting basal insulin throughout treatment"
+        },
+        {
+          "text": "Potassium: add 40 mmol/L KCl to fluids once K+ <5.5 mmol/L and urine output confirmed; target K+ 4–5 mmol/L"
+        },
+        {
+          "text": "Add glucose 10% alongside insulin when blood glucose <14 mmol/L to prevent hypoglycaemia while continuing ketone clearance"
+        },
+        {
+          "text": "Resolution criteria (JBDS): ketones <0.3 mmol/L, venous pH >7.3, bicarbonate >18 mmol/L — NOT simply when glucose normalises"
+        },
+        {
+          "text": "Euglycaemic DKA on SGLT2 inhibitors: glucose may be near-normal — check ketones in all sick diabetics regardless of glucose level"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "JBDS DKA Hourly Monitoring Targets",
+        "steps": [
+          "0h: confirm diagnosis, IV access, fluid resuscitation 0.9% NaCl 1 L/h, baseline bloods including VBG and ketones",
+          "1h: if K+ ≥3.5 mmol/L, start FRII 0.1 units/kg/h",
+          "Target: ketones falling ≥0.5 mmol/L/h OR bicarbonate rising ≥3 mmol/L/h OR glucose falling ≥3 mmol/L/h",
+          "If targets not met at 1h: increase FRII by 1 unit/h (not by increasing fluid rate arbitrarily)",
+          "Add 10% glucose once BG <14 mmol/L — do NOT reduce insulin at this point",
+          "Cerebral oedema risk: headache or altered GCS during treatment → immediate critical care involvement"
+        ]
+      },
+      "quiz": {
+        "question": "A 24-year-old type 1 diabetic has pH 7.20, ketones 4.5 mmol/L, glucose 18 mmol/L, K+ 3.2 mmol/L. Which action is most important before starting insulin?",
+        "options": [
+          "Give sodium bicarbonate 50 mmol IV",
+          "Start FRII immediately at 0.1 units/kg/h",
+          "Replace potassium first — do not start insulin with K+ <3.5 mmol/L",
+          "Give a 2 L bolus of 0.9% NaCl before any insulin"
+        ],
+        "answer_index": 2,
+        "explanation": "Insulin drives K+ intracellularly, worsening hypokalaemia. Starting FRII with K+ <3.5 mmol/L risks fatal arrhythmia. Correct potassium to ≥3.5 mmol/L first, then initiate insulin. Bicarbonate is not routinely indicated and can worsen intracellular acidosis."
+      },
+      "source": {
+        "title": "The Management of Diabetic Ketoacidosis in Adults (3rd edition)",
+        "publisher": "Joint British Diabetes Societies for Inpatient Care",
+        "url": "https://abcd.care/joint-british-diabetes-societies-jbds-inpatient-care-group"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/dka/"
+    },
+    {
+      "id": "shock-four-types",
+      "date": "",
+      "title": "Shock — Four Types, One Bedside Framework",
+      "category": "resus",
+      "tags": [
+        "shock",
+        "POCUS",
+        "vasopressors"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Distributive: high CO, low SVR — warm peripheries, bounding pulse; vasopressor choice: noradrenaline 0.01–3 mcg/kg/min; add vasopressin for refractory septic shock"
+        },
+        {
+          "text": "Cardiogenic: low CO, high SVR — cool clammy peripheries, raised JVP; avoid aggressive fluids; LV vs RV failure requires fundamentally different management"
+        },
+        {
+          "text": "Obstructive: PE (JVP raised, RV strain ECG), tension pneumothorax (absent breath sounds, tracheal deviation), tamponade (Beck's triad) — treat the cause urgently"
+        },
+        {
+          "text": "Hypovolaemic: low CO, high SVR — look for source; haemorrhage requires early blood products not just crystalloid"
+        },
+        {
+          "text": "RUSH protocol (Rapid Ultrasound for Shock and Hypotension): assess heart, IVC, aorta, pleural/pericardial spaces — differentiates shock type within minutes"
+        },
+        {
+          "text": "RV failure management: avoid tachycardia, maintain RV preload, avoid vasodilators, consider adrenaline infusion rather than noradrenaline"
+        },
+        {
+          "text": "If MAP remains <65 mmHg after 30 mL/kg crystalloid, vasopressor is indicated regardless of aetiology"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "RUSH Protocol — Rapid Ultrasound for Shock",
+        "steps": [
+          "Pump: subxiphoid view — assess LV function, RV size, pericardial effusion",
+          "Tank (preload): IVC diameter and collapsibility — >2 cm non-collapsing suggests fluid overload; <1 cm with >50% collapse suggests hypovolaemia",
+          "Tank (fluid in wrong place): bilateral pleural effusions, ascites",
+          "Pipes: aortic aneurysm — measure at three levels; exclude AAA in all undifferentiated shock",
+          "Lung windows: B-lines (pulmonary oedema), absence of sliding (pneumothorax)",
+          "Synthesise: combine findings to classify shock type and guide immediate management"
+        ]
+      },
+      "quiz": {
+        "question": "A 68-year-old is hypotensive with raised JVP, muffled heart sounds, and pulsus paradoxus. POCUS shows a pericardial effusion with RV diastolic collapse. Which treatment is immediately indicated?",
+        "options": [
+          "Urgent pericardiocentesis",
+          "Noradrenaline infusion",
+          "IV furosemide 40 mg",
+          "1 L crystalloid bolus and reassess"
+        ],
+        "answer_index": 0,
+        "explanation": "This is cardiac tamponade with haemodynamic compromise — obstructive shock. Pericardiocentesis is the definitive treatment. Fluids are a short-term temporising bridge only. Vasodilators and diuretics are contraindicated."
+      },
+      "source": {
+        "title": "RUSH Exam — Rapid Ultrasound in Shock",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/rush-exam-rapid-ultrasound-in-shock/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/shock/"
+    },
+    {
+      "id": "tranexamic-acid-evidence",
+      "date": "",
+      "title": "Tranexamic Acid — The Evidence Base and Its Limits",
+      "category": "trauma",
+      "tags": [
+        "TXA",
+        "haemorrhage",
+        "trauma"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Mechanism: antifibrinolytic — inhibits plasminogen activation and plasmin, preserving formed clot; TXA is NOT procoagulant"
+        },
+        {
+          "text": "CRASH-2 (20,211 patients): TXA 1 g IV over 10 min then 1 g over 8h reduced all-cause mortality; RR 0.91 (ARR ~1.5% in first 3h group)"
+        },
+        {
+          "text": "Time window is critical: give within 3 hours of injury — mortality reduction disappears and may increase if given after 3 hours"
+        },
+        {
+          "text": "Major haemorrhage protocol: give TXA ASAP — aim within 1 hour; prehospital TXA now standard in UK PHEM/HEMS practice"
+        },
+        {
+          "text": "WOMAN trial (postpartum haemorrhage): TXA 1 g IV within 3 hours of delivery reduced death from PPH (RR 0.81) — now recommended by NICE"
+        },
+        {
+          "text": "Topical TXA for epistaxis: 500 mg in 5 mL soaked gauze — reduces rebleeding and procedure time in RCTs"
+        },
+        {
+          "text": "CRASH-3 (SAH): TXA did not reduce disability or death overall; possible benefit within 3h but increased cerebral ischaemic events — not standard UK practice"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Why the Time Window Matters",
+        "points": [
+          "Hyperfibrinolysis peaks in the first 1–3 hours after injury — TXA blocks this critical window",
+          "Late TXA (>3h) may paradoxically increase mortality — possibly by blocking late physiological fibrinolysis needed for clot resolution",
+          "CRASH-2 subgroup: greatest benefit in those with SBP <75 mmHg — the most shocked patients benefit most",
+          "Dose: 1 g IV loading dose over 10 min, then 1 g infusion over 8h — must not give as a rapid bolus (seizure risk)",
+          "TXA is cheap, widely available, and low-risk when given in time — the barrier to use should be low in major haemorrhage"
+        ]
+      },
+      "quiz": {
+        "question": "A 32-year-old arrives 2.5 hours after a high-speed RTC with haemodynamic instability and suspected internal haemorrhage. Which statement regarding TXA is correct?",
+        "options": [
+          "TXA is contraindicated in blunt trauma",
+          "TXA 1 g IV should be given now — within the 3-hour window",
+          "TXA is only indicated if fibrinogen is confirmed low on TEG",
+          "TXA should be withheld until haemostatic surgery is confirmed"
+        ],
+        "answer_index": 1,
+        "explanation": "CRASH-2 evidence supports giving TXA as early as possible in major trauma haemorrhage, with benefit up to 3 hours from injury. Waiting for lab confirmation delays treatment and misses the time-dependent window. Dose: 1 g IV over 10 min then 1 g over 8h."
+      },
+      "source": {
+        "title": "CRASH-2 trial — tranexamic acid in trauma",
+        "publisher": "The NNT",
+        "url": "https://thennt.com/nnt/tranexamic-acid-for-trauma/"
+      },
+      "deep_dive_url": "https://www.thebottomline.org.uk/summaries/icm/crash-2/"
+    },
+    {
+      "id": "paediatric-resuscitation",
+      "date": "",
+      "title": "Paediatric Resuscitation — Doses, Rhythms, and Why Children Are Different",
+      "category": "pem",
+      "tags": [
+        "paeds",
+        "resus",
+        "APLS"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Weight estimation: (age + 4) × 2 kg for 1–10 years (APLS formula); Broselow tape for rapid bedside use; PAWPER tape reduces error in obese children"
+        },
+        {
+          "text": "Defibrillation: 4 J/kg for ALL DC shocks — first, second, and subsequent; the 2+4+4 J/kg sequence is historical — current RCUK 2021 recommends 4 J/kg throughout"
+        },
+        {
+          "text": "Adrenaline: 10 mcg/kg IV/IO (0.1 mL/kg of 1:10,000) every 3–5 minutes in arrest — same intervals as adults"
+        },
+        {
+          "text": "Amiodarone: 5 mg/kg IV/IO for shock-refractory VF/pVT — given after 3rd shock, repeated after 5th shock"
+        },
+        {
+          "text": "Non-shockable rhythms (PEA/asystole) predominate in paediatric arrest because cause is usually hypoxic — CPR quality and rapid airway management are the priorities"
+        },
+        {
+          "text": "Paediatric airway differences: large occiput causes neck flexion, large tongue, anterior larynx, narrowest point at cricoid — uncuffed tubes to age 8 acceptable but cuffed preferred"
+        },
+        {
+          "text": "Post-arrest: ThAALO RCT showed targeted temperature management (32–34°C vs 36°C) did not improve survival; fever MUST be avoided regardless"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Paediatric ALS Sequence (RCUK 2021)",
+        "steps": [
+          "Unresponsive, not breathing normally: call for help, start CPR 15:2 (two-rescuer) — 30:2 if alone",
+          "Rhythm check every 2 minutes: VF/pVT → defibrillate 4 J/kg; PEA/asystole → continue CPR",
+          "IO access if IV fails after 60 seconds in arrest — tibial tuberosity or humeral head",
+          "Adrenaline 10 mcg/kg every 3–5 min: non-shockable rhythm from start; shockable rhythm after 3rd shock",
+          "Address 4Hs and 4Ts: hypoxia is the most common paediatric cause — early high-quality airway management",
+          "ROSC: avoid hypoxia, hypoglycaemia, hyperthermia — 4-hourly glucose checks for 24h post-arrest"
+        ]
+      },
+      "quiz": {
+        "question": "A 6-year-old (20 kg) is in VF arrest. CPR is underway. What is the correct defibrillation energy for the first shock?",
+        "options": [
+          "50 J",
+          "80 J",
+          "200 J",
+          "360 J"
+        ],
+        "answer_index": 1,
+        "explanation": "Current RCUK guidelines (2021) recommend 4 J/kg for all shocks in paediatric VF/pVT. For a 20 kg child: 4 × 20 = 80 J. The older 2+4+4 J/kg sequence is no longer recommended."
+      },
+      "source": {
+        "title": "Paediatric Advanced Life Support Guidelines 2021",
+        "publisher": "Resuscitation Council UK",
+        "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/paediatric-advanced-life-support"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/paediatric-resuscitation/"
+    },
+    {
+      "id": "stroke-time-critical-pathway",
+      "date": "",
+      "title": "Stroke — The Time-Critical Pathway From Door to Decision",
+      "category": "stroke",
+      "tags": [
+        "stroke",
+        "thrombolysis",
+        "EVT"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "BE-FAST (Balance, Eyes, Face, Arms, Speech, Time) has higher sensitivity than FAST alone — posterior circulation strokes are commonly missed by FAST"
+        },
+        {
+          "text": "Stroke mimics: hypoglycaemia (check BM first), Todd's paresis post-seizure, hemiplegic migraine — BM must be checked before any stroke alert is activated"
+        },
+        {
+          "text": "Thrombolysis (alteplase 0.9 mg/kg, max 90 mg): time window 0–4.5 hours from onset; contraindications include SBP >185, glucose <2.8 or >22, platelets <100, therapeutic anticoagulation"
+        },
+        {
+          "text": "Tenecteplase 0.25 mg/kg (max 25 mg) is now used in many UK centres as a single-bolus alternative — EXTEND-IA TNK shows non-inferiority to alteplase"
+        },
+        {
+          "text": "LVO detection pre-alert tools: FAST-ED (score ≥4) and RACE (score ≥5) predict large vessel occlusion with sensitivity ~70–80% — use to pre-alert thrombectomy centre"
+        },
+        {
+          "text": "BP before thrombolysis: treat if SBP >185/110 — labetalol 10–20 mg IV or GTN infusion; target ≤185/110 to allow thrombolysis"
+        },
+        {
+          "text": "Do NOT treat hypertension if thrombolysis is NOT being given — unless >220/120; permissive hypertension aids penumbra perfusion"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Stroke Pathway — Time Targets",
+        "steps": [
+          "Door to CT: ≤25 minutes — non-contrast CT head to exclude haemorrhage",
+          "Door to needle (thrombolysis): ≤60 minutes — SSNAP/RCP national audit target",
+          "Simultaneously: BM, 12-lead ECG (AF detection), bloods, IV access × 2, NIHSS score",
+          "CT angiography for all eligible patients: identifies LVO for EVT referral — do not delay thrombolysis for CTA",
+          "Door to groin puncture (EVT): ≤90 minutes at thrombectomy-capable centre",
+          "Pre-alert Stroke team and neurovascular centre before patient arrives — time is brain = 1.9 million neurons/min"
+        ]
+      },
+      "quiz": {
+        "question": "A 62-year-old has sudden left arm weakness and dysarthria, onset 90 minutes ago. BM 6.2 mmol/L, BP 190/100, CT head normal. Which is the most appropriate next action?",
+        "options": [
+          "Observe for 4 hours and reassess",
+          "Give IV alteplase after treating BP to ≤185/110",
+          "Withhold thrombolysis — BP is a contraindication",
+          "Give aspirin 300 mg immediately and refer to TIA clinic"
+        ],
+        "answer_index": 1,
+        "explanation": "BP of 190/100 is above the thrombolysis threshold but can be treated with labetalol or GTN to ≤185/110. BP alone is not a permanent contraindication. This presentation is within the 4.5h window and warrants thrombolysis once BP is controlled."
+      },
+      "source": {
+        "title": "Stroke — National Clinical Guideline for Stroke (6th edition)",
+        "publisher": "Royal College of Physicians",
+        "url": "https://www.strokeguideline.org/"
+      },
+      "deep_dive_url": "https://first10em.com/stroke/"
+    },
+    {
+      "id": "brugada-syndrome",
+      "date": "",
+      "title": "Brugada Syndrome — The Three Patterns and Sudden Death Risk",
+      "category": "ecg",
+      "tags": [
+        "ECG",
+        "arrhythmia",
+        "sudden death"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Type 1 (diagnostic): coved ST elevation ≥2 mm in V1–V2 with negative T-wave — this is the ONLY spontaneously diagnostic pattern"
+        },
+        {
+          "text": "Type 2 (saddleback): ≥2 mm high takeoff, convex ST elevation followed by positive T — requires drug challenge to confirm; NOT diagnostic alone"
+        },
+        {
+          "text": "High right precordial leads: record V1–V2 at 2nd and 3rd ICS (high-leads position) — converts Type 2 to Type 1 in up to 30% of cases"
+        },
+        {
+          "text": "Fever unmasks Brugada — any febrile young male with Type 1 pattern needs aggressive antipyretics and urgent cardiology review"
+        },
+        {
+          "text": "SCN5A mutation (sodium channel gene): autosomal dominant with incomplete penetrance; male:female ratio 8:1; peak age 40s; Asian males overrepresented"
+        },
+        {
+          "text": "Avoid sodium channel blockers (flecainide, procainamide, ajmaline, propafenone) — they precipitate VF in Brugada patients"
+        },
+        {
+          "text": "ED management: treat fever aggressively (paracetamol 1 g IV), avoid precipitating drugs, call cardiology, ICD referral for symptomatic patients"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Drugs That Unmask or Provoke Brugada Pattern",
+        "points": [
+          "Class Ia sodium channel blockers: ajmaline, procainamide — used diagnostically to unmask Type 2 to Type 1 (only in supervised cardiology setting)",
+          "Class 1c agents: flecainide, propafenone — DANGEROUS in established Brugada; never give in ED",
+          "Tricyclic antidepressants, lithium, cocaine — can provoke VF in Brugada carriers",
+          "Non-cardiac drugs of concern: carbamazepine, phenytoin, high-dose propofol — document Brugada diagnosis prominently",
+          "Differentials for Type 1 pattern: early repolarisation, RBBB, pericarditis, myocarditis, hypothermia, hyperkalaemia — clinical context is essential"
+        ]
+      },
+      "quiz": {
+        "question": "A 38-year-old Asian male presents with fever (38.9°C) and palpitations. ECG shows coved ST elevation ≥2 mm in V1 with negative T-wave. What is the most important immediate action?",
+        "options": [
+          "Give flecainide 150 mg orally for rate control",
+          "Arrange urgent ECG stress test",
+          "Treat fever aggressively with paracetamol and seek urgent cardiology review",
+          "Discharge with 24-hour Holter monitor"
+        ],
+        "answer_index": 2,
+        "explanation": "This is a fever-unmasked Type 1 Brugada pattern — genuinely diagnostic. Fever can trigger VF in Brugada syndrome; aggressive antipyretics and urgent cardiology input are the priorities. Flecainide is absolutely contraindicated as a sodium channel blocker."
+      },
+      "source": {
+        "title": "Brugada Syndrome ECG Library",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/brugada-syndrome-ecg-library/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/brugada/"
+    },
+    {
+      "id": "wpw-pre-excitation",
+      "date": "",
+      "title": "WPW and Pre-Excitation — The Delta Wave and Why Pre-Excited AF Kills",
+      "category": "ecg",
+      "tags": [
+        "ECG",
+        "WPW",
+        "arrhythmia"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "WPW triad: short PR (<120 ms), slurred QRS upstroke (delta wave), widened QRS (>120 ms) — due to accessory pathway bypassing AV node"
+        },
+        {
+          "text": "AVRT (orthodromic): narrow complex regular tachycardia — conduction antegrade through AV node, retrograde via accessory pathway; adenosine is safe in this situation"
+        },
+        {
+          "text": "Pre-excited AF: broad, irregular, fast (>200 bpm) with varying QRS morphology — accessory pathway conducts AF without AV nodal filtering; risk of degeneration to VF"
+        },
+        {
+          "text": "NEVER give AV-nodal blocking drugs in pre-excited AF: adenosine, verapamil, diltiazem, digoxin, beta-blockers — all enhance accessory pathway conduction and may precipitate VF"
+        },
+        {
+          "text": "Treatment of pre-excited AF: DC cardioversion if haemodynamically unstable; procainamide IV (15 mg/kg over 30 min) or flecainide if stable — slows accessory pathway conduction"
+        },
+        {
+          "text": "Rate >200 bpm in a broad, irregular tachycardia strongly suggests accessory pathway conduction — the AV node cannot conduct at this rate"
+        },
+        {
+          "text": "Long-term: electrophysiology study (EPS) and radiofrequency ablation curative in >95% of cases; refer all symptomatic WPW to cardiology"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "How to Tell Pre-Excited AF From VT",
+        "points": [
+          "Pre-excited AF: broad AND irregular with varying QRS morphology — VT is usually regular",
+          "Rate >200 bpm suggests accessory pathway — AV node cannot conduct at this speed",
+          "Look for delta waves in sinus rhythm leads on the same ECG if available",
+          "When in doubt: assume VT and cardiovert — it is always safer to over-treat than to give AV-nodal blockers",
+          "After cardioversion: 12-lead in sinus rhythm to confirm WPW, then cardiology EPS referral"
+        ]
+      },
+      "quiz": {
+        "question": "A 25-year-old has palpitations. HR 240 bpm, BP 100/70. ECG shows a broad, fast, irregular tachycardia with varying QRS morphology. Which drug is CONTRAINDICATED?",
+        "options": [
+          "Procainamide",
+          "DC cardioversion",
+          "Adenosine",
+          "Flecainide"
+        ],
+        "answer_index": 2,
+        "explanation": "This is pre-excited AF. Adenosine (and verapamil, diltiazem, digoxin) block the AV node but preferentially enhance accessory pathway conduction, potentially precipitating VF. DC cardioversion or procainamide are appropriate. Flecainide slows the accessory pathway and is an alternative in stable patients."
+      },
+      "source": {
+        "title": "Atrial Fibrillation with Pre-Excitation ECG Library",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/atrial-fibrillation-with-pre-excitation/"
+      },
+      "deep_dive_url": "https://litfl.com/pre-excitation-syndromes-ecg-library/"
+    },
+    {
+      "id": "stemi-equivalents",
+      "date": "",
+      "title": "STEMI Equivalents — The ECGs That Activate the Cath Lab Without Classic Criteria",
+      "category": "ecg",
+      "tags": [
+        "ECG",
+        "ACS",
+        "STEMI"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "De Winter pattern: upsloping ST depression ≥1 mm at J-point in V1–V6 with tall, peaked symmetrical T-waves — represents proximal LAD occlusion; NO ST elevation present"
+        },
+        {
+          "text": "Posterior STEMI: horizontal ST depression V1–V3 with dominant R waves (R>S in V2) — mirror image; confirm with posterior leads V7–V9 (≥0.5 mm elevation diagnostic)"
+        },
+        {
+          "text": "Wellens syndrome Type A: biphasic T-waves V2–V3; Type B: deeply inverted symmetric T-waves V2–V3 — both indicate critical LAD proximal stenosis; do NOT exercise test"
+        },
+        {
+          "text": "Modified Sgarbossa criteria for LBBB: concordant ST elevation ≥1 mm (score 5), concordant ST depression ≥1 mm in V1–V3 (score 3), excessive discordant elevation >25% of S-wave (score 2); score ≥3 = STEMI equivalent"
+        },
+        {
+          "text": "aVR ST elevation ≥1 mm with diffuse ST depression: suggests left main or proximal LAD occlusion — high mortality, needs emergent cath lab activation"
+        },
+        {
+          "text": "Right ventricular MI: inferior STEMI with ST elevation in V4R — give IV fluids NOT nitrates; nitrates cause catastrophic BP drop in RV failure"
+        },
+        {
+          "text": "Hyperacute T-waves: tall, broad-based, asymmetric T-waves in early STEMI — often transient and missed; compare with previous ECG if available"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Practical Actions When You See These Patterns",
+        "points": [
+          "De Winter, posterior STEMI, aVR elevation: activate cath lab pathway as for STEMI — do not wait for troponin result",
+          "Wellens: patient is pain-free, ECG shows reperfusion injury — high re-occlusion risk; admit, avoid exercise testing, urgent cardiology review",
+          "Sgarbossa in LBBB: score ≥3 with ongoing chest pain warrants cath lab activation regardless of LBBB age",
+          "Right ventricular MI: right-sided leads V3R–V5R routine in all inferior STEMIs; treat shock with fluids and dobutamine, not vasodilators",
+          "Retrospective: if pain resolved and ECG normalised, serial ECGs and urgent cardiology outpatient review may be appropriate"
+        ]
+      },
+      "quiz": {
+        "question": "A 55-year-old has crushing chest pain. ECG shows 2 mm horizontal ST depression in V1–V3 with upright T-waves and dominant R wave in V2. Standard STEMI criteria are NOT met. What is the most appropriate next step?",
+        "options": [
+          "Serial troponins and admit as NSTEMI",
+          "Record posterior leads V7–V9 and activate cath lab if ≥0.5 mm elevation confirmed",
+          "CT pulmonary angiogram to exclude PE",
+          "Discharge and arrange exercise tolerance test"
+        ],
+        "answer_index": 1,
+        "explanation": "This is posterior STEMI — anterior leads show the mirror image. Posterior leads V7–V9 confirm it with as little as 0.5 mm elevation. This is a STEMI equivalent requiring emergent cath lab activation. Serial troponins alone are insufficient."
+      },
+      "source": {
+        "title": "Posterior STEMI ECG Library",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/posterior-stemi-ecg-library/"
+      },
+      "deep_dive_url": "https://litfl.com/de-winter-t-waves-ecg-library/"
+    },
+    {
+      "id": "broad-complex-tachycardia",
+      "date": "",
+      "title": "Broad Complex Tachycardia — Treat Everything as VT Until Proven Otherwise",
+      "category": "ecg",
+      "tags": [
+        "ECG",
+        "VT",
+        "arrhythmia"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Default rule: ALL broad complex tachycardias (QRS >120 ms, rate >100) are VT until proven otherwise — misdiagnosing VT as SVT-with-aberrancy and giving verapamil can cause cardiac arrest"
+        },
+        {
+          "text": "Brugada 4-step algorithm: 1) RS complex absent in all precordials → VT; 2) RS interval >100 ms in any precordial → VT; 3) AV dissociation → VT; 4) VT morphology criteria met → VT"
+        },
+        {
+          "text": "VT features: AV dissociation (independent P-waves), capture beats (narrow QRS), fusion beats (intermediate morphology), concordance (all precordials deflect same direction)"
+        },
+        {
+          "text": "Polymorphic VT vs torsades de pointes: polymorphic VT needs urgent treatment of cause (ischaemia); TdP needs magnesium 2 g IV over 10 min, QT-prolonging drugs stopped, electrolyte correction"
+        },
+        {
+          "text": "Accelerated idioventricular rhythm (AIVR): broad complex rhythm 60–100 bpm during inferior STEMI reperfusion — benign; no treatment needed"
+        },
+        {
+          "text": "Stable VT: amiodarone 300 mg IV over 20–60 min then 900 mg over 24h — do NOT give adenosine, verapamil, or beta-blockers"
+        },
+        {
+          "text": "Unstable VT (haemodynamic compromise): synchronised DC cardioversion 200 J biphasic immediately — no time for drug loading"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Vereckei aVR Algorithm for Broad Complex Tachycardia",
+        "steps": [
+          "Step 1: Is there an R wave in aVR? If yes → VT",
+          "Step 2: Is the width of initial R or Q in aVR >40 ms? If yes → VT",
+          "Step 3: Is there notching of the initial negative deflection in aVR? If yes → VT",
+          "Step 4: Is the vi/vt ratio ≤1? If yes → VT",
+          "If none of the above → SVT with aberrancy (rare to reach Step 4 in true VT)",
+          "Clinical principle: treat as VT regardless — the consequence of misdiagnosis is asymmetric"
+        ]
+      },
+      "quiz": {
+        "question": "A 70-year-old with known ischaemic cardiomyopathy has a broad complex tachycardia at 160 bpm, BP 110/70. ECG shows concordant positive QRS complexes in all precordial leads. Which treatment is correct?",
+        "options": [
+          "Adenosine 6 mg IV — to differentiate VT from SVT",
+          "Verapamil 5 mg IV — to slow the rate",
+          "Amiodarone 300 mg IV over 20 minutes",
+          "Synchronised DC cardioversion 50 J immediately"
+        ],
+        "answer_index": 2,
+        "explanation": "This is VT (concordant precordials, history of IHD). The patient is haemodynamically stable, so pharmacological cardioversion with amiodarone is appropriate. Adenosine and verapamil can cause VF in VT. 200 J is correct if haemodynamically unstable — 50 J is insufficient."
+      },
+      "source": {
+        "title": "Ventricular Tachycardia ECG Library",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/ventricular-tachycardia-ecg-library/"
+      },
+      "deep_dive_url": "https://litfl.com/vt-versus-svt-ecg-differentiation/"
+    },
+    {
+      "id": "paracetamol-overdose-full",
+      "date": "",
+      "title": "Paracetamol Overdose — NAPQI, the Nomogram, and When Liver Failure Follows",
+      "category": "tox",
+      "tags": [
+        "overdose",
+        "TOXBASE",
+        "NAC"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Mechanism: therapeutic doses undergo glucuronidation and sulphation; toxic doses generate NAPQI which accumulates as glutathione is depleted, causing centrilobular hepatic necrosis"
+        },
+        {
+          "text": "UK nomogram: single treatment line at 100 mg/L at 4h, regardless of risk factors — superseded previous high-risk/normal-risk lines per MHRA 2012 guidance"
+        },
+        {
+          "text": "Levels before 4h post-ingestion cannot be interpreted on the nomogram — wait or treat empirically if >150 mg/kg or >12 g ingested"
+        },
+        {
+          "text": "Two-bag NAC regimen (2019 MHRA update): 100 mg/kg in 200 mL 5% glucose over 2h, then 200 mg/kg in 500 mL 5% glucose over 10h — reduces adverse reactions vs old three-bag"
+        },
+        {
+          "text": "NAC anaphylactoid reaction: occurs in ~15%; slow infusion, give chlorphenamine 10 mg IV and hydrocortisone — do NOT stop NAC"
+        },
+        {
+          "text": "Staggered overdose or unknown time: treat without waiting for level — nomogram does not apply; follow TOXBASE guidance"
+        },
+        {
+          "text": "King's College Criteria for liver transplant referral: pH <7.3 after resuscitation OR (INR >6.5 + creatinine >300 μmol/L + grade III/IV encephalopathy)"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "End-of-Treatment Assessment",
+        "points": [
+          "Take bloods at end of NAC infusion: ALT, INR, creatinine, blood glucose, paracetamol level",
+          "Rising ALT or INR >2 at end of treatment: restart NAC and contact regional liver unit",
+          "Late presentation (>24h post-ingestion): high risk even with apparently subthreshold levels — discuss with NPIS/TOXBASE",
+          "Every overdose requires mental health assessment before discharge — this is a mandatory standard of care",
+          "Pregnancy: same treatment thresholds; consider obstetric review for fetal monitoring in significant overdoses"
+        ]
+      },
+      "quiz": {
+        "question": "A patient took an unknown quantity of paracetamol over 4 hours throughout the evening. Level at 3h post-last-dose is 110 mg/L. What is correct?",
+        "options": [
+          "Plot the level on the nomogram at 3h — below the line, no treatment",
+          "This is a staggered ingestion — the nomogram does not apply; treat with NAC per TOXBASE",
+          "Repeat the level at 4h and plot it then",
+          "Discharge as the level is <150 mg/L"
+        ],
+        "answer_index": 1,
+        "explanation": "A staggered ingestion over multiple hours cannot be plotted on the Rumack-Matthew nomogram, which only applies to a single ingestion at a known time. TOXBASE guidance is to treat with NAC regardless of level in staggered overdoses."
+      },
+      "source": {
+        "title": "TOXBASE — Paracetamol poisoning management",
+        "publisher": "National Poisons Information Service",
+        "url": "https://www.toxbase.org/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/acetaminophen/"
+    },
+    {
+      "id": "opioid-toxidrome-naloxone",
+      "date": "",
+      "title": "Opioid Toxidrome — Naloxone Titration and the Duration Mismatch Problem",
+      "category": "tox",
+      "tags": [
+        "opioid",
+        "naloxone",
+        "overdose"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Classic triad: miosis (pinpoint pupils), CNS depression, respiratory depression — RR <12/min is the key life-threatening feature requiring naloxone"
+        },
+        {
+          "text": "Naloxone IV: titrate 0.1–0.4 mg IV every 2–3 min; for arrest/apnoea: 0.8–2 mg IV/IM; intranasal 2 mg is effective if IV access is delayed"
+        },
+        {
+          "text": "Duration mismatch is the key danger: naloxone half-life 45–90 min vs heroin 4–6h, methadone 24–72h — re-narcotisation after naloxone wears off is common and potentially fatal"
+        },
+        {
+          "text": "Naloxone infusion: use if prolonged-acting opioid (methadone, slow-release preparations) — 2/3 of effective reversal dose per hour; monitor in resus for ≥12h"
+        },
+        {
+          "text": "Partial reversal strategy: titrate naloxone to restore respiratory drive (RR >12/min) without precipitating full reversal — acute withdrawal causes agitation, pulmonary oedema, vomiting with aspiration risk"
+        },
+        {
+          "text": "Novel opioids: illicit fentanyl analogues and nitazenes may require multiple mg of naloxone — do not assume standard dose is sufficient"
+        },
+        {
+          "text": "Buprenorphine (high-affinity partial agonist): resistant to naloxone; higher doses (2–10 mg) required; ceiling effect on respiratory depression means respiratory arrest is less common"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Safe Discharge After Naloxone",
+        "steps": [
+          "Short-acting opioid (heroin, codeine, tramadol): observe minimum 4–6 hours from last naloxone dose with maintained RR >12/min",
+          "Long-acting opioid (methadone, slow-release morphine): admit for minimum 12–24h monitoring with repeat doses or infusion",
+          "Unknown opioid or suspected synthetic fentanyl: treat as long-acting until proven otherwise",
+          "Re-narcotisation monitoring: GCS, RR, SpO2 documented every 30 min",
+          "Discharge criteria: RR consistently >12/min, GCS 15, SpO2 >94% on air, no further naloxone doses for ≥4h",
+          "Harm reduction at discharge: naloxone take-home prescription (ACCES scheme), community drug service referral"
+        ]
+      },
+      "quiz": {
+        "question": "A 40-year-old on supervised methadone 80 mg/day is found unconscious. RR 4/min. Naloxone 0.8 mg IV given — consciousness returns. Thirty minutes later he becomes drowsy again. What is the correct action?",
+        "options": [
+          "Discharge — he is now conscious and should be safe",
+          "Give another 0.8 mg IV and admit for naloxone infusion monitoring",
+          "Switch to intramuscular naloxone only",
+          "Naloxone is ineffective for methadone — intubate"
+        ],
+        "answer_index": 1,
+        "explanation": "Methadone has a half-life of 24–72 hours, far exceeding naloxone's 45–90 min. Re-narcotisation is expected and predicted. A naloxone infusion at 2/3 of the effective reversal dose per hour with minimum 12–24h monitoring is required. Naloxone DOES work for methadone."
+      },
+      "source": {
+        "title": "TOXBASE — Opioid/opiate poisoning",
+        "publisher": "National Poisons Information Service",
+        "url": "https://www.toxbase.org/"
+      },
+      "deep_dive_url": "https://litfl.com/opioid-toxidrome/"
+    },
+    {
+      "id": "stimulant-toxidrome",
+      "date": "",
+      "title": "Stimulant Toxidrome — Cocaine, Amphetamines, and the Beta-Blocker Trap",
+      "category": "tox",
+      "tags": [
+        "cocaine",
+        "amphetamines",
+        "toxicology"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Sympathomimetic toxidrome: tachycardia, hypertension, hyperthermia, mydriasis, diaphoresis, agitation — contrasts with opioid toxidrome (bradycardia, miosis, respiratory depression)"
+        },
+        {
+          "text": "Cocaine sodium channel blockade: causes QRS widening, STEMI-like pattern, Brugada phenocopy — distinguish cocaine-related chest pain from true atherosclerotic STEMI"
+        },
+        {
+          "text": "Cocaine chest pain: first-line benzodiazepines (diazepam 5–10 mg IV), GTN, aspirin, calcium channel blockers — NOT beta-blockers under any circumstances"
+        },
+        {
+          "text": "Beta-blocker contraindication: blocks beta-adrenoceptors leaving alpha-mediated vasoconstriction unopposed → paradoxical hypertension and coronary vasospasm"
+        },
+        {
+          "text": "MDMA hyponatraemia: SIADH mechanism with excess ADH release + water ingestion; particularly young females; Na+ can fall to <120 mmol/L → seizures, cerebral oedema"
+        },
+        {
+          "text": "Hyperthermia management: target temperature <38.5°C with cooling mattress/ice packs; benzodiazepines IV; dantrolene 1–2.5 mg/kg IV if serotonin syndrome overlap"
+        },
+        {
+          "text": "Rhabdomyolysis: CK >1000 U/L suggests muscle breakdown; IV fluids targeting urine output 200–300 mL/h; monitor K+ and renal function closely"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Cocaine Chest Pain — Is This ACS?",
+        "points": [
+          "Cocaine causes coronary vasospasm AND thrombosis; true MI can occur in young patients with normal coronaries",
+          "ECG changes are common even without ischaemia — broad QRS suggests sodium channel toxicity, not necessarily occlusion",
+          "High-sensitivity troponin protocol still applies — up to 6% of cocaine chest pain patients have true MI",
+          "If STEMI confirmed with cocaine use: PCI preferred over thrombolysis (thrombotic mechanism often dominant)",
+          "Observation period: minimum 9–12h for cocaine chest pain with reassuring initial investigations"
+        ]
+      },
+      "quiz": {
+        "question": "A 28-year-old who used cocaine has chest pain, HR 130, BP 190/110. ECG shows 2 mm ST elevation in V1–V3. Which drug is CONTRAINDICATED?",
+        "options": [
+          "Aspirin 300 mg",
+          "GTN sublingual",
+          "Metoprolol 5 mg IV",
+          "Lorazepam 2 mg IV"
+        ],
+        "answer_index": 2,
+        "explanation": "Beta-blockers are contraindicated in cocaine toxicity. Blocking beta-adrenergic vasodilation leaves alpha-mediated vasoconstriction unopposed, worsening coronary vasospasm and hypertension. Benzodiazepines, GTN, and aspirin are appropriate first-line treatments."
+      },
+      "source": {
+        "title": "Cocaine Toxicity — Emergency Management",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/cocaine-toxicity/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/cocaine/"
+    },
+    {
+      "id": "serotonin-vs-nms",
+      "date": "",
+      "title": "Serotonin Syndrome vs NMS — Hot, Rigid, and Confused: Which Is Which?",
+      "category": "tox",
+      "tags": [
+        "serotonin",
+        "NMS",
+        "toxicology"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Hunter criteria for serotonin syndrome (sensitivity 84%, specificity 97%): clonus (inducible/spontaneous/ocular) + one of: agitation, diaphoresis, tremor, hyperreflexia, hypertonia — in context of serotonergic drug"
+        },
+        {
+          "text": "Onset: serotonin syndrome is RAPID (within hours of drug addition); NMS is SLOW (days to weeks after antipsychotic exposure)"
+        },
+        {
+          "text": "Key differentiator — clonus: the hallmark of serotonin syndrome; NOT present in NMS; examine lower limbs, ocular, and inducible clonus in every hot confused patient"
+        },
+        {
+          "text": "NMS features: lead-pipe extrapyramidal rigidity (vs hyperreflexia in SS), hyperthermia, autonomic instability, reduced consciousness — caused by dopamine receptor blockade"
+        },
+        {
+          "text": "Drug causes of SS: SSRIs, SNRIs, MAOIs, tramadol, triptans, fentanyl (weak), lithium, linezolid — ask about ALL medications including OTC"
+        },
+        {
+          "text": "Treatment of SS: stop offending drug, benzodiazepines (diazepam 5–10 mg IV), cyproheptadine 12 mg orally (serotonin antagonist), cooling for hyperthermia"
+        },
+        {
+          "text": "Treatment of NMS: stop antipsychotic, supportive ICU care, bromocriptine 2.5 mg TDS, dantrolene 1 mg/kg IV for severe hyperthermia — recovery days to weeks"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Other Hyperthermia Syndromes to Differentiate",
+        "points": [
+          "Malignant hyperthermia: triggered by volatile anaesthetic agents or suxamethonium; genetic (RYR1 mutation); treatment is dantrolene 2.5 mg/kg IV — not the same as NMS",
+          "Anticholinergic syndrome: hot, dry, flushed, tachycardic, urinary retention, ileus, hallucinations — physostigmine in expert centres",
+          "Sympathomimetic toxidrome: wet (diaphoretic) vs anticholinergic (dry) — this distinction helps narrow the diagnosis",
+          "When in doubt: benzodiazepines are safe across all these syndromes — use while seeking toxicology advice",
+          "CK monitoring: all these syndromes can cause rhabdomyolysis — check CK, creatinine, urine output"
+        ]
+      },
+      "quiz": {
+        "question": "A 35-year-old on citalopram and tramadol develops acute agitation, diaphoresis, and inducible clonus. Temperature 38.8°C. Which treatment is most appropriate?",
+        "options": [
+          "Haloperidol 5 mg IV for acute agitation",
+          "Stop offending agents, benzodiazepines IV, cyproheptadine orally",
+          "Bromocriptine and dantrolene",
+          "Cooling blanket alone and observe"
+        ],
+        "answer_index": 1,
+        "explanation": "This meets Hunter criteria for serotonin syndrome (clonus + agitation + diaphoresis on serotonergic agents). Immediate treatment: stop causative drugs, benzodiazepines, cyproheptadine (serotonin antagonist). Haloperidol could worsen outcome. Bromocriptine/dantrolene is for NMS."
+      },
+      "source": {
+        "title": "Serotonin Syndrome — Hunter Criteria",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/serotonin-syndrome/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/serotonin/"
+    },
+    {
+      "id": "betablocker-ccb-overdose",
+      "date": "",
+      "title": "Beta-Blocker and CCB Overdose — High-Dose Insulin Is the Treatment, Not an Option",
+      "category": "tox",
+      "tags": [
+        "toxicology",
+        "HIET",
+        "overdose"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Presentation: bradycardia, hypotension, cardiogenic shock, reduced consciousness — look-alikes are inferior MI, high spinal, hypothyroidism"
+        },
+        {
+          "text": "CCB diagnostic clue: hyperglycaemia — calcium channel blockers inhibit insulin secretion from pancreatic beta-cells (vs beta-blockers → hypoglycaemia)"
+        },
+        {
+          "text": "Immediate: atropine 500 mcg–3 mg IV (often fails in severe overdose), IV fluids, continuous cardiac monitoring, glucose and ketone check"
+        },
+        {
+          "text": "Calcium chloride 10%: 10 mL (1 g) IV over 5 min for CCB overdose — gives more ionised calcium than gluconate; repeat every 15–20 min for haemodynamic response"
+        },
+        {
+          "text": "High-Dose Insulin Euglycaemic Therapy (HIET): 1 unit/kg IV bolus of actrapid then 1 unit/kg/h infusion — maintain BG 8–12 mmol/L, check glucose every 15–20 min"
+        },
+        {
+          "text": "Lipid Emulsion Therapy (LET) 20%: 1.5 mL/kg IV bolus over 1 min then 0.25 mL/kg/min for 30–60 min — for refractory cardiac arrest from lipid-soluble agents"
+        },
+        {
+          "text": "Escalation: VA-ECMO for refractory cardiogenic shock — early referral to ECMO-capable centre; do not wait for cardiac arrest before referring"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "HIET — Practical Setup at the Bedside",
+        "steps": [
+          "Prepare: 50% dextrose immediately available, glucometer on 15-min cycle, dedicated nursing resource",
+          "Bolus: actrapid 1 unit/kg IV (e.g., 70 units for 70 kg patient) — monitor closely for hypokalaemia",
+          "Infusion: 1 unit/kg/h — titrate to effect (target MAP ≥65, HR improvement)",
+          "Glucose supplementation: run 10% or 50% dextrose to maintain BG 8–12 mmol/L — glucose requirement varies widely",
+          "Potassium: check every 30–60 min; insulin drives K+ intracellularly — replace aggressively",
+          "Review at 30 min: if no haemodynamic improvement, escalate to lipid emulsion therapy and ECMO referral"
+        ]
+      },
+      "quiz": {
+        "question": "A 60-year-old ingested 20 amlodipine tablets. HR 42, BP 65/40. ECG shows junctional bradycardia. Atropine 3 mg IV has had no effect. What is the most evidence-supported pharmacological intervention?",
+        "options": [
+          "Digoxin 500 mcg IV",
+          "High-dose insulin euglycaemic therapy (1 unit/kg bolus then 1 unit/kg/h)",
+          "Adrenaline 1 mg IV immediately",
+          "Sodium bicarbonate 50 mmol IV"
+        ],
+        "answer_index": 1,
+        "explanation": "HIET is the cornerstone treatment for CCB overdose with haemodynamic compromise. Insulin improves cardiac myocyte metabolism independent of receptor binding. Calcium chloride should also be given. Atropine resistance is expected in severe CCB toxicity."
+      },
+      "source": {
+        "title": "Calcium Channel Blocker Toxicity",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/calcium-channel-blocker-toxicity/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/betablocker/"
+    },
+    {
+      "id": "rct-critical-appraisal",
+      "date": "",
+      "title": "Critical Appraisal of RCTs — The FRCEM Examiner's Framework",
+      "category": "safety",
+      "tags": [
+        "statistics",
+        "EBM",
+        "FRCEM"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "PICO framework: Population, Intervention, Comparator, Outcome — the first question in any appraisal; verify the population is comparable to your patient group"
+        },
+        {
+          "text": "Randomisation adequacy: sequence generation (computer random) vs allocation concealment (sealed envelopes, central allocation) — concealment prevents selection bias; sequence generation alone is insufficient"
+        },
+        {
+          "text": "Blinding hierarchy: unblinded < single-blind < double-blind; note when blinding is impossible (e.g., surgical vs drug trials) and assess risk of performance bias"
+        },
+        {
+          "text": "Intention-to-treat (ITT) analysis: all patients analysed in assigned group regardless of what they received — preserves randomisation, avoids attrition bias; per-protocol analysis inflates efficacy estimates"
+        },
+        {
+          "text": "Absolute Risk Difference (ARD) and NNT: ARD = Control event rate − Treatment event rate; NNT = 1/ARD — more clinically meaningful than relative risk alone"
+        },
+        {
+          "text": "RR vs OR: when event rate is low (<10%), RR approximately equals OR; when events are common, OR overestimates relative risk — always check which is reported"
+        },
+        {
+          "text": "P-value vs 95% CI: CI width indicates precision and clinical significance; a narrow CI crossing the null = definitively no effect; p-value alone tells you nothing about magnitude"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Type I and Type II Errors in Trial Design",
+        "points": [
+          "Type I error (alpha): false positive — declaring an effect that does not exist; convention alpha = 0.05",
+          "Type II error (beta): false negative — missing a real effect; convention beta = 0.2, giving power = 80%",
+          "Sample size: calculated from alpha, power, and minimum clinically important difference (MCID) — small underpowered trials should be interpreted cautiously",
+          "A negative trial (p>0.05) does not mean no effect — it may be underpowered; always inspect the confidence interval",
+          "FRCEM exam tip: calculate NNT from absolute risks, not relative values — examiners specifically test this distinction"
+        ]
+      },
+      "quiz": {
+        "question": "A trial reports that an intervention reduced mortality from 10% to 8%. The relative risk reduction is 20%. What is the Number Needed to Treat (NNT)?",
+        "options": [
+          "5",
+          "20",
+          "50",
+          "100"
+        ],
+        "answer_index": 2,
+        "explanation": "ARD = 10% − 8% = 2% (0.02). NNT = 1/ARD = 1/0.02 = 50. The RRR of 20% sounds impressive but the absolute benefit is modest. Examiners expect candidates to calculate from absolute risks, as NNT depends critically on baseline event rate."
+      },
+      "source": {
+        "title": "Critical Appraisal Tools — Oxford Centre for Evidence-Based Medicine",
+        "publisher": "CEBM Oxford",
+        "url": "https://www.cebm.ox.ac.uk/resources/ebm-tools/critical-appraisal"
+      },
+      "deep_dive_url": "https://litfl.com/evidence-based-medicine-ebm/"
+    },
+    {
+      "id": "diagnostic-test-statistics",
+      "date": "",
+      "title": "Diagnostic Test Statistics — Sensitivity, Specificity, and Likelihood Ratios",
+      "category": "safety",
+      "tags": [
+        "statistics",
+        "EBM",
+        "FRCEM"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "The 2×2 table: rows = disease present/absent, columns = test positive/negative; TP, FP, FN, TN are the building blocks — all statistics derive from this table"
+        },
+        {
+          "text": "Sensitivity = TP/(TP+FN): proportion of diseased patients who test positive; SnNout — high sensitivity RULES OUT disease when the test is negative"
+        },
+        {
+          "text": "Specificity = TN/(TN+FP): proportion of non-diseased patients who test negative; SpPin — high specificity RULES IN disease when the test is positive"
+        },
+        {
+          "text": "PPV and NPV are prevalence-dependent: same test has higher PPV in high-prevalence populations — apply in clinical context, not from paper alone"
+        },
+        {
+          "text": "LR+ = Sensitivity/(1−Specificity): LR+ >10 strongly rules in; LR+ 5–10 moderate; LR− <0.1 strongly rules out; LR− 0.1–0.2 moderate"
+        },
+        {
+          "text": "Fagan nomogram: converts pre-test probability + LR to post-test probability — anchor your clinical estimate first, then apply the test result"
+        },
+        {
+          "text": "ROC curve and AUC: perfect discriminator AUC = 1.0; random = 0.5; AUC >0.8 is considered good diagnostic performance"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Worked Example: CTPA for PE",
+        "points": [
+          "CTPA sensitivity ~83%, specificity ~96% for PE in clinical trials",
+          "LR+ = 0.83/0.04 = 20.75 → strongly rules in PE when positive",
+          "LR− = 0.17/0.96 = 0.18 → only moderately rules out PE when negative",
+          "Pre-test probability 20%: positive CTPA → post-test ~84%; negative CTPA → post-test ~4%",
+          "Pre-test probability 5%: positive CTPA → post-test ~51%; negative CTPA → post-test ~1% — context determines clinical utility"
+        ]
+      },
+      "quiz": {
+        "question": "A new bedside test for PE has sensitivity 92% and specificity 45%. Which statement is correct?",
+        "options": [
+          "A positive result strongly rules in PE",
+          "A negative result can meaningfully contribute to ruling out PE",
+          "The test is only useful when specificity exceeds 90%",
+          "Specificity of 45% makes the test clinically useless"
+        ],
+        "answer_index": 1,
+        "explanation": "LR− = (1−0.92)/0.45 = 0.18 — moderately rules out. High sensitivity (SnNout) means a negative result significantly lowers post-test probability. Low specificity (LR+ ~1.6) means a positive result is not helpful. The negative result still has clinical value."
+      },
+      "source": {
+        "title": "Diagnostic Test Calculator — CEBM",
+        "publisher": "Oxford Centre for Evidence-Based Medicine",
+        "url": "https://www.cebm.ox.ac.uk/resources/ebm-tools/diagnostic-test-calculator"
+      },
+      "deep_dive_url": "https://litfl.com/likelihood-ratio/"
+    },
+    {
+      "id": "meta-analysis-forest-plots",
+      "date": "",
+      "title": "Meta-Analysis and Forest Plots — Reading Pooled Evidence at a Glance",
+      "category": "safety",
+      "tags": [
+        "statistics",
+        "EBM",
+        "meta-analysis"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Forest plot anatomy: each horizontal line = one study (length = CI, box size = weight), diamond at bottom = pooled estimate, vertical line = effect null (OR=1 or RD=0)"
+        },
+        {
+          "text": "Heterogeneity: I² statistic — <25% low, 25–75% moderate, >75% high; high I² means pooling may be misleading; investigate clinical reasons"
+        },
+        {
+          "text": "Fixed-effects model: assumes one true effect size; random-effects model: assumes true effect varies between studies — random-effects gives wider, more conservative CI"
+        },
+        {
+          "text": "Publication bias: funnel plot asymmetry suggests positive studies are overrepresented; Egger test provides statistical assessment of asymmetry"
+        },
+        {
+          "text": "GRADE framework: High → Moderate → Low → Very Low quality of evidence; RCTs start as High but downgraded for bias, inconsistency, indirectness, imprecision"
+        },
+        {
+          "text": "Applying NNT from meta-analysis: use UK baseline event rate, not trial population's — pooled OR of 0.70 means very different things at 1% vs 30% baseline risk"
+        },
+        {
+          "text": "PRISMA checklist and PROSPERO pre-registration: quality markers for a systematic review; dual independent screening reduces selection bias"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "FRCEM Exam Pitfalls in Meta-Analysis Questions",
+        "points": [
+          "The diamond crossing the line of no effect = result is NOT statistically significant — a common exam trap",
+          "Wide CI (long diamond) = imprecise estimate from few or small studies — cannot be applied confidently",
+          "Pooled OR of 0.80 is NOT the same as 20% absolute risk reduction — convert using baseline event rate",
+          "I² >75% means the pooled estimate should be interpreted very cautiously — studies may not be measuring the same construct",
+          "A Cochrane review rated GRADE low quality: results are plausible but certainty is limited — guidelines should acknowledge this"
+        ]
+      },
+      "quiz": {
+        "question": "A meta-analysis of 8 RCTs shows a pooled OR of 0.72 (95% CI 0.55–0.94, I²=68%) for a new antibiotic in sepsis. Which statement is most accurate?",
+        "options": [
+          "Definitive result — OR 0.72 with CI not crossing 1.0 confirms benefit",
+          "High heterogeneity (I²=68%) means the pooled estimate should be interpreted cautiously",
+          "The result is statistically significant therefore clinically significant",
+          "I²=68% means 68% of studies were biased"
+        ],
+        "answer_index": 1,
+        "explanation": "I²=68% indicates substantial heterogeneity — studies may differ in populations, drug doses, or outcomes. While the CI doesn't cross 1.0 (statistically significant), the variability means the true treatment effect may differ substantially in different patient populations. I² measures heterogeneity, not bias."
+      },
+      "source": {
+        "title": "Cochrane Handbook for Systematic Reviews of Interventions",
+        "publisher": "Cochrane",
+        "url": "https://training.cochrane.org/handbook"
+      },
+      "deep_dive_url": "https://litfl.com/forest-plot/"
+    },
+    {
+      "id": "aortic-dissection-diagnosis",
+      "date": "",
+      "title": "Aortic Dissection — ADD-RS, CT Aortogram, and the STEMI Trap",
+      "category": "resus",
+      "tags": [
+        "aortic dissection",
+        "chest pain",
+        "vascular"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Stanford Type A (ascending aorta involved): surgical emergency; mortality 1–2% per hour without intervention"
+        },
+        {
+          "text": "Stanford Type B (descending only): medical management with beta-blocker + analgesia; surgery/TEVAR if complicated by malperfusion or rupture"
+        },
+        {
+          "text": "ADD-RS (Aortic Dissection Detection Risk Score): one point each for high-risk history (abrupt tearing/ripping pain), exam (pulse deficit, BP differential ≥20 mmHg, aortic regurgitation), imaging (mediastinal widening) — score ≥1: CT aortogram"
+        },
+        {
+          "text": "The STEMI trap: inferior STEMI can be caused by Type A dissection occluding the right coronary ostium — thrombolysis is catastrophic; CT aortogram BEFORE any reperfusion therapy if dissection is in the differential"
+        },
+        {
+          "text": "CXR: normal in 12–20% of dissections — mediastinum >8 cm, loss of aortic knuckle, left pleural effusion are supportive but absence does NOT exclude"
+        },
+        {
+          "text": "CT aortogram: investigation of choice, sensitivity/specificity >95% — image from arch to iliac bifurcation; contrast timing is critical"
+        },
+        {
+          "text": "BP and HR control: target systolic 100–120 mmHg and HR <60 — IV labetalol 5–10 mg boluses or esmolol infusion; avoid vasodilators without beta-blockade"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Presentations That Masquerade as Other Diagnoses",
+        "points": [
+          "Neurological: carotid involvement causes stroke/TIA; thrombolysing a dissection presenting as stroke is lethal",
+          "Abdominal pain: mesenteric artery involvement causes gut ischaemia — dissection extends distally",
+          "Limb ischaemia: femoral/iliac involvement — pulseless leg with back pain should raise dissection",
+          "Syncope: aortic root haemopericardium → tamponade — BP differential may be absent early",
+          "Document explicitly: considering and excluding aortic dissection in chest pain is standard medico-legal practice"
+        ]
+      },
+      "quiz": {
+        "question": "A 62-year-old with sudden severe chest pain radiating to the back has BP 170/100 right arm and 140/85 left. ECG shows 2 mm ST elevation in II, III, aVF. What is the safest next step?",
+        "options": [
+          "Thrombolysis — this is an inferior STEMI",
+          "CT aortogram before any reperfusion therapy",
+          "Aspirin 300 mg and heparin bolus",
+          "Bedside echo only and proceed to cath lab"
+        ],
+        "answer_index": 1,
+        "explanation": "Tearing back pain and BP differential strongly suggest aortic dissection with right coronary ostium involvement producing an inferior STEMI pattern. Giving thrombolysis to a dissection causes haemorrhagic death. CT aortogram must come first. Primary PCI with cardiac surgery standing by is the only safe approach if dissection is confirmed."
+      },
+      "source": {
+        "title": "Aortic Dissection — Emergency Management",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/aortic-dissection/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/aortic-dissection/"
+    },
+    {
+      "id": "myasthenic-crisis",
+      "date": "",
+      "title": "Myasthenic Crisis — NIF <20 cmH₂O Means Intubate, Not Watch",
+      "category": "resus",
+      "tags": [
+        "neurology",
+        "myasthenia",
+        "airway"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Myasthenic crisis: severe exacerbation with respiratory muscle failure requiring ventilatory support; common triggers are infection, surgery, and certain drugs"
+        },
+        {
+          "text": "Fatigable weakness: ptosis and diplopia worsening with sustained upgaze, bulbar weakness (dysarthria, dysphagia, nasal speech), proximal limb weakness — all worsen through the day"
+        },
+        {
+          "text": "Respiratory assessment: NIF (negative inspiratory force) — intubation threshold is NIF <20 cmH2O; also VC <1 L or <20 mL/kg; use the 20-30-40 rule as a bedside guide"
+        },
+        {
+          "text": "Cholinergic crisis (excess pyridostigmine): SLUDGE — Salivation, Lacrimation, Urination, Defaecation, GI distress, Emesis + muscle fasciculations — distinguish from myasthenic crisis"
+        },
+        {
+          "text": "Drugs that worsen MG: aminoglycosides, fluoroquinolones, magnesium, beta-blockers, procainamide — avoid or use with extreme caution"
+        },
+        {
+          "text": "Crisis treatment: stop pyridostigmine (may worsen secretions), IVIG 2 g/kg over 2–5 days OR plasma exchange — both equally effective, plasma exchange has faster onset"
+        },
+        {
+          "text": "Lambert-Eaton (LEMS): proximal limb weakness that IMPROVES with repetitive activity (opposite of MG); 60% paraneoplastic SCLC; anti-VGCC antibodies; check CT chest"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "RSI in Myasthenia Gravis — Drug Considerations",
+        "points": [
+          "Suxamethonium resistance: ACh receptor upregulation → may require 1.5–2× dose; response is unpredictable",
+          "Rocuronium sensitivity: prolonged block expected due to reduced ACh receptor reserve — use 0.6 mg/kg or titrate with nerve stimulator",
+          "Sugammadex: reverses rocuronium reliably in MG — have immediately available",
+          "Avoid aminoglycosides perioperatively — they block neuromuscular transmission independently",
+          "Post-extubation: MG patients at high risk of re-intubation — minimum 24h in HDU/ICU after any intubation"
+        ]
+      },
+      "quiz": {
+        "question": "A known myasthenic patient has worsening dysphagia and dysarthria. VC 1.2 L and NIF −18 cmH2O. Which is the correct immediate action?",
+        "options": [
+          "Increase pyridostigmine dose",
+          "Prepare for intubation — NIF below threshold with bulbar symptoms indicates imminent respiratory failure",
+          "Start oral prednisolone 60 mg",
+          "Observe in the ED for 4 hours"
+        ],
+        "answer_index": 1,
+        "explanation": "NIF <20 cmH2O is an intubation threshold in myasthenic crisis. NIF −18 cmH2O combined with VC <1.5 L and bulbar symptoms indicates imminent respiratory failure. Increasing pyridostigmine risks cholinergic crisis. Early elective intubation is far safer than emergency intubation after arrest."
+      },
+      "source": {
+        "title": "Myasthenic Crisis — Emergency Management",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/myasthenic-crisis/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/myasthenia/"
+    },
+    {
+      "id": "anaphylaxis-ng258",
+      "date": "",
+      "title": "Anaphylaxis — NICE NG258, Three Tryptase Samples, and Biphasic Reactions",
+      "category": "resus",
+      "tags": [
+        "anaphylaxis",
+        "adrenaline",
+        "allergy"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Diagnosis (NICE NG258): acute onset + mucocutaneous features ± cardiovascular or respiratory involvement, following likely allergen exposure"
+        },
+        {
+          "text": "Adrenaline 1:1000: 0.5 mg IM (0.5 mL) anterolateral mid-thigh in adults — FIRST treatment always; do NOT delay for antihistamine or steroid; repeat every 5 minutes if no improvement"
+        },
+        {
+          "text": "Paediatric adrenaline doses: >12 years 0.5 mg; 6–12 years 0.3 mg; <6 years 0.15 mg IM — all using 1:1000 preparation"
+        },
+        {
+          "text": "Three mast cell tryptase samples (NG258): 1st at 30–120 min post-onset, 2nd at 3–4h, 3rd baseline >24h or at follow-up — all three are required to confirm diagnosis"
+        },
+        {
+          "text": "Observation period: minimum 6–12h for moderate reactions; 24h if severe, previous biphasic reaction, or laryngeal oedema — biphasic reactions occur in 3–20%, up to 72h later"
+        },
+        {
+          "text": "Steroids NOT recommended routinely in initial management (NICE NG258 2024 update) — no evidence they prevent biphasic reactions; antihistamines also not first-line"
+        },
+        {
+          "text": "Discharge: 2 adrenaline auto-injectors + written action plan + antihistamine/prednisolone course + mandatory allergy referral (NG258 requirement, not optional)"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Refractory Anaphylaxis Protocol",
+        "steps": [
+          "After 2 IM adrenaline doses with no improvement: call for critical care help immediately",
+          "IV adrenaline: ONLY in cardiac arrest (1 mg bolus) OR in expert setting with monitoring (50 mcg boluses titrated)",
+          "Position: supine with legs raised unless airway concern — sitting or standing is linked to empty ventricle syndrome and arrest",
+          "IV fluids: 500 mL–1 L crystalloid bolus for distributive shock — may need up to 5–8 L total",
+          "Refractory vasodilation: vasopressin 1–2 units IV if noradrenaline infusion is insufficient",
+          "Airway: early intubation for laryngeal oedema — oedema progresses rapidly and the window closes"
+        ]
+      },
+      "quiz": {
+        "question": "A 32-year-old develops acute urticaria, lip swelling, and wheeze after eating peanuts. BP 90/60. Which is the correct first drug and route?",
+        "options": [
+          "Chlorphenamine 10 mg IV — antihistamine first",
+          "Hydrocortisone 200 mg IV — steroid to prevent biphasic reaction",
+          "Adrenaline 0.5 mg IM (1:1000) into the anterolateral thigh",
+          "Salbutamol nebuliser 5 mg for the wheeze"
+        ],
+        "answer_index": 2,
+        "explanation": "IM adrenaline is ALWAYS the first-line treatment in anaphylaxis. NICE NG258 is explicit — do not delay adrenaline for antihistamines or steroids. IM into the anterolateral thigh achieves faster absorption than the deltoid. Salbutamol is an adjunct, not a primary treatment for anaphylaxis."
+      },
+      "source": {
+        "title": "Anaphylaxis: assessment and referral after emergency treatment (NG258)",
+        "publisher": "NICE",
+        "url": "https://www.nice.org.uk/guidance/ng258"
+      },
+      "deep_dive_url": "https://litfl.com/anaphylaxis/"
+    },
+    {
+      "id": "meningitis-encephalitis",
+      "date": "",
+      "title": "Meningitis and Encephalitis — Antibiotics Before CT, Always",
+      "category": "resus",
+      "tags": [
+        "meningitis",
+        "encephalitis",
+        "neurology"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Classic triad of bacterial meningitis (headache, neck stiffness, photophobia) is present in only 44% of cases — absence does not exclude the diagnosis"
+        },
+        {
+          "text": "Jolt accentuation test (headache worsening with 2–3 Hz horizontal head rotation): sensitivity 97% for meningism — more sensitive than Kernig's or Brudzinski's"
+        },
+        {
+          "text": "CT before LP indications: GCS <13, focal neurology, papilloedema, new seizure, immunosuppression, known CNS lesion — in ALL other cases, LP first"
+        },
+        {
+          "text": "Antibiotics MUST NOT be delayed for CT: give ceftriaxone 2 g IV (adult) immediately when LP is deferred; delay >30 min worsens mortality"
+        },
+        {
+          "text": "Dexamethasone 0.15 mg/kg IV (max 10 mg) with or just before first antibiotic dose: reduces mortality (NNT ~8) and deafness in bacterial meningitis"
+        },
+        {
+          "text": "HSV encephalitis: temporal lobe involvement on MRI DWI, EEG periodic complexes, CSF PCR; give aciclovir 10 mg/kg IV every 8h empirically while awaiting results"
+        },
+        {
+          "text": "CSF interpretation: bacterial (PMN >100, protein >1 g/L, glucose ratio <0.4), viral (lymphocytes, normal glucose), TB (lymphocytes, very low glucose, high protein)"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Meningitis Action Sequence",
+        "steps": [
+          "Recognition: fever + headache + any neurological sign — assume meningitis until excluded",
+          "Immediate: blood cultures × 2, then ceftriaxone 2 g IV — do NOT wait for CT or LP",
+          "Dexamethasone 10 mg IV simultaneously with or just before first antibiotic dose",
+          "CT head only if one of the indications above is present, then LP — collect 10–15 mL CSF in 3 numbered bottles",
+          "Add aciclovir 10 mg/kg IV if encephalitis features (altered cognition, behavioural change, focal deficit)",
+          "UKHSA notification immediately for confirmed meningococcal — ciprofloxacin 500 mg PO single dose for close contacts"
+        ]
+      },
+      "quiz": {
+        "question": "A 22-year-old has fever 39.2°C, severe headache for 6 hours, and neck stiffness. GCS 15, no focal neurology, no papilloedema. What is the correct sequence?",
+        "options": [
+          "CT head first, then LP if normal, then antibiotics",
+          "LP immediately (no CT indicated), then ceftriaxone + dexamethasone",
+          "Blood cultures then ceftriaxone + dexamethasone immediately, then LP (no CT indication present)",
+          "Oral antibiotics and GP follow-up if clinically stable"
+        ],
+        "answer_index": 2,
+        "explanation": "With GCS 15, no focal neurology, no papilloedema, there is NO indication for CT before LP. Correct sequence: blood cultures → ceftriaxone 2 g IV + dexamethasone → then LP. Do not delay antibiotics even to perform the LP first."
+      },
+      "source": {
+        "title": "Meningitis (bacterial) and meningococcal septicaemia in under 16s (CG102)",
+        "publisher": "NICE",
+        "url": "https://www.nice.org.uk/guidance/cg102"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/meningitis/"
+    },
+    {
+      "id": "life-threatening-rashes",
+      "date": "",
+      "title": "Life-Threatening Rashes — Diagnoses That Cannot Wait for Dermatology",
+      "category": "resus",
+      "tags": [
+        "rash",
+        "sepsis",
+        "dermatology"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Meningococcal septicaemia: non-blanching petechiae/purpura — glass test; benzylpenicillin 1.2 g IV immediately; do not wait for bloods; call critical care now"
+        },
+        {
+          "text": "SJS vs TEN: SJS <10% BSA skin detachment, TEN >30%, overlap 10–30%; positive Nikolsky sign (skin detaches with lateral pressure); mucous membrane involvement is key"
+        },
+        {
+          "text": "SJS/TEN drug causes: allopurinol (most common in UK), carbamazepine, lamotrigine, sulphonamides, oxicam NSAIDs — stop the causative drug immediately"
+        },
+        {
+          "text": "SSSS vs TEN: SSSS — intraepidermal cleavage (superficial, heals well); TEN — subepidermal cleavage (full-thickness, scarring) — skin biopsy differentiates if uncertain"
+        },
+        {
+          "text": "Necrotising fasciitis: pain out of proportion, crepitus, skin blistering, gas on imaging; LRINEC score ≥8 = high risk; immediate surgical referral — imaging must not delay theatre"
+        },
+        {
+          "text": "Toxic Shock Syndrome: Strep TSS (hypotension + soft tissue infection + organ failure); treat with clindamycin (inhibits toxin production) + beta-lactam; remove focus"
+        },
+        {
+          "text": "Purpura fulminans: severe DIC with symmetrical acral necrosis in meningococcal/asplenic patients; FFP and prompt antimicrobials; immediate ICU admission"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "SJS/TEN — ED Management Principles",
+        "points": [
+          "Stop all non-essential drugs immediately — identify the most likely causative drug using a medication timeline",
+          "Fluid resuscitation as for burns patient: substantial losses through denuded skin",
+          "Strict temperature control: patients cannot thermoregulate through damaged skin",
+          "Urgent ophthalmology review: eye involvement is frequent and can cause permanent blindness",
+          "Refer to burns unit or specialist dermatology centre — management complexity equivalent to major burns"
+        ]
+      },
+      "quiz": {
+        "question": "A 45-year-old started allopurinol 6 weeks ago with fever, painful erythema on face and trunk, oral ulcers, and conjunctivitis. Skin detaches when lateral pressure applied. What is the immediate priority?",
+        "options": [
+          "Topical steroids and dermatology outpatient referral",
+          "Stop allopurinol, urgent admission, consider burns/dermatology unit transfer",
+          "IV aciclovir for disseminated herpes simplex",
+          "Emollients and discharge with oral antihistamines"
+        ],
+        "answer_index": 1,
+        "explanation": "This is SJS/TEN — allopurinol is the most common drug cause in the UK. Positive Nikolsky sign + mucosal involvement + drug exposure confirms the diagnosis. Causative drug must be stopped immediately. Specialist inpatient management equivalent to burns care is required."
+      },
+      "source": {
+        "title": "Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/stevens-johnson-syndrome-toxic-epidermal-necrolysis/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/sjs-ten/"
+    },
+    {
+      "id": "hocm-ed-management",
+      "date": "",
+      "title": "HOCM in the ED — What Not to Give Is as Important as What to Give",
+      "category": "resus",
+      "tags": [
+        "HOCM",
+        "cardiomyopathy",
+        "syncope"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Pathophysiology: asymmetric septal hypertrophy → dynamic LVOT obstruction; systolic anterior motion (SAM) of the mitral valve worsens obstruction in high-flow states"
+        },
+        {
+          "text": "ECG: LVH voltage criteria, deep Q waves in lateral (I, aVL) and inferior leads, apical HOCM variant shows giant symmetric T-wave inversion V4–V6 (Yamaguchi pattern)"
+        },
+        {
+          "text": "Clinical: exertional syncope (Valsalva physiology), dyspnoea, angina; crescendo-decrescendo systolic murmur INCREASES with Valsalva and DECREASES with squatting (opposite of fixed AS)"
+        },
+        {
+          "text": "Treatment: beta-blockers (bisoprolol, metoprolol) and verapamil — reduce heart rate, increase diastolic filling time, reduce dynamic obstruction"
+        },
+        {
+          "text": "Contraindicated in HOCM: nitrates, ACE inhibitors, ARBs, diuretics, inotropes — all reduce preload or SVR, worsening obstruction; nitrates can cause catastrophic haemodynamic collapse"
+        },
+        {
+          "text": "Acute decompensation: IV phenylephrine (alpha-agonist) to raise SVR; passive leg raise; IV beta-blockers for rate control; avoid tachycardia absolutely"
+        },
+        {
+          "text": "Sudden cardiac death: leading cause in young UK athletes <35; ICD for survivors of VF, those with family history of SCD, or high-risk feature on cardiac imaging"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "HOCM Murmur — Bedside Manoeuvres",
+        "points": [
+          "Valsalva (straining): reduces venous return → decreased preload → increased obstruction → murmur gets LOUDER",
+          "Squatting: increases venous return → increased preload → decreased obstruction → murmur gets SOFTER",
+          "Standing quickly: same as Valsalva — murmur louder; useful bedside test",
+          "Aortic stenosis: fixed obstruction, murmur relatively unchanged by these manoeuvres",
+          "This dynamic physiology explains why nitrates are so dangerous — they mimic Valsalva by reducing preload"
+        ]
+      },
+      "quiz": {
+        "question": "A 22-year-old footballer collapses during training. ECG shows LVH and deep Q waves in I and aVL. Echo shows asymmetric septal hypertrophy. BP 105/70, HR 110. Which drug should be given?",
+        "options": [
+          "GTN sublingual for possible angina",
+          "Furosemide 40 mg IV for possible pulmonary oedema",
+          "IV metoprolol 5 mg for rate control and obstruction reduction",
+          "Dobutamine infusion for cardiac output support"
+        ],
+        "answer_index": 2,
+        "explanation": "HOCM with tachycardia requires rate reduction to increase diastolic filling and reduce dynamic obstruction. IV beta-blockers achieve this safely. GTN, furosemide, and dobutamine are all contraindicated — they reduce preload or increase contractility/HR, potentially causing fatal haemodynamic collapse."
+      },
+      "source": {
+        "title": "Hypertrophic Obstructive Cardiomyopathy (HOCM)",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/hypertrophic-obstructive-cardiomyopathy-hocm/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/hocm/"
+    },
+    {
+      "id": "carbon-monoxide-poisoning",
+      "date": "",
+      "title": "Carbon Monoxide — The Great Mimic and the SpO2 That Lies",
+      "category": "tox",
+      "tags": [
+        "CO",
+        "poisoning",
+        "HBO"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Mechanism: CO has 240× higher affinity for haemoglobin than O2; COHb shifts O2 dissociation curve left; CO also binds cytochrome oxidase, blocking cellular respiration"
+        },
+        {
+          "text": "Presentation: headache, nausea, cognitive impairment, vomiting — cherry-red skin is a LATE and rare autopsy finding; flu-like illness with no fever is the classic ED presentation"
+        },
+        {
+          "text": "SpO2 pulse oximetry is falsely NORMAL — cannot distinguish COHb from oxyhaemoglobin; only co-oximetry ABG correctly measures COHb level"
+        },
+        {
+          "text": "COHb levels: <10% mild (headache); 10–20% moderate (headache, vomiting); 20–40% severe (confusion, syncope); >40% loss of consciousness, seizures, cardiac arrest"
+        },
+        {
+          "text": "High-flow O2: 100% FiO2 via non-rebreathe mask reduces COHb half-life from ~5h (on air) to 60–90 min — start immediately; continue until COHb <5% and asymptomatic"
+        },
+        {
+          "text": "HBO UK indications: COHb >25%, any loss of consciousness, neurological deficit, cardiac involvement (ECG changes, arrhythmia), pregnancy (any COHb level) — contact national HBO centre"
+        },
+        {
+          "text": "Delayed neurological sequelae (DNS): cognitive and personality changes 2–6 weeks post-exposure; COHb at time of treatment does not predict risk; refer to neurology"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Public Health Actions After CO Presentation",
+        "steps": [
+          "Identify source: faulty boiler, gas appliance, log burner, car exhaust in enclosed space — fire service must attend property",
+          "Household contacts: all present at time of exposure must attend ED for COHb testing regardless of symptoms",
+          "Refer to UKHSA/local public health team for household CO alarm fitting follow-up",
+          "Screen for intentional exposure vs accidental — safeguarding implications if children involved",
+          "Pets: small animals affected earlier than humans — a dead canary or gerbil is a historical but relevant clue",
+          "Document: time of discovery, source, estimated duration of exposure, number of persons affected — all affect prognostication"
+        ]
+      },
+      "quiz": {
+        "question": "A 28-year-old pregnant woman (12 weeks) is brought in from a house with a faulty boiler. She is alert, COHb 18% on co-oximetry ABG. SpO2 is 99% on air. What is the correct management?",
+        "options": [
+          "SpO2 is normal — discharge with CO alarm advice",
+          "High-flow O2 and arrange HBO regardless of COHb level in pregnancy",
+          "Standard O2 therapy only — HBO is contraindicated in pregnancy",
+          "COHb 18% is below HBO threshold — observe and discharge"
+        ],
+        "answer_index": 1,
+        "explanation": "In pregnancy, ANY detectable COHb level is an indication for HBO — fetal haemoglobin has even higher CO affinity and fetal CO elimination is slower. HBO is NOT contraindicated in pregnancy. The apparently normal SpO2 demonstrates the oximetry trap — always use co-oximetry ABG in suspected CO poisoning."
+      },
+      "source": {
+        "title": "Carbon Monoxide Poisoning",
+        "publisher": "Life in the Fast Lane",
+        "url": "https://litfl.com/carbon-monoxide-poisoning/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/co/"
+    },
+    {
+      "id": "brue-paediatric",
+      "date": "",
+      "title": "BRUE — Brief Resolved Unexplained Events: Low-Risk vs High-Risk",
+      "category": "pem",
+      "tags": [
+        "paeds",
+        "BRUE",
+        "infant"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "BRUE definition (AAP 2016): infant <1 year, sudden brief episode <1 minute, now resolved, with no explanation, and ≥1 of: colour change (cyanosis/pallor), irregular/absent breathing, tone change, altered responsiveness"
+        },
+        {
+          "text": "Low-risk criteria (all must be met): age >60 days, gestational age ≥38 weeks, FIRST BRUE, NO CPR required by trained clinician, no concerning features on exam or history"
+        },
+        {
+          "text": "Low-risk BRUE: recommend AGAINST routine bloods, ECG, EEG, imaging, or septic workup — brief observation and parental education is appropriate; this is evidence-based, not negligent"
+        },
+        {
+          "text": "Recurrence rate: 9–14%; serious underlying diagnosis found in up to 5% of all BRUEs — mimics must be excluded by careful history and examination"
+        },
+        {
+          "text": "BRUE mimics: GI causes (30%) — GORD, oesophageal dysmotility; respiratory (12%) — pertussis, RSV; neurological — seizures; cardiac — long QT, SVT; metabolic — hypoglycaemia; child maltreatment (~2–3%)"
+        },
+        {
+          "text": "High-risk features requiring admission and workup: age <60 days, prematurity, recurrent BRUE, CPR given by trained clinician, abnormal exam, concerning social history"
+        },
+        {
+          "text": "Always: consider non-accidental injury, document parental concern, assess feeding and growth, check social circumstances — safeguarding is implicit in every BRUE assessment"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "BRUE Assessment Framework",
+        "steps": [
+          "History: exact sequence of events, witness account, feeding position, duration, recovery — establish BRUE vs not-unexplained",
+          "Examination: weight centile, tone, fontanelle, bruising/petechiae, eye exam — signs of NAI or systemic disease",
+          "Low-risk criteria all met: brief ED observation, parent education on infant CPR, safety netting — no routine investigations required",
+          "High-risk or uncertain: admit, ECG (long QT screen), monitored bed, targeted investigations based on clinical suspicion",
+          "ECG: QTc >460 ms warrants paediatric cardiology review; always calculate corrected QT using Bazett formula",
+          "Safeguarding: BRUE with social concerns, unexplained marks, or implausible history → MASH/CP referral before discharge"
+        ]
+      },
+      "quiz": {
+        "question": "A 3-month-old full-term infant had a 20-second episode of pallor and limpness while feeding, witnessed by the mother. She recovered immediately. First such episode, no CPR given, examination is normal. Which management is most appropriate?",
+        "options": [
+          "Full septic workup and 48h admission",
+          "Discharge with no investigation — this is a low-risk BRUE",
+          "Brief ED observation, parent education on infant CPR, safety netting — no routine investigations",
+          "EEG and head MRI before any discharge decision"
+        ],
+        "answer_index": 2,
+        "explanation": "This meets low-risk BRUE criteria (>60 days, term, first episode, no CPR by clinician, normal exam). AAP 2016 guidelines recommend against routine investigations. Brief observation with parent education and safety-netting is appropriate and evidence-based."
+      },
+      "source": {
+        "title": "Emergency medicine updates: Pediatric brief resolved unexplained event (BRUE)",
+        "publisher": "American Journal of Emergency Medicine",
+        "url": "https://doi.org/10.1016/j.ajem.2025.12.036"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/brief-resolved-unexplained-events/"
+    },
+    {
+      "id": "rocuronium-rsi-dosing",
+      "date": "",
+      "title": "Rocuronium for RSI — Why >1.2 mg/kg Improves First-Pass Success",
+      "category": "resus",
+      "tags": [
+        "RSI",
+        "airway",
+        "rocuronium"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Rocuronium >1.2 mg/kg significantly improves first-attempt intubation success — a 2026 retrospective analysis in ED and ICU settings (Am J Emerg Med, PMID 42385663) confirms this dose-response relationship"
+        },
+        {
+          "text": "Standard intubating dose 1.2 mg/kg (3× ED95): onset 60–90 seconds; the traditional 0.6 mg/kg (1× ED95) is inadequate for RSI — do not use doses <1.2 mg/kg"
+        },
+        {
+          "text": "For maximum onset speed: 1.6 mg/kg provides conditions comparable to suxamethonium 1.5 mg/kg at 90 seconds — use when aspiration risk is highest"
+        },
+        {
+          "text": "Suxamethonium vs rocuronium: suxamethonium 1.5 mg/kg has fastest onset (45–60s) and shortest duration (8–10 min) — preferred for anticipated difficult airway where wake-up may be needed"
+        },
+        {
+          "text": "Rocuronium advantages: no hyperkalaemia risk (safe in burns >24h, denervation, severe AKI), no malignant hyperthermia trigger, no fasciculations"
+        },
+        {
+          "text": "Duration: rocuronium 1.2 mg/kg lasts 35–45 min; 1.6 mg/kg lasts 60–90 min — plan post-intubation sedation before pushing the paralytic"
+        },
+        {
+          "text": "Sugammadex 16 mg/kg IV reverses rocuronium within 3–5 minutes — must be immediately available in every resus bay as the plan B for CICO on rocuronium"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Rocuronium or Suxamethonium — Decision Framework",
+        "points": [
+          "Default for most RSIs: rocuronium 1.2–1.6 mg/kg — fewer absolute contraindications, reversal available with sugammadex",
+          "Choose suxamethonium: known/predicted difficult airway where wake-up is desirable, no hyperkalaemia risk, no MH history",
+          "Absolute suxamethonium contraindications: hyperkalaemia, burns/crush >24h, denervation syndromes, myopathies, personal/FH malignant hyperthermia",
+          "High-risk rocuronium: myasthenia gravis (unpredictable block), severe hepatic failure (prolonged duration)",
+          "KETAMINE-RSI trial (NEJM 2026, PMID 41369227): no mortality difference between ketamine and etomidate — induction drug choice should reflect individual haemodynamics"
+        ]
+      },
+      "quiz": {
+        "question": "A 65-year-old with advanced CKD (K+ 6.2 mmol/L) requires emergency intubation. Which neuromuscular blocking agent is most appropriate?",
+        "options": [
+          "Suxamethonium 1.5 mg/kg — fastest onset",
+          "Rocuronium 1.2 mg/kg — no hyperkalaemia risk, reversible with sugammadex",
+          "Vecuronium 0.1 mg/kg",
+          "No paralytic — awake fibreoptic intubation only"
+        ],
+        "answer_index": 1,
+        "explanation": "Suxamethonium causes rapid K+ release from depolarised muscle — in a patient with K+ 6.2 mmol/L this risks fatal hyperkalaemia and VF. Rocuronium 1.2 mg/kg provides reliable RSI conditions without this risk and can be rapidly reversed with sugammadex 16 mg/kg if needed."
+      },
+      "source": {
+        "title": "Rocuronium dosing for rapid sequence intubation: A retrospective analysis in ED and ICU settings",
+        "publisher": "American Journal of Emergency Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42385663/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/airway/"
+    },
+    {
+      "id": "febrile-infant-60-90-days",
+      "date": "",
+      "title": "Febrile Infant 60–90 Days — IBI Risk 1.1% and How to Stratify",
+      "category": "pem",
+      "tags": [
+        "fever",
+        "infant",
+        "sepsis"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "A 2026 JAMA Pediatrics meta-analysis (PMID 42189531) reports pooled IBI prevalence of 1.11% in well-appearing febrile infants aged 60–90 days — bacteraemia accounts for most; bacterial meningitis is rare"
+        },
+        {
+          "text": "The 60–90 day age group sits between definitely high risk (<60 days) and likely viral (>90 days) — structured risk stratification, not uniform LP/admission, is the evidence-based approach"
+        },
+        {
+          "text": "NICE NG143 and Step-by-Step algorithm: procalcitonin, CRP, ANC, and NICE traffic light appearance all contribute to risk classification in this age group"
+        },
+        {
+          "text": "Low-risk features: well-appearing, procalcitonin <0.5 ng/mL, negative urine dipstick, ANC <10×10⁹/L — can be managed with close safety-netting and early return review"
+        },
+        {
+          "text": "High-risk features: ill-appearing, petechiae, temperature >39°C (>38°C if <3 months), procalcitonin ≥0.5 ng/mL, ANC >10×10⁹/L — warrant blood cultures, urine MC&S, empirical antibiotics"
+        },
+        {
+          "text": "UTI is the most common serious bacterial infection in this age group — catheter specimen urine or suprapubic aspiration is more reliable than dipstick alone in infants"
+        },
+        {
+          "text": "Empirical antibiotic: ceftriaxone 50 mg/kg IV OD covers E. coli and GBS; add ampicillin if Listeria risk; always take cultures before giving antibiotics"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Step-by-Step Risk Stratification for Febrile Infant 60–90 Days",
+        "steps": [
+          "Appearance: ill-appearing = high risk, admit regardless of all other markers",
+          "Urine dipstick: leucocytes/nitrites positive → likely UTI, treat empirically pending cultures",
+          "Procalcitonin: ≥0.5 ng/mL = elevated risk; increases IBI probability significantly",
+          "CRP: >20 mg/L is a red flag in this age group alongside other markers",
+          "ANC: ≥10×10⁹/L = neutrophilia, adds to high-risk classification",
+          "Low risk (all negative, well-appearing): shared decision-making with parents, review at 12–24h, written safety-net advice with clear return guidance"
+        ]
+      },
+      "quiz": {
+        "question": "A 72-day-old well-appearing full-term infant has temperature 38.4°C. Urine dipstick negative, procalcitonin 0.3 ng/mL, CRP 8 mg/L, ANC 6×10⁹/L. What is the most appropriate management?",
+        "options": [
+          "Full septic workup including LP and empirical antibiotics",
+          "Discharge immediately — no risk factors identified",
+          "Apply Step-by-Step criteria: low-risk category may allow discharge with close safety-netting and early review",
+          "Admit for 48 hours observation regardless of risk stratification"
+        ],
+        "answer_index": 2,
+        "explanation": "This infant meets Step-by-Step low-risk criteria (well-appearing, negative urine, procalcitonin <0.5, normal ANC, low CRP). Validated risk stratification allows selective investigation and managed discharge with close follow-up, avoiding over-medicalisation while ensuring safety."
+      },
+      "source": {
+        "title": "Prevalence of Invasive Bacterial Infections Among Febrile Infants Aged 60 to 90 Days",
+        "publisher": "JAMA Pediatrics",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42189531/"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/the-febrile-infant/"
+    },
+    {
+      "id": "pulmonary-embolism-risk-stratification",
+      "date": "",
+      "title": "Pulmonary Embolism — Intermediate-High Risk: When Anticoagulation Alone Is Not Enough",
+      "category": "resus",
+      "tags": [
+        "PE",
+        "embolism",
+        "POCUS"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "PE risk stratification: massive (cardiac arrest/refractory shock) → thrombolyse or ECMO; intermediate-high (RV dysfunction + troponin rise, haemodynamically stable) → escalation consideration; low risk (sPESI 0) → outpatient DOAC"
+        },
+        {
+          "text": "STORM-PE RCT (Circulation 2026, PMID 41183181): catheter-directed aspiration/vacuum thrombectomy (CAVT) vs anticoagulation alone — CAVT superior for RV/LV ratio reduction at 48h with comparable adverse events"
+        },
+        {
+          "text": "POCUS for PE: RV:LV ratio >1.0 in 4-chamber view, D-sign (septal flattening), McConnell sign (RV free wall akinesis with spared apex) — confirm RV dysfunction and escalate risk tier"
+        },
+        {
+          "text": "Thrombolysis (alteplase 100 mg over 2h): for massive PE only; PEITHO trial shows intermediate-risk thrombolysis increases major bleeding and stroke — NOT routine practice"
+        },
+        {
+          "text": "DOAC outpatient PE: sPESI 0 + HESTIA criteria met → outpatient apixaban 10 mg BD for 7 days then 5 mg BD is safe; admission does not improve outcomes in sPESI 0-1 (PMID 42313763)"
+        },
+        {
+          "text": "PE response team: intermediate-high risk PE requires multidisciplinary input (cardiology, interventional radiology, haematology) — most UK centres now have dedicated PE response teams"
+        },
+        {
+          "text": "All PE: anticoagulate immediately with LMWH or DOAC loading dose before/during imaging confirmation unless haemorrhagic contraindication"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "PE Risk Stratification to Treatment Pathway",
+        "steps": [
+          "Haemodynamic instability (SBP <90 or cardiac arrest)? Yes → massive PE: systemic thrombolysis 100 mg alteplase over 2h (50 mg if in arrest)",
+          "Stable but RV dysfunction on echo + elevated troponin? → Intermediate-high: anticoagulate, HDU, activate PE response team for CAVT discussion",
+          "Stable, no RV dysfunction, troponin negative? → Intermediate-low: anticoagulate and observe",
+          "sPESI 0 + HESTIA criteria met? → Low risk: outpatient DOAC, apixaban 10 mg BD for 7 days",
+          "All PE: anticoagulate before imaging completion if clinical diagnosis is strong",
+          "CTPA remains gold standard; VQ scan preferred in CKD/contrast allergy"
+        ]
+      },
+      "quiz": {
+        "question": "A 55-year-old has confirmed PE on CTPA. HR 108, BP 118/76, SpO2 94% on 2L O2. Echo shows RV:LV ratio 1.3 and D-sign. Troponin I elevated at 120 ng/L. Which is most appropriate?",
+        "options": [
+          "Systemic thrombolysis (alteplase 100 mg IV over 2 hours) immediately",
+          "Discharge with DOAC — sPESI likely 0",
+          "Intermediate-high risk PE: anticoagulate, HDU admission, activate PE response team for CAVT consideration",
+          "Repeat echo in 24h then decide"
+        ],
+        "answer_index": 2,
+        "explanation": "RV dysfunction (RV:LV >1.0) with elevated troponin = intermediate-high risk PE. Patient is haemodynamically stable so immediate thrombolysis is not indicated (PEITHO: increased bleeding without mortality benefit in this subgroup). Anticoagulation, close monitoring, and PE team for possible CAVT is correct."
+      },
+      "source": {
+        "title": "STORM-PE Trial — Mechanical Thrombectomy vs Anticoagulation in Intermediate-High Risk PE",
+        "publisher": "Circulation",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41183181/"
+      },
+      "deep_dive_url": "https://www.thebottomline.org.uk/summaries/icm/storm-pe/"
+    },
+    {
+      "id": "sepsis-surviving-sepsis-2026",
+      "date": "",
+      "title": "Sepsis 2026 — Updated Guidelines, Capillary Refill Targets, and Vasopressor Escalation",
+      "category": "resus",
+      "tags": [
+        "sepsis",
+        "antibiotics",
+        "resuscitation"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Sepsis definition (Sepsis-3): life-threatening organ dysfunction caused by dysregulated host response to infection — SOFA score ≥2 change from baseline; qSOFA ≥2 for rapid screening outside ICU"
+        },
+        {
+          "text": "Hour-1 bundle: blood cultures × 2 before antibiotics, IV antibiotics within 1 hour for septic shock, crystalloid for hypotension or lactate ≥4, vasopressors if MAP <65 after fluids, remeasure lactate"
+        },
+        {
+          "text": "ANDROMEDA-SHOCK-2 RCT (JAMA 2025, PMID 41159835): capillary refill time (CRT)-guided personalised resuscitation was superior to usual care — CRT is now validated as a resuscitation target alongside MAP and lactate"
+        },
+        {
+          "text": "Antibiotic choice: piperacillin/tazobactam (Tazocin) 4.5 g IV TDS or meropenem 1 g IV TDS for undifferentiated septic shock; escalate to meropenem if ESBL risk or no response at 48h"
+        },
+        {
+          "text": "Vasopressor sequence (Surviving Sepsis 2026): noradrenaline first-line; add vasopressin 0.03 units/min when noradrenaline ≥0.25 mcg/kg/min; hydrocortisone 200 mg/day for refractory shock"
+        },
+        {
+          "text": "Fluid strategy 2026: against fixed 30 mL/kg bolus in all patients — dynamic assessment (passive leg raise, pulse pressure variation) preferred; avoid fluid overload"
+        },
+        {
+          "text": "Source control within 6–12 hours of identification (drain abscess, remove infected device) — delay beyond 12h independently associated with worse outcomes"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "ED Septic Shock Resuscitation Algorithm",
+        "steps": [
+          "0–15 min: recognise (NEWS2 ≥7, lactate ≥2, suspected infection), blood cultures × 2, broad-spectrum antibiotics immediately",
+          "0–30 min: 250–500 mL crystalloid boluses with reassessment after each; MAP target ≥65 mmHg",
+          "If MAP <65 after 1–2 L crystalloid: start noradrenaline via peripheral IV (up to 1–2h peripherally while CVC placed)",
+          "Reassess dynamically: CRT, HR, MAP, lactate, urine output — dynamic measures outperform static CVP",
+          "Escalating vasopressor need (noradrenaline >0.25 mcg/kg/min): add vasopressin 0.03 units/min + hydrocortisone 200 mg/24h",
+          "Source control: identify and treat source within 12h; imaging to exclude drainable collection"
+        ]
+      },
+      "quiz": {
+        "question": "A 70-year-old with suspected urinary source sepsis has MAP 58 despite 1.5 L crystalloid. HR 118, CRT 5 seconds, lactate 4.2 mmol/L. What is the next most important intervention?",
+        "options": [
+          "Give another 1 L crystalloid bolus before considering vasopressors",
+          "Start noradrenaline targeting MAP ≥65 mmHg",
+          "Await blood culture results before starting antibiotics",
+          "Give furosemide 40 mg IV to prevent fluid overload"
+        ],
+        "answer_index": 1,
+        "explanation": "This is septic shock with persistent hypotension after adequate fluid resuscitation and a rising lactate. Noradrenaline is the first-line vasopressor and should start without further delay. Antibiotics should already have been given. Furosemide is absolutely contraindicated in distributive shock."
+      },
+      "source": {
+        "title": "Surviving Sepsis Campaign: International Guidelines 2026",
+        "publisher": "Critical Care Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41869847/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/sepsis/"
+    },
+    {
+      "id": "paediatric-septic-shock-fluids",
+      "date": "",
+      "title": "Paediatric Septic Shock Fluids — SQUEAKY Trial: Balanced Crystalloid or Saline?",
+      "category": "pem",
+      "tags": [
+        "paeds",
+        "sepsis",
+        "fluids"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "PALISI SQUEAKY trial (NEJM 2026, PMID 42028918): 47 EDs across 5 countries, children with septic shock — balanced crystalloid vs 0.9% saline — NO significant difference in death, new RRT, or persistent kidney dysfunction"
+        },
+        {
+          "text": "The theoretical harm of normal saline (hyperchloraemic metabolic acidosis, renal vasoconstriction) did not translate to clinical outcome difference in this large paediatric study"
+        },
+        {
+          "text": "Adult data (SMART, SALT-ED): balanced crystalloids showed modest AKI benefits in adults — still used preferentially in adults; paediatric evidence is now less clear-cut"
+        },
+        {
+          "text": "Current practice post-SQUEAKY: either fluid type is acceptable in paediatric septic shock; use what is available; never delay resuscitation to obtain balanced crystalloid"
+        },
+        {
+          "text": "Volume matters more than type: reassess after every 10 mL/kg bolus; total 40–60 mL/kg before vasopressor consideration; watch for fluid overload (hepatomegaly, crackles, gallop rhythm)"
+        },
+        {
+          "text": "Children with CHD, DKA, or severe malnutrition: follow disease-specific pathways — standard fluid bolus approach does NOT apply"
+        },
+        {
+          "text": "Vasopressors in paediatric septic shock: adrenaline first-line for warm distributive shock; noradrenaline reasonable; dopamine no longer recommended as first-line (NEJM)"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Monitoring Fluid Response in Children",
+        "points": [
+          "HR, capillary refill time (<2s normal, 3–5s delayed, >5s very prolonged), skin mottling, peripheral vs central temperature gap",
+          "AVPU or GCS: improving neurological status after fluid suggests adequate perfusion improvement",
+          "Liver edge palpation: tender hepatomegaly or increased liver span suggests right heart fluid overload",
+          "Lactate: >4 mmol/L higher risk; trend more important than single value; aim to clear lactate over 6h",
+          "Urine output: >0.5–1 mL/kg/h in children; absence after 40 mL/kg + vasopressors = RRT discussion"
+        ]
+      },
+      "quiz": {
+        "question": "A 5-year-old with septic shock has received 20 mL/kg Plasmalyte. HR 155, CRT 4 seconds. Only 0.9% saline is available. What is the correct approach?",
+        "options": [
+          "Delay resuscitation until Plasmalyte is obtained — saline causes renal injury",
+          "Give next bolus of 10 mL/kg 0.9% saline — SQUEAKY trial shows no outcome difference",
+          "Switch to albumin — 0.9% saline is contraindicated in children",
+          "Start vasopressors now — 20 mL/kg is the maximum safe bolus"
+        ],
+        "answer_index": 1,
+        "explanation": "The SQUEAKY trial (NEJM 2026) found no significant difference between balanced crystalloid and 0.9% saline in paediatric septic shock. Clinical resuscitation should never be delayed for fluid type. Continue with available fluid and reassess after each bolus."
+      },
+      "source": {
+        "title": "Balanced Fluid or 0.9% Saline in Children Treated for Septic Shock",
+        "publisher": "New England Journal of Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42028918/"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/septic-shock-in-children/"
+    },
+    {
+      "id": "major-haemorrhage-protocol",
+      "date": "",
+      "title": "Major Haemorrhage — MHP Activation, 1:1:1 Ratios, and the Whole Blood Trial",
+      "category": "trauma",
+      "tags": [
+        "haemorrhage",
+        "blood",
+        "trauma"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "MHP activation criteria: SBP <90, HR >120, transfusion >4 units pRBC in 4h, or clinical exsanguination — activate early; blood products lose the race to crystalloid if called late"
+        },
+        {
+          "text": "1:1:1 ratio (pRBC:FFP:platelets): haemostatic resuscitation addresses coagulopathy from the outset — standard UK MHP practice; avoid large-volume crystalloid which worsens dilutional coagulopathy"
+        },
+        {
+          "text": "Prehospital whole blood RCT (NEJM 2026, PMID 41841706, NHS Blood and Transplant): 2 units prehospital whole blood vs standard care — primary outcome (death/massive transfusion at 24h) NOT significantly different"
+        },
+        {
+          "text": "FFP-first approach (J Trauma 2026, PMID 42275580): FFP as first product in MHP independently associated with improved survival — supports FFP-first over pRBC-first strategy in MHP"
+        },
+        {
+          "text": "Viscoelastic assays (TEG/ROTEM): guides targeted factor replacement; fibrinogen concentrate for hypofibrinogenaemia; increasingly available at UK major trauma centres"
+        },
+        {
+          "text": "Permissive hypotension (SBP 80–90 mmHg) until surgical haemostasis: reduce crystalloid before haemorrhage control; AVOID permissive hypotension if TBI is concurrent — target MAP ≥80"
+        },
+        {
+          "text": "Calcium replacement: packed red cells contain citrate; give calcium chloride 10 mL 10% IV after every 4 units of blood products to maintain ionised Ca ≥1.1 mmol/L"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "MHP Activation — Initial Steps",
+        "steps": [
+          "Activate MHP: call blood bank with patient ID and MHP activate — ensure crossmatch blood or O-neg ready",
+          "Pack 1: 4 units pRBC + 4 units FFP — administer simultaneously",
+          "Mechanical haemostasis: tourniquet or wound packing for compressible haemorrhage — do this first",
+          "TXA 1g IV over 10 min within 3h of injury — give concurrently",
+          "Calcium chloride 10 mL 10% IV after every 4 units of blood products",
+          "Target: ionised Ca ≥1.1, fibrinogen ≥1.5 g/L — give cryoprecipitate or fibrinogen concentrate if low"
+        ]
+      },
+      "quiz": {
+        "question": "A 25-year-old stab wound victim has SBP 82, HR 132 after 1L crystalloid. MHP activated. Which statement about blood product ratios is correct?",
+        "options": [
+          "Give 4 more litres of crystalloid before releasing blood products",
+          "pRBC only until haemostasis achieved — FFP delays red cell delivery",
+          "1:1:1 pRBC:FFP:platelets from MHP pack is the standard haemostatic approach",
+          "Whole blood is proven superior and should be the first product"
+        ],
+        "answer_index": 2,
+        "explanation": "1:1:1 haemostatic resuscitation is the standard UK MHP practice. Large-volume crystalloid worsens dilutional coagulopathy. Prehospital whole blood showed non-inferiority but not superiority in the 2026 NHS NEJM trial. FFP-first has some supporting evidence but standard MHP packs deliver 1:1:1 simultaneously."
+      },
+      "source": {
+        "title": "Prehospital Whole Blood in Traumatic Hemorrhage — A Randomized Controlled Trial",
+        "publisher": "New England Journal of Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41841706/"
+      },
+      "deep_dive_url": "https://www.thebottomline.org.uk/summaries/prehospital-whole-blood/"
+    },
+    {
+      "id": "pocus-dyspnoea-ed",
+      "date": "",
+      "title": "POCUS for Acute Dyspnoea — Early Diagnostic Certainty at the Bedside",
+      "category": "resus",
+      "tags": [
+        "POCUS",
+        "ultrasound",
+        "dyspnoea"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": false,
+      "bullets": [
+        {
+          "text": "POCUS-driven pathway (Eur J Emerg Med 2026, PMID 41870288): increases early diagnostic certainty in ED dyspnoea; higher concordance between initial and final diagnosis in the POCUS-first group"
+        },
+        {
+          "text": "Lung POCUS for APO: bilateral B-lines (>3 per zone in ≥3 zones bilaterally) — sensitivity 85%, specificity 92% for acute pulmonary oedema vs COPD/asthma"
+        },
+        {
+          "text": "Lung sliding present: pneumothorax excluded at probe position (100% NPV); absent sliding: possible pneumothorax — confirm with M-mode (seashore vs stratosphere sign)"
+        },
+        {
+          "text": "International POCUS lung ultrasound update (ICM 2026, PMID 42257880): now recommended as first-line in acute dyspnoea in experienced hands, before CXR"
+        },
+        {
+          "text": "Cardiac windows: assess LV function, RV:LV ratio, pericardial effusion; 4-chamber view guides real-time fluid management and disposition decisions"
+        },
+        {
+          "text": "IVC assessment: <1 cm collapsing with inspiration = volume-responsive; >2 cm non-collapsing = consider tamponade, RV failure, or tension pneumothorax in context"
+        },
+        {
+          "text": "POCUS does NOT replace formal echo: documents point-of-care answer to specific questions — document what was asked and found; label clips with date, patient ID, view"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Lung POCUS Zones and Interpretation",
+        "points": [
+          "8-zone protocol: 2 anterior + 2 lateral per side; A-lines = normal aeration or pneumothorax (contextual)",
+          "B-lines (rocket sign): vertical hyperechoic lines reaching screen edge, erasing A-lines, moving with lung = interstitial fluid",
+          "Consolidation: tissue-like echogenicity replacing aerated lung; dynamic air bronchogram = pneumonia (vs static = obstruction)",
+          "Free pleural fluid: anechoic space between chest wall and lung — easily measurable, guide for thoracocentesis",
+          "Combine cardiac + lung + IVC views for maximum diagnostic yield in undifferentiated dyspnoea"
+        ]
+      },
+      "quiz": {
+        "question": "A 72-year-old in respiratory distress has bilateral B-lines in 6 of 8 zones, dilated non-collapsing IVC, and severely impaired LV systolic function on POCUS. Which diagnosis and treatment is correct?",
+        "options": [
+          "Pneumonia — give IV antibiotics",
+          "Acute cardiogenic pulmonary oedema — IV furosemide 40–80 mg and GTN",
+          "Tension pneumothorax — immediate needle decompression",
+          "Pulmonary embolism — start anticoagulation"
+        ],
+        "answer_index": 1,
+        "explanation": "Bilateral B-lines + impaired LV + dilated IVC = acute cardiogenic pulmonary oedema. Immediate treatment: IV furosemide and GTN. POCUS allows this diagnosis within 2 minutes. Tension pneumothorax shows absent lung sliding with no B-lines. PE would show RV strain, not LV dysfunction."
+      },
+      "source": {
+        "title": "International evidence-based recommendations for point-of-care lung ultrasound: 2025 focused update",
+        "publisher": "Intensive Care Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42257880/"
+      },
+      "deep_dive_url": "https://litfl.com/pocus-for-dyspnoea/"
+    },
+    {
+      "id": "ugib-ed-management",
+      "date": "",
+      "title": "Upper GI Bleeding — Glasgow-Blatchford, Lactate, and When to Scope Urgently",
+      "category": "resus",
+      "tags": [
+        "GI bleed",
+        "haemorrhage",
+        "endoscopy"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "UGIB mortality predictors (J Emerg Med 2026, PMID 41863907): admission lactate, haemodynamic instability, and active endoscopic bleeding are the strongest early ED mortality predictors — integrate with Glasgow-Blatchford Score"
+        },
+        {
+          "text": "Glasgow-Blatchford Score (GBS): ≤1 = very low risk, suitable for outpatient endoscopy; ≥12 = high risk, urgent endoscopy within 12–24h; calculates from Urea, Hb, SBP, HR, melaena, syncope, liver disease, heart failure"
+        },
+        {
+          "text": "Haemodynamic resuscitation: pRBC transfusion target Hb >70 g/L (>80 g/L if cardiovascular disease); restrictive transfusion strategy associated with better outcomes in UGIB"
+        },
+        {
+          "text": "IV PPI: pantoprazole or omeprazole 40 mg IV before endoscopy — reduces high-risk endoscopic stigmata; does NOT reduce mortality but reduces re-bleeding and surgery need"
+        },
+        {
+          "text": "Terlipressin 2 mg IV (variceal bleed): first-line vasoactive drug for suspected variceal haemorrhage; continue 1 mg QDS for up to 5 days; ceftriaxone 1 g IV OD mandatory for SBP prophylaxis"
+        },
+        {
+          "text": "Sengstaken-Blakemore or Minnesota tube: balloon tamponade for uncontrolled variceal bleeding as a bridge to TIPSS — last resort, risk of oesophageal necrosis and aspiration"
+        },
+        {
+          "text": "Document medication review explicitly: NSAIDs, aspirin (unless specific cardiac indication), anticoagulants, and steroids should not be initiated empirically in acute UGIB"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "UGIB Pathway — Variceal vs Non-Variceal",
+        "steps": [
+          "Stabilise: 2 large-bore IVs, group and screen, consider early intubation for GCS ≤8 or massive ongoing haemorrhage before endoscopy",
+          "Non-variceal: IV PPI, transfuse to Hb ≥70, GBS ≥12 or haemodynamic instability → urgent endoscopy within 12h",
+          "Variceal suspected (cirrhosis, portal hypertension signs): terlipressin + ceftriaxone immediately, GI/hepatology referral",
+          "GBS 0–1: discharge with outpatient endoscopy in 24–72h — validated as safe and cost-effective",
+          "Anticoagulated patients: do not routinely reverse unless life-threatening haemorrhage — discuss haematology",
+          "Post-endoscopy: Forrest class Ia/Ib (active bleeding) or IIa (visible vessel) → endoscopic therapy + admit"
+        ]
+      },
+      "quiz": {
+        "question": "A 58-year-old with known cirrhosis presents with haematemesis, HR 118, BP 92/60. Lactate 5.8 mmol/L. Which is the most important immediate pharmacological intervention?",
+        "options": [
+          "IV PPI (pantoprazole 40 mg)",
+          "Terlipressin 2 mg IV and ceftriaxone 1 g IV",
+          "Vasopressin 20 units IV bolus",
+          "FFP for coagulopathy correction"
+        ],
+        "answer_index": 1,
+        "explanation": "In a cirrhotic with haematemesis and shock, variceal haemorrhage must be assumed. Terlipressin reduces portal pressure and variceal bleeding. Ceftriaxone prophylaxis is mandatory — infection-related mortality is significant in variceal bleeding. IV PPI is not the priority here."
+      },
+      "source": {
+        "title": "Emergency Department Predictors of Mortality in Upper GI Bleeding",
+        "publisher": "Journal of Emergency Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41863907/"
+      },
+      "deep_dive_url": "https://litfl.com/upper-gi-bleeding/"
+    },
+    {
+      "id": "paediatric-musculoskeletal-analgesia",
+      "date": "",
+      "title": "Paediatric MSK Analgesia — Ibuprofen Alone Is Sufficient; Opioids Add Harm",
+      "category": "pem",
+      "tags": [
+        "paeds",
+        "analgesia",
+        "MSK"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": false,
+      "bullets": [
+        {
+          "text": "JAMA 2026 RCT (PMID 41505155): in children with acute non-operative MSK injury — ibuprofen plus paracetamol did NOT improve pain at 60 min vs ibuprofen alone; adverse events were 4× higher with hydromorphone"
+        },
+        {
+          "text": "Ibuprofen 10 mg/kg PO (max 400 mg) is first-line for paediatric MSK injury — start at triage before doctor review when possible"
+        },
+        {
+          "text": "Adding paracetamol 15 mg/kg provides no additional analgesia in acute fracture/sprain at 60 min — may still be used for antipyresis or home analgesia after discharge"
+        },
+        {
+          "text": "Oral opioids: no clinically meaningful benefit over ibuprofen alone for non-operative MSK injury, with 4× more adverse events (vomiting, sedation) — avoid routinely"
+        },
+        {
+          "text": "Reserve IV morphine or oral oxycodone for: severe pain, operative fractures, or when oral route is unavailable — use with consent and monitoring"
+        },
+        {
+          "text": "Intranasal fentanyl 1.5 mcg/kg: effective procedural analgesia for fracture reduction without IV access — onset 5–10 min"
+        },
+        {
+          "text": "Regional anaesthesia in the paediatric ED: femoral nerve block for femoral fractures, haematoma block for radius — increasingly available, opioid-sparing, evidence-based"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "Pain Assessment and Triage Analgesia in Children",
+        "points": [
+          "Pain assessment tools: <4 years FLACC scale, 4–12 years Faces scale, >12 years NRS 0–10",
+          "Triage analgesia: empower nurses to administer paracetamol/ibuprofen at triage — reduces time-to-analgesia from ~60 to ~15 minutes",
+          "Splinting before X-ray: reduces pain and distress without interfering with the diagnostic image",
+          "COMFORT measures: distraction, positioning, carer presence — non-pharmacological analgesia is evidence-based",
+          "Discharge: alternating NSAID + paracetamol every 4h is an effective home regimen; codeine NOT recommended in children <12 (CYP2D6 ultra-metaboliser risk)"
+        ]
+      },
+      "quiz": {
+        "question": "A 9-year-old has a closed radius fracture. Pain score 7/10. No IV access yet. Which analgesic regimen is most evidence-based for the ED?",
+        "options": [
+          "Wait for IV access before giving any analgesia",
+          "Oral ibuprofen 10 mg/kg — as effective as combination therapy for acute paediatric fracture pain",
+          "Oral codeine 1 mg/kg — standard opioid for paediatric fractures",
+          "Oral paracetamol + ibuprofen simultaneously — combination superior to either alone"
+        ],
+        "answer_index": 1,
+        "explanation": "JAMA 2026 (PMID 41505155) showed ibuprofen alone was as effective as ibuprofen + paracetamol or ibuprofen + opioid in paediatric MSK injury, with fewer adverse events. Codeine is not recommended in children under 12. Combination analgesia is not superior and adds side effects."
+      },
+      "source": {
+        "title": "Acetaminophen or Opioid Analgesia Added to Ibuprofen for Children's Musculoskeletal Injury",
+        "publisher": "JAMA",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41505155/"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/pain-management-in-children/"
+    },
+    {
+      "id": "rib-fracture-regional-anaesthesia",
+      "date": "",
+      "title": "Rib Fractures — Serratus Anterior Plane Block and Regional Analgesia in the ED",
+      "category": "trauma",
+      "tags": [
+        "regional anaesthesia",
+        "rib fracture",
+        "analgesia"
+      ],
+      "difficulty": "advanced",
+      "status": "published",
+      "frcem_relevant": false,
+      "bullets": [
+        {
+          "text": "SAPB RCT (Acad Emerg Med 2026, PMID 42159402): SAPB added to usual care produced statistically significant pain improvement in ED patients with rib fractures — safe and feasible by emergency physicians"
+        },
+        {
+          "text": "SAPB anatomy: LA injected deep to serratus anterior at the midaxillary line — blocks lateral cutaneous branches of intercostal nerves T2–T9; covers the lateral chest wall where rib fractures are most common"
+        },
+        {
+          "text": "Rib fracture complications: inadequate analgesia leads to splinting, reduced respiratory effort, retained secretions, and pneumonia — especially dangerous in the elderly and those with ≥3 fractures"
+        },
+        {
+          "text": "Elderly rib fractures: mortality increases ~19% per additional rib fracture; flail chest (3+ consecutive ribs fractured in ≥2 places) = paradoxical breathing → NIV or intubation"
+        },
+        {
+          "text": "Multimodal analgesia: regular paracetamol 1 g QDS + regular NSAID (if not contraindicated) + thoracic regional block + PRN opioid — avoid opioid monotherapy"
+        },
+        {
+          "text": "Incentive spirometry and respiratory physiotherapy: mandatory post-rib fractures — deep breathing, coughing technique, early mobilisation; reduces pneumonia from 10% to ~3% in RCTs"
+        },
+        {
+          "text": "CT chest for all significant rib fractures: detects pneumothorax (30% missed on erect CXR), haemothorax, pulmonary contusion, aortic injury — never rely solely on CXR in high-mechanism trauma"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "SAPB Technique at the Bedside",
+        "steps": [
+          "Position: lateral decubitus or sitting; POCUS high-frequency linear probe in coronal plane at 4th–6th rib level midaxillary line",
+          "Identify: ribs → intercostal muscles → serratus anterior muscle (superficial to ribs, diagonal fibres), latissimus dorsi (more superficial)",
+          "In-plane needle approach: insert anterior to posterior, advance to deep surface of serratus anterior muscle",
+          "Confirm correct plane: inject 1–2 mL LA and observe spread between serratus and intercostal muscle (hydrodissection)",
+          "Volume: 20–30 mL levobupivacaine 0.25% or bupivacaine 0.25% total — covers multiple dermatomes",
+          "Onset 15–30 min; duration 6–12h; catheter can be placed for continuous infusion in severe cases"
+        ]
+      },
+      "quiz": {
+        "question": "A 72-year-old has 4 rib fractures (6th–9th left) after a fall. Pain 8/10 on inspiration, SpO2 93% on 4L O2. What is the optimal analgesia strategy?",
+        "options": [
+          "IV morphine PCA alone — fastest onset",
+          "Oral codeine plus paracetamol — standard combination",
+          "Multimodal: paracetamol + NSAID + SAPB ultrasound-guided + PRN opioid + respiratory physiotherapy",
+          "Reassure and discharge — CXR shows no pneumothorax"
+        ],
+        "answer_index": 2,
+        "explanation": "4 rib fractures in an elderly patient with SpO2 93% is a serious injury. Multimodal analgesia including SAPB is evidence-based (PMID 42159402). Opioid monotherapy increases sedation and respiratory depression — the opposite of what is needed. CT chest is required to exclude occult injuries."
+      },
+      "source": {
+        "title": "Serratus Anterior Plane Block for Acute Rib Fractures in the Emergency Department",
+        "publisher": "Academic Emergency Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42159402/"
+      },
+      "deep_dive_url": "https://emcrit.org/ibcc/rib-fractures/"
+    },
+    {
+      "id": "paediatric-asthma-ed",
+      "date": "",
+      "title": "Paediatric Asthma in the ED — One Dose of Dexamethasone Is Probably Enough",
+      "category": "pem",
+      "tags": [
+        "paeds",
+        "asthma",
+        "steroids"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Dexamethasone 0.15–0.6 mg/kg PO (max 10 mg) is the preferred oral corticosteroid for paediatric asthma — better palatability than prednisolone, fewer vomiting episodes"
+        },
+        {
+          "text": "Single vs two doses (Ann Emerg Med 2026, PMID 41575401): nearly two-thirds of children received 2 doses; two doses NOT associated with improved outcomes — a single dose of dexamethasone may be sufficient for most children"
+        },
+        {
+          "text": "Salbutamol 2.5–5 mg (weight-based) nebulised every 20 min for first hour in moderate-severe attack; MDI + spacer is equivalent or superior to nebulised in mild-moderate attacks"
+        },
+        {
+          "text": "Ipratropium bromide 250 mcg (up to 500 mcg in >12 years) with first 3 salbutamol nebulisers — reduces admission rate in moderate-severe attacks (NNT ~8)"
+        },
+        {
+          "text": "IV magnesium sulphate 40 mg/kg (max 2 g) over 20 min: use in severe/life-threatening attacks or no response to initial nebulisers — reduces admission rate (NNT 5–6)"
+        },
+        {
+          "text": "Life-threatening features: SpO2 <92% on O2, silent chest, exhaustion, altered consciousness, cyanosis — call anaesthetics immediately; never sedate without intubation equipment ready"
+        },
+        {
+          "text": "Azithromycin for preschool wheeze (NEJM 2026, PMID 42149992): NO benefit over placebo for acute wheezing in preschoolers — do not prescribe macrolides for viral wheeze"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Severity Scoring and Step-Up Treatment",
+        "steps": [
+          "Mild: SpO2 ≥95%, mild wheeze, talking in sentences — salbutamol MDI/spacer × 4 puffs, oral dexamethasone 0.15 mg/kg single dose",
+          "Moderate: SpO2 92–95%, moderate wheeze, sentences interrupted — salbutamol + ipratropium nebulised × 3 over 60 min, dexamethasone, IV access",
+          "Severe: SpO2 <92%, severe wheeze, words only — back-to-back nebs + ipratropium, IV MgSO4 40 mg/kg, continuous monitoring, anaesthetic review",
+          "Life-threatening: silent chest, exhaustion, altered consciousness — immediate anaesthetic/ITU, consider heliox, prepare for intubation",
+          "Discharge criteria: SpO2 ≥95% on room air for ≥1h, no wheeze, tolerating oral fluids, education — spacer + written action plan"
+        ]
+      },
+      "quiz": {
+        "question": "A 7-year-old with moderate asthma has received three salbutamol nebulisers and ipratropium. SpO2 93% on 4L O2. Which is the next most appropriate intervention?",
+        "options": [
+          "Azithromycin 10 mg/kg orally — possible bacterial trigger",
+          "IV magnesium sulphate 40 mg/kg over 20 minutes",
+          "Increase salbutamol to 10 mg nebulised every 5 minutes",
+          "Discharge with oral prednisolone and GP follow-up"
+        ],
+        "answer_index": 1,
+        "explanation": "SpO2 93% after 3 nebulisers = severe asthma. IV magnesium sulphate is the next step — evidence shows it reduces hospital admission and improves bronchodilation in the ED. Azithromycin has no role in acute viral wheeze (NEJM 2026). Discharge at SpO2 93% is unsafe."
+      },
+      "source": {
+        "title": "Dexamethasone Treatment Regimen and Clinical Outcomes in Children With Asthma Exacerbations",
+        "publisher": "Annals of Emergency Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41575401/"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/management-of-acute-asthma-in-children/"
+    },
+    {
+      "id": "ed-boarding-patient-safety",
+      "date": "",
+      "title": "ED Boarding — Early Clinical Deterioration and the Safety Evidence You Need",
+      "category": "safety",
+      "tags": [
+        "crowding",
+        "boarding",
+        "patient safety"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": false,
+      "bullets": [
+        {
+          "text": "ED boarding: Ann Emerg Med 2026 (PMID 41860510) — boarding duration independently associated with increased odds of early clinical deterioration (ECD); ECD occurs in 2–5% of boarded patients"
+        },
+        {
+          "text": "ECD definition: unplanned escalation to ICU, cardiac arrest, or death within 24h of ED admission — risk increases with each additional hour of boarding"
+        },
+        {
+          "text": "BMJ 2026 (PMID 42521355): a patient died from sepsis after ED discharge due to overcrowding — NHS England serious incident; overcrowding directly causing missed deterioration is now a medico-legal standard"
+        },
+        {
+          "text": "Monitoring standards for boarded patients: NEWS2 documented at least every 2 hours; medical review with every 3-point NEWS2 change; document when suboptimal monitoring is capacity-imposed"
+        },
+        {
+          "text": "Systemic risk factors: boarded corridor patients have higher rates of missed vital signs, delayed treatment, and medication errors — document when monitoring is constrained by operational pressures"
+        },
+        {
+          "text": "RCEM guidance: patient safety must not be compromised by operational pressures — if a patient cannot be monitored safely, escalate to senior clinician and document in notes"
+        },
+        {
+          "text": "Professional duty: document boarding time, monitoring challenges, and escalation requests — creates the evidence base for system change AND provides medico-legal protection"
+        }
+      ],
+      "deep_dive": {
+        "type": "notes",
+        "heading": "NEWS2 Thresholds and Escalation in the Boarded Patient",
+        "points": [
+          "NEWS2 ≥5: 4-hourly minimum monitoring; escalate to senior clinician; request urgent clinical review",
+          "NEWS2 ≥7: continuous monitoring; emergency senior review within 30 min; consider HDU/ICU without waiting for bed",
+          "Corridor patients: document that monitoring frequency is constrained by environment — this triggers an incident report",
+          "Escalation pathway: charge nurse → site manager → on-call consultant → medical director — use the full chain, document each step",
+          "CQC and NHSE: repeated sub-standard monitoring of boarded patients is a regulatory risk for the department"
+        ]
+      },
+      "quiz": {
+        "question": "A 68-year-old admitted patient has been in the ED corridor for 6 hours. NEWS2 rises from 4 to 7. No monitored bays are available. What is the correct action?",
+        "options": [
+          "Check observations every 4 hours — NEWS2 4 protocol",
+          "Document NEWS2 7, escalate to senior clinician for emergency review, document monitoring limitations, consider direct ICU/HDU referral",
+          "Discharge and readmit when a monitored space becomes available",
+          "Call for a ward review when a doctor is free"
+        ],
+        "answer_index": 1,
+        "explanation": "NEWS2 7 requires emergency senior review within 30 minutes. Monitoring limitations imposed by overcrowding must be documented as a patient safety incident. Direct ICU/HDU escalation should not wait for a medical ward bed. This is both a patient safety issue and a professional documentation requirement."
+      },
+      "source": {
+        "title": "Early Clinical Deterioration Among Emergency Department Boarders",
+        "publisher": "Annals of Emergency Medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41860510/"
+      },
+      "deep_dive_url": "https://www.rcem.ac.uk/RCEM/Quality_Policy/Policy/Position_Statements.aspx"
+    },
+    {
+      "id": "paediatric-drowning-cpr",
+      "date": "",
+      "title": "Paediatric Drowning — Rescue Breathing Is Mandatory, Not Optional",
+      "category": "pem",
+      "tags": [
+        "paeds",
+        "drowning",
+        "CPR"
+      ],
+      "difficulty": "core",
+      "status": "published",
+      "frcem_relevant": true,
+      "bullets": [
+        {
+          "text": "Resuscitation 2026 nationwide study (PMID 41819340): in paediatric drowning OHCA, compression-only CPR (CO-CPR) was associated with WORSE survival and neurological outcomes than standard CPR with rescue breaths"
+        },
+        {
+          "text": "Mechanism: drowning is an asphyxial arrest — primary hypoxia precedes circulatory collapse; oxygen delivery through rescue breathing is essential, unlike adult VF arrest where compressions alone are effective"
+        },
+        {
+          "text": "Paediatric CPR ratios: 2-rescuer 15:2 (compressions:breaths); 1-rescuer 30:2 — rescue breaths are integral, not optional adjuncts"
+        },
+        {
+          "text": "Bystander rescue breathing in drowning: RCUK strongly advocates CPR with rescue breaths for drowning; compression-only bystander CPR is an inadequate response in asphyxial arrest"
+        },
+        {
+          "text": "ED management of near-drowning: RSI early if GCS ≤8 or respiratory failure; lung protective ventilation 6 mL/kg IBW; PEEP 5–8 cmH2O; CXR + ABG + blood glucose; active rewarming if <35°C"
+        },
+        {
+          "text": "Hypothermic drowning: not dead until warm and dead — resuscitate until core temperature ≥32°C before declaring death; ECMO-assisted rewarming for severe hypothermia at ECMO-capable centres"
+        },
+        {
+          "text": "Public CPR teaching: all public CPR training must include rescue breaths for children and drowning victims — CO-CPR guidance for adult VF arrest does NOT apply to paediatric drowning"
+        }
+      ],
+      "deep_dive": {
+        "type": "algorithm",
+        "heading": "Paediatric Drowning — ED Resuscitation Protocol",
+        "steps": [
+          "Airway: immediate RSI if GCS ≤8, apnoeic, or SpO2 <90% despite high-flow O2",
+          "Breathing: lung protective ventilation; suction airway if contaminated; consider surfactant in infants",
+          "Circulation: IV/IO access; 10 mL/kg balanced crystalloid if haemodynamically compromised; check blood glucose (hypoglycaemia is common)",
+          "Temperature: rectal or oesophageal temperature; active rewarming if <35°C; ECMO referral if <32°C with no ROSC",
+          "Neurology: post-ROSC care; prevent hyperthermia; target glucose 4–8 mmol/L; seizure watch; CT head if traumatic mechanism",
+          "Withdrawal of care: do NOT terminate resuscitation while hypothermic — transfer to ECMO centre if no ROSC and temperature <28°C"
+        ]
+      },
+      "quiz": {
+        "question": "A bystander pulls a 6-year-old from a swimming pool. The child is unresponsive and not breathing. What type of CPR should the bystander perform?",
+        "options": [
+          "Compression-only CPR — as per standard public bystander guidance",
+          "Standard CPR with rescue breaths (30:2 if alone, 15:2 if two rescuers) — rescue breathing is essential in drowning",
+          "Rescue breaths only — no chest compressions until the ambulance arrives",
+          "Wait for EMS with AED — bystander CPR may cause harm in a child"
+        ],
+        "answer_index": 1,
+        "explanation": "Drowning is an asphyxial arrest — rescue breaths are mandatory. Compression-only CPR is significantly inferior in paediatric drowning (Resuscitation 2026, PMID 41819340). CO-CPR guidance was designed for witnessed adult VF arrest, not paediatric asphyxial arrest. Every second without oxygenation worsens outcome."
+      },
+      "source": {
+        "title": "Decline in rescue breathing and its impact on outcomes in pediatric out-of-hospital cardiac arrest due to drowning",
+        "publisher": "Resuscitation",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41819340/"
+      },
+      "deep_dive_url": "https://dontforgetthebubbles.com/paediatric-drowning/"
     }
   ]
 }
