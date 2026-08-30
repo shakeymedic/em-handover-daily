@@ -3,114 +3,604 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EM Handover Daily</title>
-<meta name="description" content="One teaching point, one safety alert and one question, every day, sized for the department screen at handover.">
+<title>ED Handover — EM Handover Daily</title>
+<meta name="description" content="Structured ED handover prompt — landscape screen format.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0f6157">
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+   HANDOVER PAGE LAYOUT
+   Full-viewport landscape card:
+     top:    3-column handover sections
+     bottom: teaching point (left 60%) | paper of the day (right 40%)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Remove default body scroll for the handover view — the page fits the screen */
+html, body { height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.75rem;
+  overflow: hidden;
+}
+
+/* ── Top section: 3 handover columns ─────────────────────────────────────── */
+.hv-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.65rem;
+  flex: 1 1 0;
+  min-height: 0;
+  padding-top: 0.5rem;
+}
+
+/* ── Bottom strip: teaching | paper ──────────────────────────────────────── */
+.hv-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  padding: 0.65rem 0 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Section column ───────────────────────────────────────────────────────── */
+.hv-col {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hv-col__hdr {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--signal);
+  font-weight: 700;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 2px solid var(--signal);
+  flex-shrink: 0;
+}
+
+.hv-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  flex: 1 1 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Prompt blocks inside a card ─────────────────────────────────────────── */
+.pb {
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.pb:first-child { padding-top: 0; margin-top: 0; border-top: none; }
+
+.pb__hdr {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.pl {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.pl li {
+  font-size: 0.82rem;
+  line-height: 1.3;
+  padding: 0.18rem 0 0.18rem 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+.pl li::before {
+  content: "";
+  position: absolute;
+  left: 0.3rem; top: 0.78em;
+  width: 0.4rem; height: 1px;
+  background: var(--ink-faint);
+}
+.pl li.strong { font-weight: 700; }
+.pl li.note   { font-size: 0.72rem; color: var(--ink-soft); padding-left: 1.5rem; }
+.pl li.note::before { left: 0.75rem; }
+
+/* Alert rows inside col 1 */
+.hv-alert-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+.hv-alert {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+.hv-alert__src {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--alarm);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.hv-alert__title {
+  color: var(--ink);
+}
+.hv-alert--quiet .hv-alert__src { color: var(--ink-faint); }
+.hv-alert--quiet .hv-alert__title { color: var(--ink-soft); }
+
+/* ── Bottom cards ─────────────────────────────────────────────────────────── */
+.hv-teaching {
+  background: var(--signal-tint);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hv-teaching__hdr {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--signal);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.hv-teaching__title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+.hv-teaching__bullet {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+.hv-teaching__link {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.35rem;
+  display: inline-block;
+}
+
+.hv-paper {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+.hv-paper__hdr {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.hv-paper__title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.hv-paper__title a { color: inherit; text-decoration: none; }
+.hv-paper__title a:hover { color: var(--signal); }
+.hv-paper__cite {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.2rem;
+}
+.hv-paper__takeaway {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+.hv-paper__qr { flex-shrink: 0; }
+.hv-paper__qr svg { display: block; width: 72px; height: 72px; border-radius: 2px; }
+.hv-paper__qr--none {
+  width: 72px; height: 72px;
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; color: var(--ink-faint); text-align: center;
+  font-family: var(--mono); padding: 0.25rem;
+}
+
+/* ── Utility bar ──────────────────────────────────────────────────────────── */
+.hv-util {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0 0.25rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+/* ── Portrait hint ────────────────────────────────────────────────────────── */
+@media (orientation: portrait) and (max-width: 900px) {
+  .rotate-hint { display: flex !important; }
+}
+.rotate-hint {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--paper-raised);
+  align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem;
+  font-family: var(--mono); font-size: 0.875rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-soft); text-align: center; padding: 2rem;
+}
+
+/* ── Handover mode ────────────────────────────────────────────────────────── */
+body.handover .pl li           { font-size: 1.1rem; line-height: 1.4; padding: 0.3rem 0 0.3rem 1.4rem; }
+body.handover .pl li::before   { top: 0.78em; width: 0.55rem; }
+body.handover .pl li.note      { font-size: 0.9rem; }
+body.handover .pb__hdr         { font-size: 0.75rem; }
+body.handover .hv-col__hdr     { font-size: 0.75rem; }
+body.handover .hv-card         { padding: 0.9rem 1rem; }
+body.handover .hv-alert        { font-size: 0.95rem; }
+body.handover .hv-alert__src   { font-size: 0.75rem; }
+body.handover .hv-teaching__title  { font-size: 1.1rem; }
+body.handover .hv-teaching__bullet { font-size: 0.95rem; }
+body.handover .hv-paper__title     { font-size: 1rem; }
+body.handover .hv-paper__takeaway  { font-size: 0.9rem; }
+body.handover .hv-paper__qr svg    { width: 90px; height: 90px; }
+body.handover .hv-paper__qr--none  { width: 90px; height: 90px; }
+
+/* ── Print — landscape A4 ────────────────────────────────────────────────── */
+@media print {
+  @page { size: A4 landscape; margin: 7mm; }
+  html, body { height: auto; overflow: visible; }
+  body { display: block; }
+  main { display: block; overflow: visible; padding: 0; }
+  .hv-top    { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+  .hv-bottom { display: grid; grid-template-columns: 1fr 1fr;    gap: 4mm; margin-top: 4mm; }
+  .hv-col    { display: block; }
+  .hv-card   { display: block; }
+  .pl li     { font-size: 7.5pt; padding: 1pt 0 1pt 9pt; }
+  .pl li::before { top: 0.75em; width: 4pt; }
+  .pb__hdr   { font-size: 5.5pt; }
+  .hv-col__hdr { font-size: 5.5pt; margin-bottom: 2pt; padding-bottom: 2pt; }
+  .hv-card, .hv-teaching, .hv-paper { padding: 4pt 5pt; }
+  .hv-teaching__title  { font-size: 8pt; }
+  .hv-teaching__bullet { font-size: 7pt; }
+  .hv-paper__title     { font-size: 8pt; }
+  .hv-paper__cite      { font-size: 5.5pt; }
+  .hv-paper__takeaway  { font-size: 6.5pt; }
+  .hv-paper__qr svg    { width: 55pt; height: 55pt; }
+  .hv-paper__hdr, .hv-teaching__hdr { font-size: 5.5pt; }
+  .no-print, .masthead, .trace, .hv-util, .rotate-hint { display: none !important; }
+}
+</style>
 </head>
 <body>
 
-<header class="masthead">
+<div class="rotate-hint" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+    <rect x="5" y="2" width="14" height="20" rx="2"/>
+    <path d="M2 9l3-3 3 3M5 6v6M22 15l-3 3-3-3m3 3V12"/>
+  </svg>
+  Rotate to landscape
+</div>
+
+<header class="masthead no-print">
   <div class="wrap masthead__row">
     <a class="wordmark" href="index.html">EM Handover <span>Daily</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="index.html" aria-current="page">Today</a>
+      <a href="index.html" aria-current="page">Handover</a>
+      <a href="teaching.html">Teaching</a>
       <a href="archive.html">Archive</a>
       <a href="alerts.html">Alerts</a>
-      <a href="night-handover.html">Night handover</a>
       <a href="about.html">About</a>
     </nav>
   </div>
 </header>
 
-<div class="trace" aria-hidden="true">
+<div class="trace no-print" aria-hidden="true">
   <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
     <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
   </svg>
 </div>
 
-<main class="wrap">
-
-  <div class="utility no-print">
-    <span data-today-label>Loading…</span>
+<main>
+  <!-- Utility bar -->
+  <div class="hv-util no-print">
+    <span id="hv-date"></span>
     <span class="btn-row">
       <button class="btn" data-handover-toggle aria-pressed="false">Handover mode</button>
       <button class="btn" data-print>Print</button>
     </span>
   </div>
 
-  <section class="alerts" id="alerts" aria-label="Live safety alerts">
-    <div class="alert alert--quiet"><div class="alert__meta">Safety alerts</div>
-      <div class="alert__title">Checking MHRA feed…</div></div>
-  </section>
+  <!-- TOP: 3 handover columns -->
+  <div class="hv-top">
 
-  <div id="today">
-    <div class="empty">Loading today's module…</div>
-  </div>
+    <!-- Column 1: Section 1 — All staff -->
+    <div class="hv-col">
+      <div class="hv-col__hdr">Section 1 — All staff</div>
+      <div class="hv-card">
 
-  <div id="paper"></div>
+        <div class="pb">
+          <div class="pb__hdr">Introductions</div>
+          <ul class="pl">
+            <li>Consultant and senior regs introduce themselves</li>
+            <li>Attendance register</li>
+            <li>Role allocation for the shift</li>
+            <li>Learning needs flagged</li>
+            <li>Acknowledgement and thanks to the finishing team</li>
+          </ul>
+        </div>
 
-  <p class="eyebrow no-print" style="margin-bottom:2rem">
-    Educational resource only. Not a substitute for clinical judgement.
-    Always refer to local guidelines and current BNF/NICE guidance.
-  </p>
+        <div class="pb">
+          <div class="pb__hdr">Imminent blue lights</div>
+          <ul class="pl">
+            <li>Any pre-alerts expected in the next 30 minutes?</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">ABCDE — must cross over</div>
+          <ul class="pl">
+            <li class="strong">Deaths</li>
+            <li class="strong">Absconding / left DAMA</li>
+            <li class="strong">Bed and specialty issues</li>
+            <li class="strong">Clinical / acute concerns</li>
+            <li class="strong">Equipment issues</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Safety alerts</div>
+          <div class="hv-alert-row" id="hv-alerts">
+            <div class="hv-alert hv-alert--quiet">
+              <span class="hv-alert__src">Checking…</span>
+              <span class="hv-alert__title"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Section 2 — Resus / Education / Paeds -->
+    <div class="hv-col">
+      <div class="hv-col__hdr">Section 2 — Resus · Education · Paeds</div>
+      <div class="hv-card">
+
+        <div class="pb">
+          <div class="pb__hdr">Resus handover</div>
+          <ul class="pl">
+            <li>Current resus patients — bed space only</li>
+            <li>Pending procedures or decisions</li>
+            <li>Who is leading each bay</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">5-min education / RCEM safety flash</div>
+          <ul class="pl">
+            <li>Aim for 3× weekly at morning handovers</li>
+            <li>Today's teaching point shown below</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Paediatric handover</div>
+          <ul class="pl">
+            <li>Paediatric patients in department</li>
+            <li>Safeguarding or social concerns</li>
+            <li>Who is the paeds lead</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Section 3 — Split into teams -->
+    <div class="hv-col">
+      <div class="hv-col__hdr">Section 3 — Split into teams</div>
+      <div class="hv-card">
+
+        <div class="pb">
+          <div class="pb__hdr">Majors</div>
+          <ul class="pl">
+            <li class="strong">Patients not yet referred</li>
+            <li class="strong">Outstanding jobs for ED</li>
+            <li class="strong">Unwell / clinical concern</li>
+            <li class="strong">Psychiatric concern</li>
+            <li class="strong">Suitable for discharge</li>
+            <li class="strong">Ambulance queue</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">EDAA <span style="font-size:0.75em;font-weight:400;text-transform:none;letter-spacing:0">(EDAA Drs office)</span></div>
+          <ul class="pl">
+            <li class="strong">Patients not yet referred</li>
+            <li class="strong">Outstanding jobs for ED</li>
+            <li class="strong">Unwell / clinical concern</li>
+            <li class="strong">Psychiatric concern</li>
+            <li class="strong">Suitable for discharge</li>
+          </ul>
+        </div>
+
+        <div class="pb">
+          <div class="pb__hdr">Staffing</div>
+          <ul class="pl">
+            <li>Rota gaps or sick calls</li>
+            <li>Named consultant lead overnight</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /hv-top -->
+
+  <!-- BOTTOM STRIP: Teaching | Paper of the day -->
+  <div class="hv-bottom">
+
+    <!-- Teaching point -->
+    <div class="hv-teaching" id="hv-teaching">
+      <div class="hv-teaching__hdr">
+        Teaching point
+        <a href="teaching.html" style="font-size:0.8em;font-weight:400;text-transform:none;letter-spacing:0;margin-left:0.5rem">Full module &rarr;</a>
+      </div>
+      <div id="hv-teaching-body" style="color:var(--ink-faint);font-size:0.82rem">Loading…</div>
+    </div>
+
+    <!-- Paper of the day -->
+    <div class="hv-paper" id="hv-paper">
+      <div class="hv-paper__body">
+        <div class="hv-paper__hdr">Paper of the day</div>
+        <div id="hv-paper-body" style="color:var(--ink-faint);font-size:0.82rem">Loading…</div>
+      </div>
+      <div class="hv-paper__qr" id="hv-paper-qr"></div>
+    </div>
+
+  </div><!-- /hv-bottom -->
 
 </main>
 
-<!-- app.js must load first — it defines the globals used by the module scripts below -->
 <script src="assets/app.js"></script>
-
-<!-- All async work is in module scripts. Because app.js is a classic script loaded
-     synchronously above, its globals are available by the time these modules run.
-     We do NOT wrap anything in DOMContentLoaded here — the module scripts are
-     deferred by the browser and run after parsing, so the DOM is already ready. -->
 <script type="module">
-  import { getAlerts, renderAlerts } from './assets/alerts.js';
-  import { loadPapers, pickPaperForDate, renderPaper } from './assets/papers.js';
+  import { getAlerts }                          from './assets/alerts.js';
+  import { loadPapers, pickPaperForDate,
+           paperLink, citation }                from './assets/papers.js';
+  import { qrSVG }                              from './assets/qr.js';
 
-  // Alerts — independent of modules, kick off immediately
-  (async () => {
-    try {
-      renderAlerts(document.getElementById('alerts'), await getAlerts({ limit: 3 }));
-    } catch (err) {
-      console.warn('Alerts failed:', err);
-    }
-  })();
+  const iso = localISODate();
 
-  // Paper of the day
-  (async () => {
-    const box = document.getElementById('paper');
-    try {
-      const payload = await loadPapers();
-      const paper = pickPaperForDate(payload.papers, localISODate());
-      renderPaper(box, paper, payload);
-    } catch (err) {
-      box.innerHTML = `<div class="empty">Could not load the paper list: ${err.message}</div>`;
-    }
-  })();
+  // Date label
+  const dateEl = document.getElementById('hv-date');
+  if (dateEl) dateEl.textContent = longDate(iso);
 
-  // Daily module
+  // ── Alerts ────────────────────────────────────────────────────────────────
   (async () => {
-    const root = document.getElementById('today');
-    const label = document.querySelector('[data-today-label]');
+    const box = document.getElementById('hv-alerts');
     try {
-      const modules = await loadModules();
-      const iso = localISODate();
-      const { module, scheduled } = pickForDate(modules, iso);
-      if (!module) {
-        root.innerHTML = '<div class="empty">No modules in the content bank yet. ' +
-          'Add one to <code>data/modules.json</code>.</div>';
+      const { alerts, degraded, message } = await getAlerts({ limit: 3 });
+      if (!alerts.length) {
+        box.innerHTML = `<div class="hv-alert hv-alert--quiet">
+          <span class="hv-alert__src">Alerts</span>
+          <span class="hv-alert__title">No ED-relevant alerts in the last 90 days${degraded ? ' — ' + escapeHTML(message) : ''}</span>
+        </div>`;
         return;
       }
-      if (label) label.textContent = longDate(iso);
-      renderModule(root, module, {
-        eyebrow: scheduled ? longDate(iso) : `${longDate(iso)} — from the archive`
-      });
-    } catch (err) {
-      root.innerHTML = `<div class="empty"><strong>Could not load the content bank.</strong><br>
-        ${err.message}. If you opened this file directly, serve it over HTTP instead
-        (<code>python3 -m http.server</code>).</div>`;
+      const fmt = iso => new Date(iso).toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+      box.innerHTML = alerts.map(a => `
+        <div class="hv-alert">
+          <span class="hv-alert__src">${escapeHTML(a.source)} &middot; ${fmt(a.date)}</span>
+          <a class="hv-alert__title" href="${escapeHTML(a.url)}" target="_blank" rel="noopener">${escapeHTML(a.title)}</a>
+        </div>`).join('');
+    } catch (e) {
+      box.innerHTML = `<div class="hv-alert hv-alert--quiet">
+        <span class="hv-alert__src">Alerts</span>
+        <span class="hv-alert__title">Could not load alerts</span>
+      </div>`;
+    }
+  })();
+
+  // ── Teaching point ────────────────────────────────────────────────────────
+  (async () => {
+    const box = document.getElementById('hv-teaching-body');
+    try {
+      const modules = await loadModules();
+      const { module, scheduled } = pickForDate(modules, iso);
+      if (!module) {
+        box.innerHTML = `<span>No module today — <a href="teaching.html">browse archive</a></span>`;
+        return;
+      }
+      const cat   = CATEGORIES[module.category] || module.category;
+      const b1    = module.bullets?.[0];
+      const b1txt = b1 ? (typeof b1 === 'string' ? b1 : b1.text) : '';
+      const b2    = module.bullets?.[1];
+      const b2txt = b2 ? (typeof b2 === 'string' ? b2 : b2.text) : '';
+      box.innerHTML = `
+        <div class="hv-teaching__title">
+          <span class="chip chip--cat" style="margin-right:0.35rem;vertical-align:middle;font-size:0.65rem">${escapeHTML(cat)}</span>${escapeHTML(module.title)}
+        </div>
+        ${b1txt ? `<div class="hv-teaching__bullet">${escapeHTML(b1txt)}</div>` : ''}
+        ${b2txt ? `<div class="hv-teaching__bullet">${escapeHTML(b2txt)}</div>` : ''}
+        <a class="hv-teaching__link" href="teaching.html">Open full module &rarr;</a>`;
+    } catch (e) {
+      box.textContent = 'Could not load module.';
+    }
+  })();
+
+  // ── Paper of the day ──────────────────────────────────────────────────────
+  (async () => {
+    const body = document.getElementById('hv-paper-body');
+    const qrEl = document.getElementById('hv-paper-qr');
+    try {
+      const payload = await loadPapers();
+      const paper   = pickPaperForDate(payload.papers, iso);
+      if (!paper) {
+        body.textContent = 'No paper today.';
+        return;
+      }
+      const link = paperLink(paper);
+      const cite = citation(paper);
+      const titleHTML = link
+        ? `<a href="${escapeHTML(link)}" target="_blank" rel="noopener">${escapeHTML(paper.title)}</a>`
+        : escapeHTML(paper.title);
+
+      body.innerHTML = `
+        <div class="hv-paper__title">${titleHTML}</div>
+        ${cite ? `<div class="hv-paper__cite">${escapeHTML(cite)}</div>` : ''}
+        ${paper.takeaway ? `<div class="hv-paper__takeaway">${escapeHTML(paper.takeaway)}</div>` : ''}`;
+
+      if (link) {
+        try {
+          qrEl.innerHTML = qrSVG(link, { size: 80, label: 'Scan to open paper' });
+        } catch {
+          qrEl.innerHTML = `<div class="hv-paper__qr--none">Link too long for QR</div>`;
+        }
+      } else {
+        qrEl.innerHTML = `<div class="hv-paper__qr--none">No link</div>`;
+      }
+    } catch (e) {
+      body.textContent = 'Could not load paper.';
     }
   })();
 </script>

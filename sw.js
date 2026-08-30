@@ -2,7 +2,7 @@
    so a new module appears without waiting for a cache expiry. */
 const VERSION = 'ehd-v1';
 const SHELL = [
-  './', './index.html', './archive.html', './alerts.html',
+  './', './index.html', './teaching.html', './archive.html', './alerts.html',
   './night-handover.html', './about.html',
   './assets/style.css', './assets/app.js', './assets/alerts.js',
   './assets/papers.js', './assets/qr.js',
