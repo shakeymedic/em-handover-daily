@@ -1,53 +1,94 @@
 {
-  "note": "Manually curated RCEM safety flashes and alerts. Entries older than 90 days are filtered out automatically. Add new entries as they are published. Date format: YYYY-MM-DD. Note: entries older than 90 days are automatically excluded from the live alert strip. The 2024 entries will not appear in August 2026 but are preserved here for reference. The June-August 2025 entries ARE within 90 days of August 2026 and will show live.",
-  "alerts": [
+  "note": "Auto-updated weekly by EM Evidence pipeline (Step 17.2). New MHRA and RCEM safety flashes are added each Thursday. Entries older than 90 days are filtered out automatically by the browser. To add a one-off alert manually, add an entry here with active:true.",
+  "events": [
     {
-      "title": "Euglycaemic DKA with SGLT-2 Inhibitor (-flozin) use",
+      "id": "Euglycaemic_DKA_with_SGLT_2_Inhibitor_Use_RCEM_Safety_Flash.",
       "date": "2025-04-01",
+      "title": "Euglycaemic DKA with SGLT-2 Inhibitor (-flozin) use",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/wp-content/uploads/2025/06/Euglycaemic_DKA_with_SGLT_2_Inhibitor_Use_RCEM_Safety_Flash.pdf",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
+      "id": "Glucocorticoid_Steroid_Dependancy_Safety_Flash_June-2025.pdf",
+      "date": "2025-06-01",
       "title": "Glucocorticoid Steroid Dependency — emergency treatment of adrenal crisis",
-      "date": "2025-06-01",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/wp-content/uploads/2025/06/Glucocorticoid_Steroid_Dependancy_Safety_Flash_June-2025.pdf",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
-      "title": "Glycerol Toxicity from Slushies — risk in under-10s",
+      "id": "Glycerol_Toxicity_from_Slushies_Safety_Flash_June_2025.pdf",
       "date": "2025-06-01",
+      "title": "Glycerol Toxicity from Slushies — risk in under-10s",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/wp-content/uploads/2025/06/Glycerol_Toxicity_from_Slushies_Safety_Flash_June_2025.pdf",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
-      "title": "Think Ectopic — updated safety flash (RCEM / Ectopic Pregnancy Trust)",
+      "id": "think-ectopic-—-updated-safety-flash-(rc",
       "date": "2025-08-01",
+      "title": "Think Ectopic — updated safety flash (RCEM / Ectopic Pregnancy Trust)",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/news/rcem-supports-think-ectopic-campaign-to-raise-awareness-of-common-medical-condition/",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
+      "id": "ingestion-of-super-strong-magnets-in-chi",
+      "date": "2024-12-01",
       "title": "Ingestion of Super Strong Magnets in Children — updated guidance",
-      "date": "2024-12-01",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/clinical-standards-and-guidance/",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
+      "id": "water-beads-and-bowel-obstruction-in-chi",
+      "date": "2024-12-01",
       "title": "Water Beads and Bowel Obstruction in Children",
-      "date": "2024-12-01",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/clinical-standards-and-guidance/",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
+      "id": "undetected-button-and-coin-cell-battery-",
+      "date": "2024-12-01",
       "title": "Undetected Button and Coin Cell Battery Ingestion in Children — updated",
-      "date": "2024-12-01",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/clinical-standards-and-guidance/",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     },
     {
-      "title": "Pabrinex Shortage — prescribing and supply information",
+      "id": "pabrinex-shortage-—-prescribing-and-supp",
       "date": "2024-09-01",
+      "title": "Pabrinex Shortage — prescribing and supply information",
+      "detail": "",
+      "category": "safety",
       "url": "https://rcem.ac.uk/clinical-standards-and-guidance/",
-      "source": "RCEM Safety Flash"
+      "source": "RCEM Safety Flash",
+      "submitted_by": "Pipeline",
+      "active": true
     }
-  ]
+  ],
+  "display_days": 90
 }

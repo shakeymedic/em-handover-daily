@@ -60,9 +60,10 @@ async function fetchLocalRCEM() {
     const res = await fetch('data/rcem-alerts.json', { cache: 'no-cache' });
     if (!res.ok) return [];
     const data = await res.json();
-    return (data.alerts || [])
-      .filter(a => isRecent(a.date))
-      .map(a => ({ source: a.source || 'RCEM', title: a.title, date: a.date, url: a.url }));
+    // accepts both legacy 'alerts' key and new pipeline 'events' key
+    return (data.events || data.alerts || [])
+      .filter(a => a.active !== false && isRecent(a.date))
+      .map(a => ({ source: a.source || 'RCEM', title: a.title, date: a.date, url: a.url || '' }));
   } catch { return []; }
 }
 
