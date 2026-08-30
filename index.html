@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0f1923">
+<meta name="theme-color" content="#1d4ed8">
 <style>
 /* ═══════════════════════════════════════════════════════════════════════════
    FONT OVERRIDE — Inter for display (high legibility at distance),
@@ -21,36 +21,45 @@
   --font-mono:  'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
 
   /* Colour palette */
-  --bg:         #0f1923;
-  --surface:    #162030;
-  --surface2:   #1c2a3a;
-  --border:     rgba(255,255,255,0.09);
-  --text:       #e8edf2;
-  --text-soft:  #8fa3b4;
-  --text-faint: #546a7a;
+  --bg:         #f0f2f5;
+  --surface:    #ffffff;
+  --surface2:   #f7f8fa;
+  --border:     #d1d9e0;
+  --text:       #111827;
+  --text-soft:  #374151;
+  --text-faint: #6b7280;
 
   /* Section accent colours */
-  --s1:         #3b82f6;   /* blue   — all staff */
-  --s1-tint:    rgba(59,130,246,0.10);
-  --s2:         #10b981;   /* teal   — resus/education/paeds */
-  --s2-tint:    rgba(16,185,129,0.10);
-  --s3:         #f59e0b;   /* amber  — split teams */
-  --s3-tint:    rgba(245,158,11,0.10);
-  --meet:       #a78bfa;   /* violet — meetings */
-  --meet-tint:  rgba(167,139,250,0.10);
+  --s1:         #1d4ed8;   /* blue   — all staff */
+  --s1-tint:    #eff6ff;
+  --s2:         #047857;   /* teal   — resus/education/paeds */
+  --s2-tint:    #ecfdf5;
+  --s3:         #b45309;   /* amber  — split teams */
+  --s3-tint:    #fffbeb;
+  --meet:       #6d28d9;   /* violet — meetings */
+  --meet-tint:  #f5f3ff;
 
   /* Bottom strip */
-  --teach-acc:  #34d399;
-  --paper-acc:  #60a5fa;
-  --learn-acc:  #fbbf24;
-  --alarm:      #f87171;
+  --teach-acc:  #10b981;
+  --paper-acc:  #3b82f6;
+  --learn-acc:  #b45309;
+
+  --trial-acc:  #065f46;
+  --trial-bg:   #ecfdf5;
+  --trial-fg:   #064e3b;
+
+  --teach-bg:   #064e3b;  /* dark green teaching card */
+  --teach-fg:   #d1fae5;
+  --paper-bg:   #1e3a5f;  /* dark navy paper card */
+  --paper-fg:   #dbeafe;
+  --alarm:      #dc2626;
 
   /* Sizing — all up from before */
   --fs-label:   0.7rem;
-  --fs-body:    0.95rem;
-  --fs-strong:  1rem;
-  --fs-title:   1.1rem;
-  --fs-hdr:     0.65rem;
+  --fs-body:    1.05rem;
+  --fs-strong:  1.1rem;
+  --fs-title:   1.2rem;
+  --fs-hdr:     0.72rem;
   --r:          6px;
 }
 
@@ -70,7 +79,7 @@ a { color: inherit; }
 /* ── Masthead ─────────────────────────────────────────────────────────────── */
 .masthead {
   background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
   padding: 0;
 }
 .masthead__row {
@@ -87,24 +96,13 @@ a { color: inherit; }
 .nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .nav a {
   font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em;
-  text-transform: uppercase; color: var(--text-soft); text-decoration: none;
+  text-transform: uppercase; color: var(--text-faint); text-decoration: none;
   padding-bottom: 1px;
 }
 .nav a:hover { color: var(--text); }
 .nav a[aria-current="page"] { color: var(--s2); border-bottom: 2px solid var(--s2); }
 
-/* ── ECG trace ────────────────────────────────────────────────────────────── */
-.trace {
-  display: block; width: 100%; height: 12px;
-  background: var(--surface); border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
-.trace svg { display: block; width: 200%; height: 12px; }
-.trace path { fill: none; stroke: var(--s2); stroke-width: 1.5; opacity: 0.4; }
-@media (prefers-reduced-motion: no-preference) {
-  .trace svg { animation: sweep 24s linear infinite; }
-}
-@keyframes sweep { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* ECG trace removed */
 
 /* ── Main layout ──────────────────────────────────────────────────────────── */
 main {
@@ -159,7 +157,7 @@ main {
 
 .hv-card {
   background: var(--surface);
-  border: 1px solid var(--border); border-top: 2px solid;
+  border: 1px solid var(--border); border-top: 3px solid;
   border-radius: 0 0 var(--r) var(--r);
   padding: 0.75rem 0.9rem;
   flex: 1 1 0; min-height: 0; overflow: hidden;
@@ -208,7 +206,7 @@ main {
 .hv-alert {
   display: flex; align-items: baseline; gap: 0.4rem;
   font-size: 0.85rem; line-height: 1.3;
-  background: rgba(248,113,113,0.07);
+  background: #fef2f2;
   border-left: 2.5px solid var(--alarm);
   border-radius: 0 var(--r) var(--r) 0;
   padding: 0.22rem 0.5rem;
@@ -220,7 +218,7 @@ main {
 .hv-alert__title { color: var(--text); }
 .hv-alert a.hv-alert__title { text-decoration: none; }
 .hv-alert a.hv-alert__title:hover { text-decoration: underline; }
-.hv-alert--quiet { background: rgba(255,255,255,0.03); border-left-color: var(--border); }
+.hv-alert--quiet { background: #f9fafb; border-left-color: var(--border); }
 .hv-alert--quiet .hv-alert__src   { color: var(--text-faint); }
 .hv-alert--quiet .hv-alert__title { color: var(--text-soft); }
 
@@ -235,7 +233,7 @@ main {
   font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em;
   color: var(--meet); margin-bottom: 0.06rem;
 }
-.meet-item__title { font-size: 0.85rem; font-weight: 600; line-height: 1.25; color: var(--text); }
+.meet-item__title { font-size: 0.88rem; font-weight: 600; line-height: 1.25; color: var(--text); }
 .meet-item__sub   { font-size: 0.75rem; color: var(--text-faint); margin-top: 0.04rem; }
 .meet-empty       { font-size: 0.82rem; color: var(--text-faint); font-style: italic; }
 
@@ -244,7 +242,7 @@ main {
   display: flex; gap: 0.5rem; align-items: stretch; flex-shrink: 0;
 }
 .hv-learning-card {
-  background: var(--surface); border: 1px solid var(--border);
+  background: #fffbeb; border: 1px solid #fde68a;
   border-left: 3px solid var(--learn-acc);
   border-radius: var(--r); padding: 0.4rem 0.75rem;
   display: flex; align-items: center; gap: 0.75rem; flex: 1;
@@ -273,8 +271,8 @@ main {
 
 /* ── Teaching card ────────────────────────────────────────────────────────── */
 .hv-teaching {
-  background: var(--surface);
-  border: 1px solid var(--border); border-top: 3px solid var(--teach-acc);
+  background: var(--teach-bg);
+  border: 1px solid rgba(16,185,129,0.3); border-top: 3px solid var(--teach-acc);
   border-radius: var(--r);
   padding: 0.75rem 0.9rem;
   display: flex; flex-direction: column; justify-content: center;
@@ -298,10 +296,10 @@ main {
 }
 .hv-teaching__title {
   font-weight: 700; font-size: var(--fs-title); line-height: 1.3;
-  color: var(--text); margin-bottom: 0.25rem;
+  color: #fff; margin-bottom: 0.25rem;
 }
 .hv-teaching__bullet {
-  font-size: var(--fs-body); color: var(--text-soft); line-height: 1.4;
+  font-size: var(--fs-body); color: var(--teach-fg); line-height: 1.4;
   padding-left: 0.9rem; position: relative; margin-bottom: 0.08rem;
 }
 .hv-teaching__bullet::before {
@@ -316,8 +314,8 @@ main {
 
 /* ── Paper card ───────────────────────────────────────────────────────────── */
 .hv-paper {
-  background: var(--surface);
-  border: 1px solid var(--border); border-top: 3px solid var(--paper-acc);
+  background: var(--paper-bg);
+  border: 1px solid rgba(59,130,246,0.3); border-top: 3px solid var(--paper-acc);
   border-radius: var(--r); padding: 0.75rem 0.9rem;
   display: grid; grid-template-columns: 1fr auto; gap: 0.85rem; align-items: start;
 }
@@ -334,15 +332,15 @@ main {
   text-transform: uppercase; padding: 0.08rem 0.35rem; border-radius: 3px; white-space: nowrap;
 }
 .hv-paper__title {
-  font-weight: 700; font-size: var(--fs-title); line-height: 1.3; color: var(--text); margin-bottom: 0.2rem;
+  font-weight: 700; font-size: var(--fs-title); line-height: 1.3; color: #fff; margin-bottom: 0.2rem;
 }
 .hv-paper__title a { color: inherit; text-decoration: none; }
 .hv-paper__title a:hover { color: var(--paper-acc); }
 .hv-paper__cite {
-  font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-faint); margin-bottom: 0.3rem;
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--paper-fg); opacity: 0.7; margin-bottom: 0.3rem;
 }
 .hv-paper__takeaway {
-  font-size: var(--fs-body); color: var(--text-soft); line-height: 1.45;
+  font-size: var(--fs-body); color: var(--paper-fg); line-height: 1.45;
   border-left: 2.5px solid var(--paper-acc); padding-left: 0.55rem;
 }
 .hv-paper__qr-col {
@@ -361,11 +359,11 @@ main {
 
 /* ── Handover mode ────────────────────────────────────────────────────────── */
 body.handover {
-  --fs-body:   1.2rem;
-  --fs-strong: 1.25rem;
-  --fs-title:  1.35rem;
-  --fs-hdr:    0.78rem;
-  --fs-label:  0.82rem;
+  --fs-body:   1.4rem;
+  --fs-strong: 1.45rem;
+  --fs-title:  1.6rem;
+  --fs-hdr:    0.88rem;
+  --fs-label:  0.92rem;
 }
 body.handover .hv-card         { padding: 0.9rem 1.1rem; }
 body.handover .hv-col__hdr     { padding: 0.4rem 0.9rem; }
@@ -438,11 +436,6 @@ body.handover .hv-paper__qr-col .hv-paper__no-qr { width: 90px; height: 90px; }
   </div>
 </header>
 
-<div class="trace no-print" aria-hidden="true">
-  <svg viewBox="0 0 1600 12" preserveAspectRatio="none">
-    <path d="M0,8 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
-  </svg>
-</div>
 
 <main>
   <div class="hv-util no-print">
