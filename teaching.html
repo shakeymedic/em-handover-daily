@@ -4,14 +4,79 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teaching — EM Handover Daily</title>
-<meta name="description" content="One teaching point, one safety alert and one question, every day, sized for the department screen at handover.">
+<meta name="description" content="Today's teaching point, deep dive, and question of the day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0f6157">
+<meta name="theme-color" content="#1d4ed8">
+<style>
+/* Teaching page layout — module left, paper+trials right */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem 0 2rem;
+}
+@media (max-width: 900px) {
+  .teaching-grid { grid-template-columns: 1fr; }
+}
+
+/* Right sidebar */
+.teaching-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Trials box */
+.trials-box {
+  background: var(--trial-bg);
+  border: 1px solid rgba(6,95,70,0.25);
+  border-top: 3px solid var(--trial-acc);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+.trials-box__hdr {
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--trial-acc); margin-bottom: 0.6rem;
+}
+.trial-item {
+  padding: 0.35rem 0 0.35rem 0.7rem;
+  border-left: 2px solid rgba(6,95,70,0.25);
+  margin-bottom: 0.4rem;
+}
+.trial-item:last-child { margin-bottom: 0; }
+.trial-item__name {
+  font-size: 1rem; font-weight: 700; color: var(--trial-acc);
+  display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
+}
+.trial-badge {
+  background: rgba(6,95,70,0.12); color: var(--trial-acc);
+  font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.08rem 0.35rem; border-radius: 3px;
+}
+.trial-item__q { font-size: 0.9rem; color: var(--trial-fg); line-height: 1.4; margin-top: 0.2rem; }
+.trial-item__pop { font-size: 0.78rem; color: #6b7280; margin-top: 0.1rem; font-style: italic; }
+.trial-item__action {
+  margin-top: 0.35rem;
+  font-size: 0.82rem; color: var(--trial-fg);
+  background: rgba(6,95,70,0.08);
+  border-radius: var(--radius); padding: 0.3rem 0.5rem;
+  line-height: 1.35;
+}
+.trial-empty { font-size: 0.88rem; color: #6b7280; font-style: italic; }
+
+/* Handover mode */
+body.handover .trial-item__name { font-size: 1.2rem; }
+body.handover .trial-item__q    { font-size: 1.05rem; }
+body.handover .paper__title     { font-size: 1.3rem; }
+body.handover .paper__takeaway  { font-size: 1.1rem; }
+body.handover .paper__qr        { width: 130px; }
+</style>
 </head>
 <body>
 
-<header class="masthead">
+<header class="masthead no-print">
   <div class="wrap masthead__row">
     <a class="wordmark" href="index.html">EM Handover <span>Daily</span></a>
     <nav class="nav" aria-label="Main">
@@ -25,14 +90,7 @@
   </div>
 </header>
 
-<div class="trace" aria-hidden="true">
-  <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
-    <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
-  </svg>
-</div>
-
 <main class="wrap">
-
   <div class="utility no-print">
     <span data-today-label>Loading…</span>
     <span class="btn-row">
@@ -41,41 +99,74 @@
     </span>
   </div>
 
+  <!-- Live MHRA alerts -->
   <section class="alerts" id="alerts" aria-label="Live safety alerts">
-    <div class="alert alert--quiet"><div class="alert__meta">Safety alerts</div>
-      <div class="alert__title">Checking MHRA feed…</div></div>
+    <div class="alert alert--quiet">
+      <div class="alert__meta">Safety alerts</div>
+      <div class="alert__title">Checking MHRA feed…</div>
+    </div>
   </section>
 
-  <div id="today">
-    <div class="empty">Loading today's module…</div>
-  </div>
+  <div class="teaching-grid">
+    <!-- Left: today's module -->
+    <div>
+      <div id="today">
+        <div class="empty">Loading today's module…</div>
+      </div>
+      <div id="paper" style="margin-top:1.25rem"></div>
+    </div>
 
-  <div id="paper"></div>
+    <!-- Right: trials + upcoming -->
+    <div class="teaching-sidebar no-print">
+
+      <!-- Active trials -->
+      <div class="trials-box" id="trials-box">
+        <div class="trials-box__hdr">Active trials</div>
+        <div class="trial-empty">Loading…</div>
+      </div>
+
+    </div>
+  </div>
 
   <p class="eyebrow no-print" style="margin-bottom:2rem">
     Educational resource only. Not a substitute for clinical judgement.
     Always refer to local guidelines and current BNF/NICE guidance.
   </p>
-
 </main>
 
-<!-- app.js must load first — it defines the globals used by the module scripts below -->
 <script src="assets/app.js"></script>
-
-<!-- All async work is in module scripts. Because app.js is a classic script loaded
-     synchronously above, its globals are available by the time these modules run.
-     We do NOT wrap anything in DOMContentLoaded here — the module scripts are
-     deferred by the browser and run after parsing, so the DOM is already ready. -->
 <script type="module">
-  import { getAlerts, renderAlerts } from './assets/alerts.js';
-  import { loadPapers, pickPaperForDate, renderPaper } from './assets/papers.js';
+  import { getAlerts, renderAlerts }             from './assets/alerts.js';
+  import { loadPapers, pickPaperForDate,
+           renderPaper }                         from './assets/papers.js';
 
-  // Alerts — independent of modules, kick off immediately
+  // Date label
+  const iso = localISODate();
+  const label = document.querySelector('[data-today-label]');
+  if (label) label.textContent = longDate(iso);
+
+  // Alerts
   (async () => {
+    renderAlerts(document.getElementById('alerts'), await getAlerts({ limit: 2 }));
+  })();
+
+  // Teaching module
+  (async () => {
+    const root = document.getElementById('today');
     try {
-      renderAlerts(document.getElementById('alerts'), await getAlerts({ limit: 3 }));
+      const modules = await loadModules();
+      const { module, scheduled } = pickForDate(modules, iso);
+      if (!module) {
+        root.innerHTML = '<div class="empty">No modules yet — add one to <code>data/modules.json</code>.</div>';
+        return;
+      }
+      label.textContent = longDate(iso);
+      renderModule(root, module, {
+        eyebrow: scheduled ? longDate(iso) : `${longDate(iso)} — from the archive`
+      });
     } catch (err) {
-      console.warn('Alerts failed:', err);
+      root.innerHTML = `<div class="empty"><strong>Could not load modules.</strong><br>${err.message}<br>
+        Serve over HTTP: <code>python3 -m http.server</code></div>`;
     }
   })();
 
@@ -84,34 +175,39 @@
     const box = document.getElementById('paper');
     try {
       const payload = await loadPapers();
-      const paper = pickPaperForDate(payload.papers, localISODate());
+      const paper = pickPaperForDate(payload.papers, iso);
       renderPaper(box, paper, payload);
     } catch (err) {
-      box.innerHTML = `<div class="empty">Could not load the paper list: ${err.message}</div>`;
+      box.innerHTML = `<div class="empty">Could not load paper: ${err.message}</div>`;
     }
   })();
 
-  // Daily module
+  // Trials
   (async () => {
-    const root = document.getElementById('today');
-    const label = document.querySelector('[data-today-label]');
+    const box = document.getElementById('trials-box');
     try {
-      const modules = await loadModules();
-      const iso = localISODate();
-      const { module, scheduled } = pickForDate(modules, iso);
-      if (!module) {
-        root.innerHTML = '<div class="empty">No modules in the content bank yet. ' +
-          'Add one to <code>data/modules.json</code>.</div>';
+      const res = await fetch('data/trials.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      const active = (data.trials || []).filter(t => t.status === 'recruiting' || t.status === 'paused');
+      if (!active.length) {
+        box.innerHTML = '<div class="trials-box__hdr">Active trials</div><div class="trial-empty">No active trials</div>';
         return;
       }
-      if (label) label.textContent = longDate(iso);
-      renderModule(root, module, {
-        eyebrow: scheduled ? longDate(iso) : `${longDate(iso)} — from the archive`
-      });
-    } catch (err) {
-      root.innerHTML = `<div class="empty"><strong>Could not load the content bank.</strong><br>
-        ${err.message}. If you opened this file directly, serve it over HTTP instead
-        (<code>python3 -m http.server</code>).</div>`;
+      const statusLabel = { recruiting: 'Recruiting', paused: 'Paused' };
+      box.innerHTML = `<div class="trials-box__hdr">Active trials</div>` +
+        active.map(t => `
+          <div class="trial-item">
+            <div class="trial-item__name">
+              ${escapeHTML(t.name)}
+              <span class="trial-badge">${statusLabel[t.status] || t.status}</span>
+            </div>
+            <div class="trial-item__q">${escapeHTML(t.question || t.full_name || '')}</div>
+            <div class="trial-item__pop">${escapeHTML(t.population || '')}</div>
+            ${t.what_to_do ? `<div class="trial-item__action">${escapeHTML(t.what_to_do)}</div>` : ''}
+          </div>`).join('');
+    } catch {
+      box.innerHTML = '<div class="trials-box__hdr">Active trials</div><div class="trial-empty">No trials data</div>';
     }
   })();
 </script>
