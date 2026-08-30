@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive — EM Handover Daily</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead__row">
+    <a class="wordmark" href="index.html">EM Handover <span>Daily</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Today</a>
+      <a href="archive.html" aria-current="page">Archive</a>
+      <a href="alerts.html">Alerts</a>
+      <a href="night-handover.html">Night handover</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+<div class="trace" aria-hidden="true">
+  <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
+    <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
+  </svg>
+</div>
+
+<main class="wrap">
+  <div class="utility no-print">
+    <span data-count>—</span>
+    <span class="btn-row"><button class="btn" data-handover-toggle aria-pressed="false">Handover mode</button></span>
+  </div>
+
+  <div class="filters no-print">
+    <input class="field field--search" type="search" id="q" placeholder="Search titles, tags and teaching points" aria-label="Search modules">
+    <select class="field" id="cat" aria-label="Category">
+      <option value="">All categories</option>
+    </select>
+    <select class="field" id="tagfilter" aria-label="Exam relevance">
+      <option value="">All modules</option>
+      <option value="frcem">FRCEM only</option>
+      <option value="draft">Drafts only</option>
+      <option value="published">Published only</option>
+    </select>
+  </div>
+
+  <ul class="grid" id="grid"></ul>
+  <div id="detail" style="margin-top:1.5rem"></div>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const grid = document.getElementById('grid');
+  const detail = document.getElementById('detail');
+  const count = document.querySelector('[data-count]');
+  let modules = [];
+
+  try {
+    modules = await loadModules();
+  } catch (err) {
+    grid.innerHTML = `<li class="empty">Could not load the content bank: ${err.message}</li>`;
+    return;
+  }
+
+  const catSel = document.getElementById('cat');
+  [...new Set(modules.map(m => m.category))].sort().forEach(c => {
+    const o = document.createElement('option');
+    o.value = c;
+    o.textContent = CATEGORIES[c] || c;
+    catSel.append(o);
+  });
+
+  function haystack(m) {
+    const bulletText = (m.bullets || [])
+      .map(b => typeof b === 'string' ? b : b.text).join(' ');
+    return `${m.title} ${m.category} ${(m.tags || []).join(' ')} ${bulletText}`.toLowerCase();
+  }
+
+  function apply() {
+    const q = document.getElementById('q').value.trim().toLowerCase();
+    const cat = catSel.value;
+    const mode = document.getElementById('tagfilter').value;
+
+    const rows = modules.filter(m => {
+      if (cat && m.category !== cat) return false;
+      if (mode === 'frcem' && !m.frcem_relevant) return false;
+      if (mode === 'draft' && m.status === 'published') return false;
+      if (mode === 'published' && m.status !== 'published') return false;
+      if (q && !haystack(m).includes(q)) return false;
+      return true;
+    }).reverse();
+
+    count.textContent = `${rows.length} of ${modules.length} modules`;
+
+    grid.innerHTML = rows.length ? rows.map(m => `
+      <li class="card">
+        <div class="card__meta">${longDate(m.date)} &middot; ${CATEGORIES[m.category] || m.category}</div>
+        <h3><a href="#${encodeURIComponent(m.id)}" data-open="${encodeURIComponent(m.id)}">${m.title
+          .replace(/&/g,'&amp;').replace(/</g,'&lt;')}</a></h3>
+        <div class="chips">${m.frcem_relevant ? '<span class="chip chip--frcem">FRCEM</span>' : ''}
+          ${m.status !== 'published' ? '<span class="chip chip--draft">Draft</span>' : ''}
+          ${m.difficulty ? `<span class="chip">${m.difficulty}</span>` : ''}</div>
+      </li>`).join('')
+      : '<li class="empty">Nothing matches those filters. Clear the search to see everything.</li>';
+  }
+
+  function open(id) {
+    const m = modules.find(x => x.id === id);
+    if (!m) return;
+    renderModule(detail, m);
+    detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  grid.addEventListener('click', e => {
+    const a = e.target.closest('[data-open]');
+    if (!a) return;
+    e.preventDefault();
+    open(decodeURIComponent(a.dataset.open));
+  });
+
+  ['q', 'cat', 'tagfilter'].forEach(id =>
+    document.getElementById(id).addEventListener('input', apply));
+
+  apply();
+  if (location.hash) open(decodeURIComponent(location.hash.slice(1)));
+});
+</script>
+</body>
+</html>

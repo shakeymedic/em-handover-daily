@@ -1,0 +1,4 @@
+{
+  "note": "Phase 1: add RCEM and other non-GOV.UK alerts here by hand. Anything older than 90 days is filtered out of the live strip automatically. Phase 2 replaces this with the scheduled Netlify function.",
+  "alerts": []
+}

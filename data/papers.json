@@ -1,0 +1,41 @@
+{
+  "note": "Fallback list, used when no Google Sheet is connected or the sheet cannot be read. Same fields as the sheet columns. 'date' is optional — leave it blank and the paper joins the daily rotation instead of being pinned to one day. These three records were pulled from PubMed and their DOIs check out, but the one-line takeaways are mine and need your review.",
+  "papers": [
+    {
+      "date": "",
+      "title": "Pharmacists in Trauma: a randomised controlled trial of emergency medicine pharmacists in trauma response teams",
+      "authors": "Roman C, et al.",
+      "journal": "Emerg Med J",
+      "year": "2024",
+      "doi": "10.1136/emermed-2022-212934",
+      "pmid": "38749667",
+      "design": "RCT",
+      "takeaway": "Putting an EM pharmacist in the trauma team cut time to first analgesia. Single Australian centre, unblinded, 82 patients analysed.",
+      "tags": ["trauma", "analgesia", "workforce"]
+    },
+    {
+      "date": "",
+      "title": "The effect of early fluid resuscitation on mortality in sepsis: a systematic review and meta-analysis",
+      "authors": "Ward MA, Kuttab HI, Badgett RG",
+      "journal": "Crit Care Med",
+      "year": "2025",
+      "doi": "10.1097/CCM.0000000000006769",
+      "pmid": "40637496",
+      "design": "Systematic review and meta-analysis",
+      "takeaway": "Randomised data show no mortality difference between liberal and restrictive early fluid strategies. Certainty of evidence is low throughout.",
+      "tags": ["sepsis", "fluids"]
+    },
+    {
+      "date": "",
+      "title": "Nonoperative versus operative management of chest trauma with multiple rib fractures: meta-analysis and trial sequential analysis",
+      "authors": "Hisamune R, et al.",
+      "journal": "World J Emerg Surg",
+      "year": "2024",
+      "doi": "10.1186/s13017-024-00540-z",
+      "pmid": "38504282",
+      "design": "Systematic review and meta-analysis",
+      "takeaway": "Surgical rib fixation shortened ventilation and reduced pneumonia, but showed no clear mortality benefit. GRADE certainty very low to low.",
+      "tags": ["trauma", "chest"]
+    }
+  ]
+}

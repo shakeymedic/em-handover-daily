@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night handover — EM Handover Daily</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+
+<header class="masthead no-print">
+  <div class="wrap masthead__row">
+    <a class="wordmark" href="index.html">EM Handover <span>Daily</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Today</a>
+      <a href="archive.html">Archive</a>
+      <a href="alerts.html">Alerts</a>
+      <a href="night-handover.html" aria-current="page">Night handover</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+<div class="trace no-print" aria-hidden="true">
+  <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
+    <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
+  </svg>
+</div>
+
+<main class="wrap">
+
+  <div class="utility no-print">
+    <span>Prompt sheet — nothing is saved or sent</span>
+    <span class="btn-row">
+      <button class="btn btn--primary" data-print>Print handover</button>
+      <button class="btn" id="copy">Copy to clipboard</button>
+      <button class="btn" id="clear">Clear form</button>
+    </span>
+  </div>
+
+  <form class="sheet" id="sheet" autocomplete="off">
+
+    <h2>ED night handover</h2>
+    <div class="row">
+      <label class="stack">Date<input type="date" name="Date" id="date"></label>
+      <label class="stack">Time<input type="time" name="Time" id="time"></label>
+      <label class="stack">Handed over by<input type="text" name="Handed over by"></label>
+      <label class="stack">Receiving<input type="text" name="Receiving"></label>
+    </div>
+
+    <p class="gdpr">This tool is a prompt only. Do not enter patient-identifiable
+      information. Clinical handover documentation must be completed in your EPR.</p>
+
+    <fieldset>
+      <legend>1 — Deaths, disasters and deserters</legend>
+      <p class="hint">The three things that must be handed over, whatever else gets missed.</p>
+      <div class="row">
+        <label class="stack">Deaths<textarea name="Deaths" rows="2"></textarea></label>
+        <label class="stack">Disasters — incidents, complaints, near misses<textarea name="Disasters" rows="2"></textarea></label>
+        <label class="stack">Deserters — anyone who left before being seen or against advice<textarea name="Deserters" rows="2"></textarea></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 — Department status</legend>
+      <div class="row">
+        <label class="stack">Patients in department<input type="text" name="Patients in department"></label>
+        <label class="stack">Longest wait<input type="text" name="Longest wait"></label>
+        <label class="stack">Resus / majors / paeds occupancy<input type="text" name="Occupancy"></label>
+        <label class="stack">Ambulance offload / corridor status<input type="text" name="Offload status"></label>
+      </div>
+      <label class="stack">Escalation level and what is already in place<textarea name="Escalation" rows="2"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 — Staff safety</legend>
+      <p class="hint">Security concerns, violent or aggressive patients, lone working, anyone who needs support tonight.</p>
+      <label class="stack"><span class="visually-hidden">Staff safety notes</span>
+        <textarea name="Staff safety" rows="3"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4 — Sickness and staffing</legend>
+      <div class="row">
+        <label class="stack">Gaps on the night rota<textarea name="Rota gaps" rows="2"></textarea></label>
+        <label class="stack">Late or sick calls<textarea name="Sickness" rows="2"></textarea></label>
+        <label class="stack">Who is the named lead overnight<input type="text" name="Named night lead"></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5 — Equipment and safety alerts</legend>
+      <p class="hint">Broken kit, missing equipment, and any live MHRA or RCEM alert for today.
+        Active alerts are pulled in below — delete any that are not relevant.</p>
+      <label class="stack">Equipment issues<textarea name="Equipment" rows="2"></textarea></label>
+      <label class="stack">Active safety alerts
+        <textarea name="Active alerts" id="alertbox" rows="3"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>6 — Significant patients</legend>
+      <p class="hint">Not a clinical handover list. The few the oncoming lead must know about.
+        Use initials or bed space, never full identifiers.</p>
+      <label class="stack"><span class="visually-hidden">Significant patients</span>
+        <textarea name="Significant patients" rows="5"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>7 — Tasks for the night team</legend>
+      <label class="stack"><span class="visually-hidden">Tasks</span>
+        <textarea name="Tasks" rows="4"></textarea></label>
+    </fieldset>
+
+  </form>
+
+  <p class="eyebrow no-print" style="margin:1rem 0 2rem" id="status" aria-live="polite"></p>
+</main>
+
+<script src="assets/app.js"></script>
+<script type="module">
+  import { getAlerts, alertLines } from './assets/alerts.js';
+
+  const form = document.getElementById('sheet');
+  const status = document.getElementById('status');
+  const now = new Date();
+  document.getElementById('date').value = localISODate(now);
+  document.getElementById('time').value =
+    `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+  // Pre-populate today's live alerts. Always editable, never locked.
+  getAlerts({ limit: 3 }).then(payload => {
+    const lines = alertLines(payload);
+    if (lines.length) document.getElementById('alertbox').value = lines.join('\n');
+  }).catch(() => {});
+
+  document.getElementById('clear').addEventListener('click', () => {
+    form.reset();
+    document.getElementById('date').value = localISODate();
+    status.textContent = 'Form cleared.';
+  });
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    const out = ['ED NIGHT HANDOVER'];
+    [...form.elements].forEach(el => {
+      if (!el.name) return;
+      const v = el.value.trim();
+      if (v) out.push(`${el.name}: ${v}`);
+    });
+    try {
+      await navigator.clipboard.writeText(out.join('\n'));
+      status.textContent = 'Copied. Remember it contains whatever you typed — check before pasting.';
+    } catch {
+      status.textContent = 'Copy failed — your browser blocked clipboard access. Use Print instead.';
+    }
+  });
+</script>
+<style>
+  .visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</body>
+</html>

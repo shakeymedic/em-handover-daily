@@ -1,0 +1,642 @@
+/* ==========================================================================
+   EM Handover Daily — stylesheet
+   No build step. No CDN. Works offline once cached by the service worker.
+   Three modes: personal (default), handover (large screen), print (A4).
+   ========================================================================== */
+
+:root {
+  /* Ink / paper */
+  --paper:        #f5f4f0;
+  --paper-raised: #ffffff;
+  --ink:          #14191d;
+  --ink-soft:     #4a5560;
+  --ink-faint:    #78838d;
+  --rule:         #d8d5cc;
+
+  /* Signal colours */
+  --signal:       #0f6157;  /* brand / category */
+  --signal-tint:  #e3efec;
+  --alarm:        #a8102b;  /* safety alerts */
+  --alarm-tint:   #f7e6e9;
+  --trace:        #0f8f6b;  /* the monitor trace */
+  --draft:        #8a5a00;
+  --draft-tint:   #fbf0da;
+
+  /* Type */
+  --display: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body:    ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono:    ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Scale — personal mode */
+  --fs-body:   1.0625rem;
+  --fs-bullet: 1.125rem;
+  --fs-title:  2rem;
+  --fs-eyebrow: 0.75rem;
+
+  --maxw: 62rem;
+  --gap: 1.5rem;
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  letter-spacing: -0.003em;
+}
+
+a { color: var(--signal); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Masthead + the monitor trace (signature element)
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-raised);
+}
+
+.masthead__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 0 0.75rem;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.wordmark span { color: var(--signal); }
+
+.nav {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+.nav a { color: var(--ink-soft); text-decoration: none; padding-bottom: 2px; }
+.nav a:hover { color: var(--ink); border-bottom: 2px solid var(--signal); }
+.nav a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--signal); }
+
+/* The trace: a slow ECG rhythm strip under the masthead. It exists so anyone
+   glancing at the department screen can tell the page is live, not stale. */
+.trace {
+  display: block;
+  width: 100%;
+  height: 14px;
+  background: var(--paper-raised);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+}
+.trace svg { display: block; width: 200%; height: 14px; }
+.trace path {
+  fill: none;
+  stroke: var(--trace);
+  stroke-width: 1.5;
+  opacity: 0.55;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .trace svg { animation: sweep 24s linear infinite; }
+}
+@keyframes sweep {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   Utility bar
+   -------------------------------------------------------------------------- */
+
+.utility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--ink-soft); color: var(--ink); }
+.btn--primary {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: #fff;
+}
+.btn--primary:hover { background: #0c4e46; border-color: #0c4e46; color: #fff; }
+.btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+.btn-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* --------------------------------------------------------------------------
+   Alert strip
+   -------------------------------------------------------------------------- */
+
+.alerts { margin: 0 0 1.25rem; }
+
+.alert {
+  display: block;
+  border-left: 4px solid var(--alarm);
+  background: var(--alarm-tint);
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.alert:hover { background: #f2dade; }
+.alert__meta {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--alarm);
+  margin-bottom: 0.2rem;
+}
+.alert__title { font-weight: 600; line-height: 1.35; }
+
+.alert--quiet { border-left-color: var(--rule); background: transparent; }
+.alert--quiet .alert__meta { color: var(--ink-faint); }
+
+/* --------------------------------------------------------------------------
+   Daily module
+   -------------------------------------------------------------------------- */
+
+.module {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.module__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.chips { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+.chip {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.chip--cat { background: var(--signal-tint); border-color: transparent; color: var(--signal); font-weight: 600; }
+.chip--frcem { border-color: var(--signal); color: var(--signal); }
+.chip--draft { background: var(--draft-tint); border-color: transparent; color: var(--draft); font-weight: 600; }
+
+.module__title {
+  font-family: var(--display);
+  font-size: var(--fs-title);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.1rem;
+  text-wrap: balance;
+}
+
+/* Bullets. Sequenced steps get numbers because the order is clinical
+   information; unsequenced points get a plain rule instead. */
+.points { list-style: none; margin: 0; padding: 0; }
+
+.points li {
+  font-size: var(--fs-bullet);
+  line-height: 1.4;
+  padding: 0.55rem 0 0.55rem 2.25rem;
+  border-top: 1px solid var(--rule);
+  position: relative;
+}
+.points li:first-child { border-top: 0; }
+
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 1.15em;
+  width: 0.75rem;
+  height: 1px;
+  background: var(--ink-faint);
+}
+.points li[data-step]::before {
+  content: attr(data-step);
+  top: 0.55rem;
+  left: 0;
+  width: 1.6rem;
+  height: auto;
+  background: transparent;
+  font-family: var(--mono);
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--signal);
+  text-align: left;
+}
+
+/* Doses, units and thresholds set in mono so numbers read cleanly at 3 metres */
+.points b, .num { font-family: var(--mono); font-weight: 700; letter-spacing: -0.01em; }
+
+.module__foot {
+  margin-top: 1.1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.module__foot .src { max-width: 44rem; }
+
+.notice {
+  border: 1px dashed var(--draft);
+  background: var(--draft-tint);
+  color: var(--draft);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Screen 2 — deep dive + quiz
+   -------------------------------------------------------------------------- */
+
+.screen2 { display: none; }
+.screen2.is-open { display: block; }
+
+.deep h3, .quiz h3 {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+
+.algorithm { list-style: none; margin: 0 0 1rem; padding: 0; }
+.algorithm li {
+  border-left: 3px solid var(--signal);
+  padding: 0.4rem 0 0.4rem 0.85rem;
+  margin-bottom: 0.4rem;
+  font-size: var(--fs-bullet);
+}
+
+.stem { font-size: var(--fs-bullet); line-height: 1.45; margin: 0 0 1rem; }
+
+.options { display: grid; gap: 0.5rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .options { grid-template-columns: 1fr; } }
+
+.option {
+  text-align: left;
+  font-family: var(--body);
+  font-size: var(--fs-bullet);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+.option:hover:not(:disabled) { border-color: var(--ink-soft); }
+.option:disabled { cursor: default; }
+.option .key { font-family: var(--mono); font-weight: 700; color: var(--ink-faint); }
+.option.is-correct { border-color: var(--trace); background: var(--signal-tint); }
+.option.is-correct .key { color: var(--trace); }
+.option.is-wrong { border-color: var(--alarm); background: var(--alarm-tint); }
+.option.is-wrong .key { color: var(--alarm); }
+
+.explain {
+  margin-top: 0.9rem;
+  border-left: 3px solid var(--trace);
+  padding: 0.5rem 0 0.5rem 0.85rem;
+  font-size: 1rem;
+}
+.explain[hidden] { display: none; }
+
+/* --------------------------------------------------------------------------
+   Archive grid
+   -------------------------------------------------------------------------- */
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.field {
+  font-family: var(--body);
+  font-size: 0.9375rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+.field--search { flex: 1 1 16rem; min-width: 12rem; }
+
+.grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card h3 { margin: 0; font-size: 1.0625rem; line-height: 1.25; font-weight: 700; }
+.card__meta { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
+.card a { text-decoration: none; color: inherit; }
+.card a:hover h3 { color: var(--signal); }
+
+.empty {
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Night handover form
+   -------------------------------------------------------------------------- */
+
+.sheet {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.sheet h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+}
+
+fieldset {
+  border: 0;
+  border-top: 2px solid var(--ink);
+  padding: 0.75rem 0 1.25rem;
+  margin: 0;
+}
+legend {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 0.5rem 0 0;
+}
+.hint { color: var(--ink-soft); font-size: 0.875rem; margin: 0 0 0.6rem; }
+
+.row { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-bottom: 0.6rem; }
+
+label.stack { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8125rem; color: var(--ink-soft); }
+label.stack input, label.stack textarea, label.stack select {
+  font-family: var(--body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 0.35rem 0.2rem;
+  border-radius: 0;
+}
+label.stack textarea { border: 1px solid var(--rule); border-radius: var(--radius); padding: 0.5rem; resize: vertical; min-height: 4.5rem; }
+label.stack input:focus, label.stack textarea:focus { border-color: var(--signal); }
+
+.gdpr {
+  border-left: 4px solid var(--ink);
+  padding: 0.6rem 0.9rem;
+  background: var(--paper);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Handover mode — 65" screen, read at 3 metres
+   -------------------------------------------------------------------------- */
+
+body.handover {
+  --paper:        #0d1216;
+  --paper-raised: #131b21;
+  --ink:          #f2f5f7;
+  --ink-soft:     #9fb0bb;
+  --ink-faint:    #7d8f9a;
+  --rule:         #2a3841;
+  --signal:       #4fd1b5;
+  --signal-tint:  #17302c;
+  --alarm:        #ff6b7f;
+  --alarm-tint:   #2d1219;
+  --trace:        #4fd1b5;
+  --draft:        #e0b25c;
+  --draft-tint:   #2b2415;
+
+  --fs-body:   1.375rem;
+  --fs-bullet: 1.875rem;   /* 30px */
+  --fs-title:  3.75rem;
+  --fs-eyebrow: 1rem;
+  --maxw: 90rem;
+}
+body.handover .btn--primary { color: #06100d; }
+body.handover .btn[aria-pressed="true"] { background: var(--signal); color: #06100d; border-color: var(--signal); }
+body.handover .nav { font-size: 1rem; }
+body.handover .wordmark { font-size: 1.375rem; }
+body.handover .module { padding: 2.25rem 2.5rem; }
+body.handover .points li { padding-top: 0.7rem; padding-bottom: 0.7rem; padding-left: 3rem; }
+body.handover .points li[data-step]::before { width: 2.2rem; }
+body.handover .module__foot { font-size: 1.0625rem; }
+body.handover .option { font-size: 1.5rem; }
+body.handover .stem { font-size: 1.75rem; }
+body.handover .card h3 { font-size: 1.375rem; }
+body.handover .trace path { opacity: 0.8; }
+body.handover .trace, body.handover .trace svg { height: 20px; }
+
+/* --------------------------------------------------------------------------
+   Print — one clean A4 sheet
+   -------------------------------------------------------------------------- */
+
+@media print {
+  :root {
+    --paper: #fff; --paper-raised: #fff; --ink: #000; --ink-soft: #333;
+    --ink-faint: #555; --rule: #999; --signal: #000; --signal-tint: #fff;
+    --alarm: #000; --alarm-tint: #fff; --trace: #000;
+    --fs-body: 11pt; --fs-bullet: 12pt; --fs-title: 20pt;
+  }
+  @page { size: A4 portrait; margin: 14mm; }
+  body { background: #fff; font-size: 11pt; }
+  body.handover { --fs-bullet: 12pt; --fs-title: 20pt; }
+  .no-print, .trace, .nav, .utility, .btn, .btn-row, .filters { display: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  .module, .sheet { border: 0; padding: 0; }
+  .screen2 { display: block !important; }
+  .points li { break-inside: avoid; }
+  label.stack input, label.stack textarea { border-bottom: 1px solid #000; }
+  label.stack textarea { border: 1px solid #000; min-height: 3.2rem; }
+  a { color: #000; text-decoration: none; }
+  .masthead__row { padding: 0 0 6pt; }
+}
+
+/* --------------------------------------------------------------------------
+   Paper of the day
+   -------------------------------------------------------------------------- */
+
+.paper {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: start;
+}
+@media (max-width: 600px) {
+  .paper { grid-template-columns: 1fr; }
+}
+
+.paper__body { min-width: 0; }
+
+.paper__title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0.35rem 0 0.35rem;
+  text-wrap: pretty;
+}
+.paper__title a { color: inherit; text-decoration: none; }
+.paper__title a:hover { color: var(--signal); text-decoration: underline; }
+
+.paper__cite {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+  margin: 0 0 0.6rem;
+}
+
+.paper__takeaway { margin: 0; font-size: 1rem; line-height: 1.45; }
+
+.paper__qr {
+  width: 116px;
+  text-align: center;
+}
+.paper__qr svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+.paper__scan {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.4rem;
+}
+.paper__qr--missing {
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+}
+
+body.handover .paper { padding: 1.75rem 2.5rem; gap: 2rem; }
+body.handover .paper__title { font-size: 2rem; }
+body.handover .paper__cite { font-size: 1.125rem; }
+body.handover .paper__takeaway { font-size: 1.5rem; }
+body.handover .paper__qr { width: 220px; }
+body.handover .paper__scan { font-size: 0.875rem; }
+
+@media print {
+  .paper { border: 0; padding: 0; border-top: 1px solid #000; padding-top: 8pt;
+           break-inside: avoid; }
+  .paper__qr { width: 90px; }
+  .paper__title { font-size: 12pt; }
+  .paper__takeaway { font-size: 10pt; }
+}

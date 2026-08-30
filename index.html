@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EM Handover Daily</title>
+<meta name="description" content="One teaching point, one safety alert and one question, every day, sized for the department screen at handover.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f6157">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead__row">
+    <a class="wordmark" href="index.html">EM Handover <span>Daily</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Today</a>
+      <a href="archive.html">Archive</a>
+      <a href="alerts.html">Alerts</a>
+      <a href="night-handover.html">Night handover</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="trace" aria-hidden="true">
+  <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
+    <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
+  </svg>
+</div>
+
+<main class="wrap">
+
+  <div class="utility no-print">
+    <span data-today-label>Loading…</span>
+    <span class="btn-row">
+      <button class="btn" data-handover-toggle aria-pressed="false">Handover mode</button>
+      <button class="btn" data-print>Print</button>
+    </span>
+  </div>
+
+  <section class="alerts" id="alerts" aria-label="Live safety alerts">
+    <div class="alert alert--quiet"><div class="alert__meta">Safety alerts</div>
+      <div class="alert__title">Checking MHRA feed…</div></div>
+  </section>
+
+  <div id="today">
+    <div class="empty">Loading today's module…</div>
+  </div>
+
+  <div id="paper"></div>
+
+  <p class="eyebrow no-print" style="margin-bottom:2rem">
+    Educational resource only. Not a substitute for clinical judgement.
+    Always refer to local guidelines and current BNF/NICE guidance.
+  </p>
+
+</main>
+
+<!-- app.js must load first — it defines the globals used by the module scripts below -->
+<script src="assets/app.js"></script>
+
+<!-- All async work is in module scripts. Because app.js is a classic script loaded
+     synchronously above, its globals are available by the time these modules run.
+     We do NOT wrap anything in DOMContentLoaded here — the module scripts are
+     deferred by the browser and run after parsing, so the DOM is already ready. -->
+<script type="module">
+  import { getAlerts, renderAlerts } from './assets/alerts.js';
+  import { loadPapers, pickPaperForDate, renderPaper } from './assets/papers.js';
+
+  // Alerts — independent of modules, kick off immediately
+  (async () => {
+    try {
+      renderAlerts(document.getElementById('alerts'), await getAlerts({ limit: 3 }));
+    } catch (err) {
+      console.warn('Alerts failed:', err);
+    }
+  })();
+
+  // Paper of the day
+  (async () => {
+    const box = document.getElementById('paper');
+    try {
+      const payload = await loadPapers();
+      const paper = pickPaperForDate(payload.papers, localISODate());
+      renderPaper(box, paper, payload);
+    } catch (err) {
+      box.innerHTML = `<div class="empty">Could not load the paper list: ${err.message}</div>`;
+    }
+  })();
+
+  // Daily module
+  (async () => {
+    const root = document.getElementById('today');
+    const label = document.querySelector('[data-today-label]');
+    try {
+      const modules = await loadModules();
+      const iso = localISODate();
+      const { module, scheduled } = pickForDate(modules, iso);
+      if (!module) {
+        root.innerHTML = '<div class="empty">No modules in the content bank yet. ' +
+          'Add one to <code>data/modules.json</code>.</div>';
+        return;
+      }
+      if (label) label.textContent = longDate(iso);
+      renderModule(root, module, {
+        eyebrow: scheduled ? longDate(iso) : `${longDate(iso)} — from the archive`
+      });
+    } catch (err) {
+      root.innerHTML = `<div class="empty"><strong>Could not load the content bank.</strong><br>
+        ${err.message}. If you opened this file directly, serve it over HTTP instead
+        (<code>python3 -m http.server</code>).</div>`;
+    }
+  })();
+</script>
+</body>
+</html>

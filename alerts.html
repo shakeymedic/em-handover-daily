@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safety alerts — EM Handover Daily</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead__row">
+    <a class="wordmark" href="index.html">EM Handover <span>Daily</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Today</a>
+      <a href="archive.html">Archive</a>
+      <a href="alerts.html" aria-current="page">Alerts</a>
+      <a href="night-handover.html">Night handover</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+<div class="trace" aria-hidden="true">
+  <svg viewBox="0 0 1600 20" preserveAspectRatio="none">
+    <path d="M0,12 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55 h50 l6,-2 l6,2 h14 l4,3 l6,-11 l6,12 l5,-4 h20 c10,-4 18,-4 28,0 h55"/>
+  </svg>
+</div>
+
+<main class="wrap">
+  <div class="utility no-print">
+    <span>ED-relevant alerts, last 90 days</span>
+    <span class="btn-row">
+      <button class="btn" id="refresh">Refresh now</button>
+      <button class="btn" data-handover-toggle aria-pressed="false">Handover mode</button>
+      <button class="btn" data-print>Print</button>
+    </span>
+  </div>
+
+  <section class="alerts" id="alerts" aria-live="polite">
+    <div class="alert alert--quiet"><div class="alert__meta">Loading</div>
+      <div class="alert__title">Checking MHRA feed…</div></div>
+  </section>
+
+  <p class="eyebrow">Alerts link to the primary source. Nothing here is paraphrased for
+    clinical decision-making — always read the original.</p>
+</main>
+
+<script src="assets/app.js"></script>
+<script type="module">
+  import { getAlerts, renderAlerts } from './assets/alerts.js';
+  const box = document.getElementById('alerts');
+  const draw = async () => renderAlerts(box, await getAlerts({ limit: 25 }));
+  draw();
+  document.getElementById('refresh').addEventListener('click', () => {
+    localStorage.removeItem('ehd:alerts');
+    draw();
+  });
+</script>
+</body>
+</html>

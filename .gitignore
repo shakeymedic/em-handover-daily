@@ -1,0 +1,13 @@
+# Preview build (generated locally by tools/build_preview.py, never committed)
+preview.html
+
+# Node (if you ever add a build step)
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
