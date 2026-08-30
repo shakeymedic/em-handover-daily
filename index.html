@@ -664,7 +664,8 @@ body.handover .hv-paper__qr-col .hv-paper__no-qr { width: 90px; height: 90px; }
             </div>
             <div class="hv-trial-item__desc">${escapeHTML(t.question || t.full_name || '')}</div>
             <div class="hv-trial-item__incl">${escapeHTML(t.population || '')}</div>
-            ${t.what_to_do ? `<div class="hv-trial-item__action">${escapeHTML(t.what_to_do.slice(0, 120))}</div>` : ''}
+            ${t.what_to_do ? `<div class="hv-trial-item__action">${escapeHTML(t.what_to_do)}</div>` : ''}
+            ${t.contact_email ? `<div class="hv-trial-item__contact">Contact: <a href="mailto:${escapeHTML(t.contact_email)}">${escapeHTML(t.contact || t.contact_email)}</a></div>` : ''}
           </div>`).join('');
     } catch { /* no trials file = silently skip */ }
   })();
